@@ -1,0 +1,104 @@
+<ion-view id="synergyclues">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">协同项目管理流程审批</h1>
+    </ion-header-bar>
+    <ion-content has-header="true" id="content" scroll="false">
+        <tab-slide-box tab='0'>
+            <div class="tsb-icons">
+                <div class="tsb-ic-wrp">
+                    <ion-scroll direction="x" class="tsb-hscroll" style="width: 100%">
+                        <a href="javascript:;" class="" style=";">项目信息</a>
+                        <a href="javascript:;" class="" style="">名单信息</a>
+                        <a href="javascript:;" class="" style="">协同方信息</a>
+                        <a href="javascript:;" class="" style="">附件资料信息</a>
+                        <a href="javascript:;" class="" style="">已完成工作</a>
+                      <!--  <a href="javascript:;" class="" style="" ng-if="activityId=='ACT_5'">审核意见</a>-->
+                    </ion-scroll>
+                </div>
+            </div>
+            <div style="height:5px;background-color:#f0f0f0;"></div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <div ng-include="'areas/backlog/flows/cmtdataprojbscinfpage/tab/baseData.html'">
+                    </div>
+                </ion-slide>
+
+                <ion-slide>
+                    <div ng-include="'areas/backlog/flows/cmtdataprojbscinfpage/tab/findCstLstTablistData.html'">
+                    </div>
+                </ion-slide>
+
+                <ion-slide>
+                    <div ng-include="'areas/backlog/flows/cmtdataprojbscinfpage/tab/doGetProjCooTeamListData.html'">
+                    </div>
+                </ion-slide>
+
+                <ion-slide>
+                    <div ng-include="'areas/backlog/flows/cmtdataprojbscinfpage/tab/getAttchListData.html'">
+                    </div>
+                </ion-slide>
+
+                <ion-slide>
+                    <div ng-include="'areas/backlog/flows/cmtdataprojbscinfpage/tab/doGetActyListData.html'">
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </tab-slide-box>
+    </ion-content>
+
+
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_9"'>
+        <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+        <button class=" " style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                ng-click="contractFiling()">合同归档
+        </button>
+    </ion-footer-bar>
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_8"'>
+        <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+        <button class=" " style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                ng-click="cfmProjBscInfToGroup('CANCLE')">提交合同签署
+        </button>
+    </ion-footer-bar>
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_6"'>
+        <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+        <button class=" " style="width:50%;background-color:#E6F9FF; color:#01B0E9; border-width: 0px" ng-click="cfmProjBscInfo_investmt('BACK')">退回补充材料</button>
+        <button class=" " style="width: 50%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                ng-click="cfmProjBscInfo_investmt('CMT')">提交
+        </button>
+    </ion-footer-bar>
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_5"'>
+       <button class=" " style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                ng-click="cfmProjBscInf_ACT_5(0)">审核
+        </button>
+    </ion-footer-bar>
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_4"'>
+        <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+        <button class=" " style="width:50%;background-color:#E6F9FF; color:#01B0E9; border-width: 0px" ng-click="carbonCopy()">抄送</button>
+        <button class=" " style="width: 50%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                ng-click="functionalDepartmentReview()">发送职能部门审核
+        </button>
+    </ion-footer-bar>
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_3"'>
+        <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+        <button class=" " style="width: 33.333%;background-color:#E6F9FF; color:#01B0E9; border-width: 0px" ng-click="commitToGrpInvest('SENDGRP')">上报集团</button>
+        <button class=" " style="width: 33.333%;background-color:#01B0E9; color:#fff; border-width: 0px ; line-height: 20px;"
+                ng-click="cfmProjBscInfToGroup('CANCLE')">提交合同签署
+        </button>
+        <button ng-click="carbonCopy()" class=" " style="width: 33.333%;background-color:#E6F9FF; color:#01B0E9; border-width: 0px">抄送</button>
+    </ion-footer-bar>
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_2"'>
+        <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+        <button class=" " style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                ng-click="cfmProjBscInf()">提交
+        </button>
+    </ion-footer-bar>
+    <ion-footer-bar style="height:44px;    padding: 0;" ng-if='activityId=="ACT_7"'>
+        <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+        <button ng-click="carbonCopy()" class=" " style="width: 50%;background-color:#E6F9FF; color:#01B0E9; border-width: 0px">抄送</button>
+        <button class=" " style="width: 50%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                ng-click="cfmProjBscInfToGroup()">提交
+        </button>
+    </ion-footer-bar>
+
+</ion-view>

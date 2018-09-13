@@ -1,0 +1,237 @@
+<ion-view id="clue" view-title="线索查询页">
+    <div>
+        <ion-side-menus>
+            <!--题头-->
+            <ion-header-bar align-title="center" class="bar-energized header-bar" id="header-bar">
+                <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"
+                        style="color: #FFFFFF;"></button>
+                <h1 class="title" style="color: #FFFFFF;">{{title}}</h1>
+                <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+            </ion-header-bar>
+
+            <!-- 中间内容 -->
+            <ion-side-menu-content>
+                <ion-content id="partnerionlist">
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list ng-if="sales == 1">
+                        <ion-item class="partner-item" ng-repeat="item in xiangmu" ng-click="show_info(item,1)">
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til1}}：</div>
+                                <div class="cx-right">{{item.clueTitle}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til2}}：</div>
+                                <div class="cx-right">{{item.crtEmpNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til3}}：</div>
+                                <div class="cx-right">{{item.crtInsNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til4}}：</div>
+                                <div class="cx-right">{{item.clueStCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til5}}：</div>
+                                <div class="cx-right">{{item.crtTm}}</div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-list ng-if="sales == 2">
+                        <ion-item class="partner-item" ng-repeat="item in xiangmu" ng-click="show_info(item,2)">
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til1}}：</div>
+                                <div class="cx-right">{{item.bizOptTitle}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til2}}：</div>
+                                <div class="cx-right">{{item.mgmtEmpNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til3}}：</div>
+                                <div class="cx-right">{{item.mgmtInsNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til4}}：</div>
+                                <div class="cx-right">{{item.bizOptStCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til5}}：</div>
+                                <div class="cx-right">{{item.crtTm}}</div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-list ng-if="sales == 3">
+                        <ion-item class="partner-item" ng-repeat="item in xiangmu" ng-click="show_info(item,3)">
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til1}}：</div>
+                                <div class="cx-right">{{item.projNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til2}}：</div>
+                                <div class="cx-right">{{item.mgmtEmpNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til3}}：</div>
+                                <div class="cx-right">{{item.mgmtInsNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til4}}：</div>
+                                <div class="cx-right">{{item.projStCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="cx-left">{{til5}}：</div>
+                                <div class="cx-right">{{item.crtTm}}</div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()"
+                                         distance="1%">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="xiangmu.length==0"  style="background-color: #f0f0f0">
+                    <div class="empty" ><p>暂无数据 ...</p></div>
+                </div>
+            </ion-side-menu-content>
+
+            <!-- 左侧菜单 -->
+            <!--<ion-side-menu side="left">
+                left
+            </ion-side-menu>-->
+
+            <!-- 右侧菜单 -->
+            <ion-side-menu style="z-index: initial">
+                <nav class="hidden  cehua">
+                    <p class="ceng" ng-click="guan()"></p>
+                    <div class="kuang">
+                        <ion-content class="has-header">
+                            <ol ng-if="sales == 1">
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">线索标题：</div>
+                                    <input type="text" name="clueTitle" id="clueTitle" placeholder="请输入线索标题">
+                                </div>
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">线索编号：</div>
+                                    <input type="text" name="clueNum" id="clueNum" value=""  placeholder="请输入线索编号">
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">线索价值：</div>
+                                    <select id="clueValCd" name="clueValCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in clueValCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">线索状态：</div>
+                                    <select id="clueStCd" name="clueStCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in clueStCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </ol>
+
+                            <ol ng-if="sales == 2">
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">机会标题：</div>
+                                    <input type="text" name="bizOptTitle" id="bizOptTitle" placeholder="请输入机会标题">
+                                </div>
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">机会编号：</div>
+                                    <input type="text" name="bizOptNum" id="bizOptNum" placeholder="请输入机会编号">
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">紧急程度：</div>
+                                    <select id="emgcyCd" name="emgcyCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in emgcyCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">机会类型：</div>
+                                    <select id="bizOptTpCd" name="bizOptTpCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in bizOptTpCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">机会状态：</div>
+                                    <select id="bizOptStCd" name="bizOptStCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in bizOptStCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">创建开始时间：</div>
+                                    <input type="date" name="crtTm1" id="crtTm21" >
+                                </div>
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">创建结束时间：</div>
+                                    <input type="date" name="crtTm2" id="crtTm22" >                                                                           >
+                                </div>
+                            </ol>
+
+                            <ol ng-if="sales == 3">
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">项目名称：</div>
+                                    <input type="text" name="projNm" id="projNm" placeholder="请输入项目名称">
+                                </div>
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">项目编号：</div>
+                                    <input type="text" name="projNum" id="projNum" placeholder="请输入项目编号">
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">项目类型：</div>
+                                    <select id="projTpCd" name="projTpCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in projTpCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">项目状态：</div>
+                                    <select id="projStCd" name="projStCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in projStCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="item item-input item-select">
+                                    <div class="input-label">紧急程度：</div>
+                                    <select id="emgcyCd" name="emgcyCd">
+                                        <option value="">全部</option>
+                                        <option value="{{item.codeValue}}" ng-repeat="item in emgcyCdData">{{item.codeName}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">创建开始时间：</div>
+                                    <input type="date" name="crtTm1" id="crtTm1" >
+                                </div>
+                                <div class="item item-input">
+                                    <div class="input-label" style="width: inherit;">创建结束时间：</div>
+                                    <input type="date" name="crtTm2" id="crtTm2" >                                                                           >
+                                </div>
+                            </ol>
+                        </ion-content>
+                        <ion-footer-bar style="height: 43px;padding: 0;">
+                            <button class="btn-reset" ng-click="func_reset()">重 置</button>
+                            <button class="btn-confirm" ng-click="func_ok()">完 成</button>
+                        </ion-footer-bar>
+                    </div>
+                </nav>
+            </ion-side-menu>
+
+
+        </ion-side-menus>
+    </div>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view>
+    <ion-header-bar class="bar-calm" id="header-bar"  align-title="center" >
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">督办统计详情</h1>
+    </ion-header-bar>
+    <ion-content has-header="true" scroll="false">
+        <!-- <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh=""></ion-refresher> -->
+        <div class="item item-input item-select">
+            <div class="input-label">
+                会议督办类型
+            </div>
+            <select ng-change="selectChange(selectedType)" ng-init="selectedType=types[0].value
+            " ng-model="selectedType">
+                <option ng-repeat="type in types" value="{{ type.value }}">{{ type.title }}</option>
+            </select>
+        </div>
+        <ion-list ng-init="fnGetData()">
+            <ion-item  class="ow-list-card" ng-repeat="item in items">                
+                <div class="item">
+                    <span class="ow-span-title ow-span-left ow-com-font-size">反馈人员</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.person }}</span>
+                </div>
+                <div class="item">
+                    <span class="ow-span-title  ow-span-left ow-com-font-size">反馈部门</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.deparment }}</span>
+                </div>
+                <div class="item">
+                    <span class="ow-span-title  ow-span-left ow-com-font-size">反馈日期</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.time }}</span>
+                </div>
+                <div class="item">
+                    <span class="ow-span-title  ow-span-left ow-com-font-size">会议督办类型</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.type }}</span>
+                </div>                      
+            </ion-item>                                          
+        </ion-list>
+        <ion-infinite-scroll immediate-check="false"  ng-if="finite_state"  on-infinite="fnLoadMore()"  distance="5px"></ion-infinite-scroll> 
+    </ion-content>
+</ion-view>

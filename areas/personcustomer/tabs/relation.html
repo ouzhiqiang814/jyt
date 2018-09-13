@@ -1,0 +1,191 @@
+<div id="personCustomerInfoChild" style="height: 100%; width:100%; position: absolute;">
+    <div id="moremenu" class="zuola">
+        <nav id="nav">
+            <ul>
+                <li class="nav-current" ng-click="categoryLeftClick($event)">
+                    地址联系信息
+                </li>
+                <li class="nav-blur" ng-click="categoryLeftClick($event)" style="line-height: 21px; height: initial; padding: 8px 3px;">
+                    电话地址联系信息
+                </li>
+                <li class="nav-blur" ng-click="categoryLeftClick($event)" style="line-height: 21px; height: initial; padding: 8px 3px;">
+                    电子地址联系信息
+                </li>
+            </ul>
+        </nav>
+        <div id="pro" style="background: #fff">
+            <div class="pro-scroll">
+                <div class="pro-warp">
+                    <ion-content>
+                        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh3a()">
+                        </ion-refresher>
+                        <ion-list>
+                            <ion-item class="cus-basic-info-item" ng-if="items3a.length !=0" ng-repeat="info in items3a">
+                                <div class="cus-basic-info">
+                                    <em>地址类型:</em>
+                                    <em>{{info.IP_PST_ADR_USE_TPCD == '*'?'*':info.IP_PST_ADR_USE_TPCDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>国家:</em>
+                                    <em>{{info.CTYRGON_CD == '*'?'*':info.CTYRGON_CDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>省:</em>
+                                    <em>{{info.PROV_CD == '*'?'*':info.PROV_CDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>市:</em>
+                                    <em>{{info.CITY_CD == '*'?'*':info.CITY_CDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>区（县）:</em>
+                                    <em>{{info.CNTYANDDSTC_CD}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>详细地址:</em>
+                                    <em>{{info.DTL_ADR}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>邮政编码:</em>
+                                    <em>{{info.ZIPECD}}</em>
+                                </div>
+                            </ion-item>
+                            <!-- <div style="height:50px"></div> -->
+                        </ion-list>
+                        <ion-infinite-scroll immediate-check="false" ng-if="finite_state3a" on-infinite="loadMore3a()" distance="1%">
+                        </ion-infinite-scroll>
+                    </ion-content>
+                    <div ng-if="items3a.length ==0">
+                        <div class="empty"><p>暂无数据 ...</p></div>
+                    </div>
+                </div>
+                <div class="pro-warp" style="display: none">
+                    <ion-content>
+                        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh3b()">
+                        </ion-refresher>
+                        <ion-list>
+                            <ion-item class="cus-basic-info-item" ng-if="items3b.length !=0" ng-repeat="info in items3b">
+                                <div class="cus-basic-info">
+                                    <em>电话类型:</em>
+                                    <em>{{info.IP_TEL_USE_TPCD == '*'?'*':info.IP_TEL_USE_TPCDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>国内区号:</em>
+                                    <em>{{info.TEL_DMST_DSTCNO}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>电话号码:</em>
+                                    <em>{{info.TEL_HST_NO}}</em>
+                                </div>
+                            </ion-item>
+                            <!-- <div style="height:50px"></div> -->
+                        </ion-list>
+                        <ion-infinite-scroll immediate-check="false" ng-if="finite_state3b" on-infinite="loadMore3b()" distance="1%">
+                        </ion-infinite-scroll>
+                    </ion-content>
+                    <div  ng-if="items3b.length ==0">
+                        <div class="empty"><p>暂无数据 ...</p></div>
+                    </div>
+                </div>
+                <div class="pro-warp" style="display: none">
+                    <ion-content>
+                        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh3c()">
+                        </ion-refresher>
+                        <ion-list>
+                            <ion-item class="cus-basic-info-item" ng-if="items3c.length !=0" ng-repeat="info in items3c">
+                                <div class="cus-basic-info">
+                                    <em>电子地址类型:</em>
+                                    <em>{{info.IP_ELC_ADR_USE_TPCD == '*'?'*':info.IP_TEL_USE_TPCDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>电子地址信息:</em>
+                                    <em>{{info.IP_ELC_ADR}}</em>
+                                </div>
+                            </ion-item>
+                            <!-- <div style="height:50px"></div> -->
+                        </ion-list>
+                        <ion-infinite-scroll immediate-check="false" ng-if="finite_state3c" on-infinite="loadMore3c()" distance="1%">
+                        </ion-infinite-scroll>
+                    </ion-content>
+                    <div ng-if="items3c.length ==0">
+                        <div class="empty"><p>暂无数据 ...</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--<div class="second_title" ng-if="items3a.length != 0">
+        <span class="label">地址联系信息</span>
+    </div>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items3a.length != 0" ng-repeat="info in items3a">
+            <div class="cus-basic-info">
+                <em>地址类型:</em>
+                <em>{{info.IP_PST_ADR_USE_TPCD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>国家:</em>
+                <em>{{info.CTYRGON_CD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>省:</em>
+                <em>{{info.PROV_CD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>市:</em>
+                <em>{{info.CITY_CD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>区（县）:</em>
+                <em>{{info.CNTYANDDSTC_CD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>详细地址:</em>
+                <em>{{info.DTL_ADR}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>邮政编码:</em>
+                <em>{{info.ZIPECD}}</em>
+            </div>
+        </ion-item>
+    </ion-list>
+    <div class="second_title" ng-if="items3b.length != 0">
+        <span class="label">电话地址联系信息</span>
+    </div>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items3b.length != 0" ng-repeat="info in items3b">
+            <div class="cus-basic-info">
+                <em>电话类型:</em>
+                <em>{{info.IP_TEL_USE_TPCD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>国内区号:</em>
+                <em>{{info.TEL_DMST_DSTCNO}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>电话号码:</em>
+                <em>{{info.TEL_HST_NO}}</em>
+            </div>
+        </ion-item>
+    </ion-list>
+    <div class="second_title" ng-if="items3c.length != 0">
+        <span class="label">电子地址联系信息</span>
+    </div>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items3c.length != 0" ng-repeat="info in items3c">
+            <div class="cus-basic-info">
+                <em>电子地址类型:</em>
+                <em>{{info.IP_ELC_ADR_USE_TPCD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>电子地址信息:</em>
+                <em>{{info.IP_ELC_ADR}}</em>
+            </div>
+        </ion-item>
+        <ion-item class=""  style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+
+        </ion-item>
+    </ion-list>-->
+</div>

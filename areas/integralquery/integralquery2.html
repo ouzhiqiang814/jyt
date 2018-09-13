@@ -1,0 +1,119 @@
+<div class="hello  begin-right">
+    <ion-view id="integralquery" ng-app="integralquery.controller">
+        <ion-header-bar class="bar-energized" style=""
+                        align-title="center">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+            <h1 class="title">积分查询</h1>
+        </ion-header-bar>
+        <ion-content  has-header="true" id="content" scroll="false">
+            <tab-slide-box tab='0'>
+                <div class="tsb-icons">
+                    <div class="tsb-ic-wrp">
+                        <ion-scroll direction="x" class="tsb-hscroll slide-tab">
+                            <a href="javascript:;" class="slide-tab-two">个人积分查询</a>
+                            <a href="javascript:;" class="slide-tab-two">机构积分查询</a>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div style="height:5px;background-color:#f0f0f0;"></div>
+                <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                    <ion-slide>
+                        <div ng-include="'areas/integralquery/slidetabpage/person.html'">
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div ng-include="'areas/integralquery/slidetabpage/organization.html'">
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+            </tab-slide-box>
+        </ion-content>
+
+        <!-- 个人积分查询，员工选择 -->
+        <nav class="hidden  cehua">
+            <p class="ceng" ng-click="hdclose()"></p>
+
+            <div class="kuang">
+                <div class="searchlei">
+                    <ol>
+                        <img ng-click="query()" src="img/integralquery/search.png" alt=""/>
+                        <input class="wou" id="txtChinese" ng-model="user" type="text" placeholder="请输入姓名的关键字"/>
+                    </ol>
+                </div>
+                <dl>
+                    <dt class="fenclass">
+                    <ul>
+                        <li ng-click="chooseUser(item)" ng-repeat="item in userList"><span
+                                ng-bind="item.realname"></span></li>
+                    </ul>
+
+                    </dt>
+
+                </dl>
+            </div>
+        </nav>
+
+        <!-- 机构积分查询，机构选择 -->
+        <nav class="hidden  cehua2">
+            <p class="ceng" ng-click="hdclose2()"></p>
+
+            <div class="kuang">
+                <div class="searchlei">
+                    <ol>
+                        <img ng-click="query()" src="img/integralquery/search.png" alt=""/>
+                        <input class="wou" id="orgSearch" ng-model="orgSearch" type="text" placeholder="请输入机构的关键字"/>
+                    </ol>
+                </div>
+                <dl>
+                    <dt class="fenclass">
+                    <ul>
+                        <li ng-click="chooseOrg(item)" ng-repeat="item in orgList"><span
+                                ng-bind="item.orgName"></span></li>
+                    </ul>
+
+                    </dt>
+
+                </dl>
+            </div>
+        </nav>
+        <style>
+            .jiegou {
+                margin-top: 44px;
+            }
+
+            .jiegou p {
+                border-bottom: 0.5px solid #007AFF;
+                margin: 0;
+                padding: 5% 7%;
+                font-size: 0.26rem;
+                display: inherit;
+                letter-spacing: 0.02rem;
+            }
+
+            .jiegou ol {
+
+            }
+
+            .jiegou .grade2 {
+                padding-left: 12%;
+            }
+
+            .jiegou .grade3 {
+                padding-left: 19%;
+            }
+
+            .jiegou .grade4 {
+                padding-left: 27%;
+            }
+
+            .jiegou p:active {
+                background: #ccc;
+            }
+
+            .jiegou div {
+                display: none;
+            }
+        </style>
+
+    </ion-view>
+</div>

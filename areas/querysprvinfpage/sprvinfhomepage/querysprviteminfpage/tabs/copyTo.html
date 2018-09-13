@@ -1,0 +1,30 @@
+<ion-content  id="partnerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh1()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="partner-basic-info-item"  ng-repeat="info in xiangmu1">
+            <ol>
+                <div class="partner-basic-info">
+                    <em>人员名称：</em>
+                    <em>{{info.rmdPsnNm}}</em>
+                </div>
+                <div class="partner-basic-info">
+                    <em>机构名称：</em>
+                    <em>{{info.rmdPsnInstNm}}</em>
+                </div>
+                <div class="partner-basic-info">
+                    <em>部门名称：</em>
+                    <em>{{info.rmdPsnDeptNm}}</em>
+                </div>
+                <div class="" style="background-color: #f0f0f0;height: 1px; position: relative; z-index: 20; margin-left:-20px;"></div>
+            </ol>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state1" on-infinite="loadMore1()" distance="1%">
+    </ion-infinite-scroll>
+    <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 20px">
+</ion-content>
+
+<div ng-if="xiangmu1.length == 0">
+    <div class="empty"><span>暂无数据 ...</span></div>
+</div>

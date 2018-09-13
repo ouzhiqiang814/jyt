@@ -1,0 +1,28 @@
+<ion-view  id="employeeCareCtrl">
+    <ion-header-bar class="bar-calm" id="header-bar"  align-title="center">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">员工关怀</h1>
+    </ion-header-bar>
+    <ion-content has-header="true" id="content" scroll="false" ng-init="fnInitData()">    
+        <div class="item item-button-right">
+            {{viewTitle}}
+            <button class="button button-light" ng-disabled="isToday()" ng-click="today()">今天</button>
+        </div>
+        <!-- <ion-nav-view>                 -->
+            <!-- <ion-nav-bar class="bar-positive" align-title="left">                        
+                <ion-nav-buttons side="left" view-title={{viewTitle}}> 
+                    <div class="">{{viewTitle}}</div>                       
+                    <button class="button" ng-disabled="isToday()" ng-click="today()">Today</button>
+                </ion-nav-buttons>
+            </ion-nav-bar>              -->
+            <div class=""></div>                       
+            
+            <!-- <ion-content scroll="false" class=""> -->
+                <calendar ng-model="calendar.currentDate" calendar-mode="calendar.mode" event-source="calendar.eventSource"
+                          range-changed="reloadSource(startTime, endTime)"
+                          event-selected="onEventSelected(event)" title-changed="onViewTitleChanged(title)"
+                          time-selected="onTimeSelected(selectedTime, events, disabled)" step="30" id="CalendarDemoCtrl"></calendar>
+            <!-- </ion-content> -->
+        <!-- </ion-nav-view> -->
+    </ion-content>
+</ion-view>

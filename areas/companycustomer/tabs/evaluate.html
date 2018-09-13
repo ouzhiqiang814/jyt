@@ -1,0 +1,29 @@
+<ion-content id="companyCustomerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh8()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items8.length != 0" ng-repeat="info in items8">
+            <div class="cus-basic-info">
+                <em>不良评价描述:</em>
+                <em>{{info.BAD_ASS_DSC}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>不良信用发生日期:</em>
+                <em>{{info.BAD_ASS_HPN_DT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>不良信用发生原因:</em>
+                <em>{{info.BAD_ASS_HPN_RSN}}</em>
+            </div>
+        </ion-item>
+        <!--<ion-item class=""  style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+        </ion-item>-->
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state8" on-infinite="loadMore8()" distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div id="" ng-if="items8.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

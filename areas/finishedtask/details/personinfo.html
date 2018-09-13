@@ -1,0 +1,16 @@
+<ion-view id="finishedtaskInfoPersonInfo">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">申请人信息</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item class="person-info-item" ng-repeat="info in personinfos">
+                <div class="person-base-info">
+                    <label>{{info.label}}:</label>
+                    <em>{{info.info}}</em>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

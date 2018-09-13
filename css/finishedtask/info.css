@@ -1,0 +1,252 @@
+#finishedtaskInfo .finishedtaskInfo_div {
+    height:50px;
+    padding: 15px;
+    border-bottom:2px #f0f0f0 solid;
+}
+#finishedtaskInfo .finishedtaskInfo_div .finishedtaskInfo_title {
+    margin-left:10px;
+    height:30px;
+}
+#finishedtaskInfo .finishedtaskInfo_div .finishedtaskInfo_title .finishedtaskInfo_title_label {
+    font-size: 15px;
+    color:#1A1A1A;
+}
+#finishedtaskInfo .finishedtaskInfo_div .finishedtaskInfo_note {
+    margin-left:10px;
+    font-size: 13px;
+    color:#999999;
+}
+#finishedtaskInfo .finishedtaskInfo_div .goDetail {
+    position:absolute;
+    right:10px;
+    font-size: 15px;
+    color:#808080;
+}
+#finishedtaskInfo .btn-auditing{
+    color: #FBC31F;
+    font-size:18px;
+    width: 35%;
+    background-color: #6a3906;
+    position:absolute;
+    right:0px
+}
+
+#finishedtaskInfo .finishedtaskInfo_base_info {
+    height: 50px;
+    width: 100%;
+    white-space: normal;
+    padding: 15px;
+    border-bottom:2px #f0f0f0 solid;
+}
+#finishedtaskInfo .finishedtaskInfo_base_info label {
+    font-size: 15px;
+    color:#333333;
+}
+#finishedtaskInfo .finishedtaskInfo_base_info em {
+    font-size: 15px;
+    color:#808080;
+    left: 155px;
+    position: absolute;
+    vertical-align: middle;
+}
+#finishedtaskInfo .list-data-info-item {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    padding: 10px 0px 0px 20px;
+    border-top-color:#f0f0f0;
+}
+#finishedtaskInfo .list-data-info {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    padding-bottom: 15px;
+}
+#finishedtaskInfo .list-data-info em{
+    font-size:14px;
+    color:#4d4d4d;
+}
+
+#finishedtaskInfo .tsb-hscroll.scroll-view{
+    white-space:nowrap;
+    margin:0px;
+}
+
+#finishedtaskInfo .second_title{
+    height:30px;
+    background-color:#f0f0f0;
+    line-height: 30px;
+}
+#finishedtaskInfo .second_title .label{
+    font-size:15px;
+    color:#999999;
+    padding-left:15px;
+}
+
+
+#finishedtaskInfoHistory .history-info-item {
+    height: 130px;
+    width: 100%;
+    padding:12px;
+}
+
+#finishedtaskInfoHistory .history-info {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+}
+#finishedtaskInfoHistory .history-info em{
+    color:#1A1A1A;
+    font-size:15px;
+}
+#finishedtaskInfoHistory .history-img-left{
+    position:absolute;
+    top: 45px;
+    left:18px;
+    width: 65px;
+    height: 65px;
+    border-color: #d6d6d6;
+    border:1px;
+    box-shadow: 1px 1px 5px 1px #E8E8E8;
+    border-radius:3px;
+    text-align: center;
+}
+#finishedtaskInfoHistory .history-img-left img{
+    width: 50px;
+    height: 50px;
+    margin-top:7px;
+}
+#finishedtaskInfoHistory .history-img-right-info{
+    width: 75%;
+    position:absolute;
+    top: 65px;
+    left:94px;
+}
+#finishedtaskInfoHistory .history-img-right-info em{
+    color:#999999;
+    font-size:15px;
+}
+
+#finishedtaskInfoPersonInfo .person-info-item {
+    height: 50px;
+    width: 100%;
+    white-space: normal;
+    padding: 15px;
+}
+#finishedtaskInfoPersonInfo .person-base-info label {
+    font-size: 15px;
+    color:#333333;
+}
+#finishedtaskInfoPersonInfo .person-base-info em {
+    font-size: 15px;
+    color:#808080;
+    left: 125px;
+    position: absolute;
+    vertical-align: middle;
+}
+#finishedtaskInfoAuditing .finishedtaskInfo_div {
+    height:50px;
+    padding: 15px;
+    border-bottom:2px #f0f0f0 solid;
+}
+#finishedtaskInfoAuditing .finishedtaskInfo_div .finishedtaskInfo_title {
+    margin-left:10px;
+    height:30px;
+}
+#finishedtaskInfoAuditing .finishedtaskInfo_div .finishedtaskInfo_title .finishedtaskInfo_title_label {
+    font-size: 15px;
+    color:#1A1A1A;
+}
+#finishedtaskInfoAuditing .finishedtaskInfo_div .finishedtaskInfo_note {
+    margin-left:10px;
+    font-size: 13px;
+    color:#999999;
+}
+#finishedtaskInfoAuditing .goDetail {
+    position:absolute;
+    right:10px;
+    font-size: 15px;
+    color:#808080;
+    padding-top:7px;
+}
+
+#diaocha .backlogInfo_title{
+  padding:10px 10px 10px 20px;
+  font-size:.3rem;
+  border-bottom: 5px solid #dcdcdc;
+}
+
+
+#synergyclues .finishedtaskInfo_div {
+  padding:10px;
+  border-bottom: 1px solid #dcdcdc;
+}
+#synergyclues .finishedtaskInfo_div:last-child{
+  border-radius: 0;
+}
+
+#synergyclues .finishedtaskInfo_div .finishedtaskInfo_title {
+    margin-left:10px;
+    color:#999;
+}
+#synergyclues .finishedtaskInfo_div .finishedtaskInfo_title .finishedtaskInfo_title_label {
+    font-size: 15px;
+    color:#1A1A1A;
+}
+#synergyclues .finishedtaskInfo_div .finishedtaskInfo_note {
+    margin-left:10px;
+    font-size: 13px;
+    color:#999999;
+}
+#synergyclues .finishedtaskInfo_div .goDetail {
+    position:absolute;
+    right:10px;
+    font-size: 15px;
+    color:#808080;
+}
+
+#synergyclues .item {
+    white-space: inherit;
+    height: initial!important;
+}
+
+#synergyclues .synergymsg .item{
+    border-width:0;
+}
+
+
+#finishedtaskInfoAuditing .searchbtn {
+    width: 80%;
+    background-color: #eeb81a;
+    margin: 0 auto;
+    color: #6a3906;
+    -moz-border-radius: 42px;
+    -webkit-border-radius: 42px;
+    border-radius: 42px;
+}
+
+#finishedtaskInfoAuditing .checkbox input, .checkbox-icon {
+    width: 20px;
+    height: 20px;
+}
+
+#finishedtaskInfoAuditing .item-checkbox .checkbox{
+    top: 60%;
+}
+#finishedtaskInfoAuditing  .checkbox input:after, .checkbox-icon:after{
+    top: 27%;
+    left: 22.4%;
+    width: 11px;
+    height: 6px;
+}
+
+#finishedtaskInfoAuditing .checkbox input:checked+.checkbox-icon:before, .checkbox input:checked:before {
+    background: #66cc33;
+    border-color: #66cc33;
+}
+
+#productInfo .synergymsg{
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}

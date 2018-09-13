@@ -1,0 +1,128 @@
+<ion-content>
+    <!--<div class="backlogInfo_div item" style="height:80px;">
+        <div class="backlogInfo_title" style="margin-bottom: 10px;" ng-bind="processName"></div>
+        <em class="backlogInfo_note" >环节：{{activityName | limitTo:7}}</em>
+        <em class="backlogInfo_note" style="padding-left:20px;">时间：{{beginTime}} </em>
+    </div>-->
+    <div class="item item-input backlogInfo_div" ui-sref="history">
+        <div class="input-label backlogInfo_title  biaotou" style="font-size: 15px;color: #1A1A1A;">
+            概况
+        </div>
+        <div class="input-label" style="width: 85%;font-size: 15px;color: #1A1A1A;">
+            <i class="icon ion-chevron-right" style="color: #b4b4b4;float: right"></i>
+        </div>
+    </div>
+    <div class="backlogInfo_div item" style="background-color: #f0f0f0;height: 30px;padding: 5px;">
+        <div class="backlogInfo_title">
+            <em class="backlogInfo_title_label" style="color: red">*</em>
+            <em class="backlogInfo_title_label">基本信息</em>
+        </div>
+    </div>
+    <ol>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                项目名称：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.projNm}}
+                <!--<em class="backlogInfo_title_label" style="margin-right: 20px">王颖希 </em>-->
+                <!--<i class="icon ion-chevron-right" style="color: #b4b4b4;float: right"></i>-->
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                项目编号：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.projId}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                项目规模：
+            </div>
+            <div class="input-label" style="width: 65%;font-size: 15px;color: #1A1A1A;  ">
+                {{baseData.projScaleNm}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                项目类型：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.projTpCdNm}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                项目经理：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.mgmtEmpNm}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                管理部门：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.mgmtInsNm}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                联系方式：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.mgmtEmptelNo}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                关联机会：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.bizOptNm}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                紧急程度：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.emgcyCdNm}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                合同金额（元）：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.ctrctAmt}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                合同签署时间：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.ctrctDt}}
+            </div>
+        </div>
+        <div class="item item-input backlogInfo_div">
+            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                项目描述：
+            </div>
+            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                {{baseData.projDsc}}
+            </div>
+        </div>
+    </ol>
+    <!--<ion-item class="" style="height: 55px;border-width: 0px;background-color: #f0f0f0">
+    </ion-item>-->
+    <div style="height:70px"></div>
+</ion-content>
+
+<div ng-if="baseData.length == 0" style="width: 100%; height: 100%;"  class="weikong">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

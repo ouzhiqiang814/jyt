@@ -1,0 +1,464 @@
+<ion-view id="clue_info" view-title="详情页" cache-view="true">
+
+    <!--题头-->
+    <ion-header-bar align-title="center" style="" class="bar-energized" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">{{title}}</h1>
+    </ion-header-bar>
+
+    <ion-content scroll="false" has-header="true">
+
+        <div class="scroll-list" style="">
+            <a class="scroll-a {{items.class}}" ng-repeat="items in itemList" id="{{items.id}}"
+               ng-click="show_slide(items.id)">
+                {{items.name}}
+            </a>
+        </div>
+
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" active-slide="last">
+            <ion-slide> <!-- 第一个切换的内容 -->
+                <ion-content>
+                    <div>
+                        <!--新建线索-->
+                        <div id="clueDetail" class="card" ng-repeat="item in queryHistoryInfoDate">
+                            <div class="item item-divider item_head card-head"
+                                 ng-click="show_survey($event,(item.aprvList.length != 0)||item.bscInfVo != null)">
+                                <img class="card-img" ng-src="img/clue/clue1.png" src="img/clue/clue1.png"
+                                     ng-if="item.prcDsc == '新建线索'&&item.stTm !=null">
+                                <img class="card-img" ng-src="img/clue/clue2.png" src="img/clue/clue2.png"
+                                     ng-if="item.prcDsc == '线索审批'&&item.stTm !=null">
+                                <img class="card-img" ng-src="img/clue/clue3.png" src="img/clue/clue3.png"
+                                     ng-if="item.prcDsc == '新建机会'&&item.stTm !=null">
+                                <img class="card-img" ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                                     ng-if="item.prcDsc == '机会认定'&&item.stTm !=null">
+                                <img class="card-img" ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                                     ng-if="item.prcDsc == '机会管理'&&item.stTm !=null">
+                                <img class="card-img" ng-src="img/clue/clue5.png" src="img/clue/clue5.png"
+                                     ng-if="item.prcDsc == '项目立项'&&item.stTm !=null">
+                                <img class="card-img" ng-src="img/clue/clue6.png" src="img/clue/clue6.png"
+                                     ng-if="item.prcDsc == '项目审批'&&(item.stTm !=null||queryHistoryInfoDate[$index+1].stTm !=null)">
+                                <img class="card-img" ng-src="img/clue/clue7.png" src="img/clue/clue7.png"
+                                     ng-if="item.prcDsc == '合同签署'&&item.stTm !=null">
+                                <img class="card-img" ng-src="img/clue/clue8.png" src="img/clue/clue8.png"
+                                     ng-if="item.prcDsc == '结束'&&item.stTm !=null">
+
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue1.png" src="img/clue/clue1.png"
+                                     ng-if="item.prcDsc == '新建线索'&&item.stTm ==null">
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue2.png" src="img/clue/clue2.png"
+                                     ng-if="item.prcDsc == '线索审批'&&item.stTm ==null">
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue3.png" src="img/clue/clue3.png"
+                                     ng-if="item.prcDsc == '新建机会'&&item.stTm ==null">
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                                     ng-if="item.prcDsc == '机会认定'&&item.stTm ==null">
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                                     ng-if="item.prcDsc == '机会管理'&&item.stTm ==null">
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue5.png" src="img/clue/clue5.png"
+                                     ng-if="item.prcDsc == '项目立项'&&item.stTm ==null">
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue6.png" src="img/clue/clue6.png"
+                                     ng-if="item.prcDsc == '项目审批'&&(item.stTm ==null&&queryHistoryInfoDate[$index+1].stTm ==null)">
+
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue7.png" src="img/clue/clue7.png"
+                                     ng-if="item.prcDsc == '合同签署'&&item.stTm ==null">
+                                <img class="card-img"
+                                     style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                                     ng-src="img/clue/clue8.png" src="img/clue/clue8.png"
+                                     ng-if="item.prcDsc == '结束'&&item.stTm ==null">
+
+                                <div class="head-title" style="width:50%;">{{item.prcDsc}}
+                                    <div style="float: right" ng-if="item.stTm!=null">{{item.stTm}}</div>
+                                </div>
+                                <div class="biao " ng-if="item.aprvList.length != 0||item.bscInfVo != null"></div>
+                            </div>
+                            <div class="list" ng-if="item.prcDsc != '合同签署'" style="display: none"
+                                 ng-repeat="aprvListItem in item.aprvList">
+                                <label class="item item-input label_item">
+                                    <span class="input-label">执行人员：</span>
+
+                                    <div class="tableInfo-title">{{aprvListItem.aprvEmpNm}}</div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label">执行机构：</span>
+
+                                    <div class="tableInfo-title">{{aprvListItem.aprvInsNm}}</div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label">执行结果：</span>
+
+                                    <div class="tableInfo-title" style="color: #01b0e9;">
+                                        {{aprvListItem.aprvResultDsc}}
+                                    </div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label">执行时间：</span>
+
+                                    <div class="tableInfo-title">{{aprvListItem.aprvTm}}</div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label" style="width: 82px;">耗时(小时)：</span>
+
+                                    <div class="tableInfo-title">{{aprvListItem.tmPrd}}</div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label">执行状态：</span>
+
+                                    <div class="tableInfo-title" style="color: #01b0e9;">{{aprvListItem.aprvStCdDsc}}
+                                    </div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label">执行进度：</span>
+
+                                    <div class="tableInfo-title">{{aprvListItem.procsNum}}</div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label">执行意见：</span>
+
+                                    <div class="tableInfo-title">{{aprvListItem.aprvOpns}}</div>
+                                </label>
+                            </div>
+                            <div class="list" ng-if="item.prcDsc == '合同签署'" style="display: none">
+                                <label class="item item-input label_item">
+                                    <span class="input-label">合同签署时间：</span>
+
+                                    <div class="tableInfo-title">{{item.bscInfVo.ctrctDt}}</div>
+                                </label>
+                                <label class="item item-input label_item">
+                                    <span class="input-label">合同金额（元）：</span>
+
+                                    <div class="tableInfo-title">{{item.bscInfVo.ctrctAmt}}</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div" style="height:50px;">
+                    </div>
+
+                </ion-content>
+            </ion-slide>
+
+            <ion-slide> <!-- 第二个切换的内容 -->
+
+                <div id="moremenu" class="zuola">
+                    <nav id="nav">
+                        <ul>
+                            <li class="nav-current"
+                                ng-click="categoryLeftClick($event)">
+                                基础信息
+                            </li>
+                            <li class="nav-blur"
+                                ng-click="categoryLeftClick($event)">
+                                协同方信息
+                            </li>
+                            <li class="nav-blur"
+                                ng-click="categoryLeftClick($event)">
+                                资料附件信息
+                            </li>
+                        </ul>
+                    </nav>
+                    <div id="pro" style="background: #fff">
+                        <div class="pro-scroll">
+                            <div ng-if="id ==1">
+                                <div class="pro-warp" ng-if="ccc">
+                                    <ion-content>
+                                        <ion-list>
+                                            <ion-item
+                                                    style="font-size: 13px;line-height: 26px;border-color:#f0f0f0;border-left-color: #fff;"
+                                                    class="">
+                                                <ol class="klist1" style="display: block!important">
+                                                    <dl>
+                                                        <dt>线索标题：</dt>
+                                                        <dd>{{baseData.clueTitle}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>管理人员：</dt>
+                                                        <dd>{{baseData.crtEmpNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>管理部门：</dt>
+                                                        <dd>{{baseData.crtInsNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>联系方式：</dt>
+                                                        <dd>{{baseData.crtMobile}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>创建时间：</dt>
+                                                        <dd>{{baseData.crtTm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>线索背景：</dt>
+                                                        <dd>{{baseData.clueBkgDsc}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>线索内容：</dt>
+                                                        <dd>{{baseData.clueCntDsc}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>线索价值：</dt>
+                                                        <dd>{{baseData.clueValCdNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>审核领导：</dt>
+                                                        <dd>{{baseData.dirLeaderNm}}</dd>
+                                                    </dl>
+                                                </ol>
+                                            </ion-item>
+                                        </ion-list>
+                                    </ion-content>
+                                </div>
+                            </div>
+                            <div ng-if="id ==2">
+                                <div class="pro-warp" ng-if="ccc">
+                                    <ion-content>
+                                        <ion-list>
+                                            <ion-item
+                                                    style="font-size: 13px;line-height: 26px;border-color:#f0f0f0;border-left-color: #fff;"
+                                                    class="">
+                                                <ol class="klist1" style="display: block!important">
+                                                    <dl>
+                                                        <dt>机会标题：</dt>
+                                                        <dd>{{baseData.bizOptTitle}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>机会类型：</dt>
+                                                        <dd>{{baseData.bizOptTpCdNm}}</dd>
+                                                    </dl>
+
+                                                    <dl>
+                                                        <dt>紧急程度：</dt>
+                                                        <dd>{{baseData.emgcyCdNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>管理人员：</dt>
+                                                        <dd>{{baseData.mgmtEmpNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>管理部门：</dt>
+                                                        <dd>{{baseData.mgmtInsNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>联系方式：</dt>
+                                                        <dd>{{baseData.telNo}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>创建时间：</dt>
+                                                        <dd>{{baseData.crtTm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>机会描述：</dt>
+                                                        <dd>{{baseData.bizOptDsc}}</dd>
+                                                    </dl>
+                                                </ol>
+                                            </ion-item>
+                                        </ion-list>
+                                    </ion-content>
+                                </div>
+                            </div>
+
+                            <div class="" ng-if="id ==3">
+                                <div class="pro-warp" ng-if="ccc">
+                                    <ion-content>
+                                        <ion-list>
+                                            <ion-item
+                                                    style="font-size: 13px;line-height: 26px;border-color:#f0f0f0;border-left-color: #fff;"
+                                                    class="">
+                                                <ol class="klist1" style="display: block!important">
+                                                    <dl>
+                                                        <dt>项目名称：</dt>
+                                                        <dd>{{baseData.projNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>项目编号：</dt>
+                                                        <dd>{{baseData.projId}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>项目规模：</dt>
+                                                        <dd>{{baseData.projScaleNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>业务类型：</dt>
+                                                        <dd>{{baseData.bsnTpcdNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>项目类型：</dt>
+                                                        <dd>{{baseData.projTpCdNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>项目经理：</dt>
+                                                        <dd>{{baseData.mgmtEmpNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>管理部门：</dt>
+                                                        <dd>{{baseData.mgmtInsNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>联系方式：</dt>
+                                                        <dd>{{baseData.mgmtEmptelNo}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>关联机会：</dt>
+                                                        <dd>{{baseData.bizOptNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>紧急程度：</dt>
+                                                        <dd>{{baseData.emgcyCdNm}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>合同金额（元）：</dt>
+                                                        <dd>{{baseData.ctrctAmt}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>合同签署时间：</dt>
+                                                        <dd>{{baseData.ctrctDt}}</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>项目描述：</dt>
+                                                        <dd>{{baseData.projDsc}}</dd>
+                                                    </dl>
+                                                </ol>
+                                            </ion-item>
+                                            <ion-item style="border: 0px"></ion-item>
+                                        </ion-list>
+                                    </ion-content>
+                                </div>
+                            </div>
+
+                            <div class="pro-warp" ng-if="aaa">
+                                <ion-content>
+                                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载"
+                                                   on-refresh="doGetProjCooTeamListData_refresh()">
+                                    </ion-refresher>
+                                    <ion-list>
+                                        <ion-item
+                                                style="font-size: 13px;line-height: 26px;border-color:#f0f0f0;border-left-color: #fff;"
+                                                class="partner-item" ng-repeat="item in doGetProjCooTeamListData">
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">协同机构：</label><label class="sright">{{item.instNm}}</label></em>
+                                            </div>
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">协同接口人：</label><label class="sright">{{item.crtEmpNm}}</label></em>
+                                            </div>
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">合作伙伴：</label><label class="sright">{{item.cooPtnNm}}</label></em>
+                                            </div>
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">协同内容描述：</label><label class="sright">{{item.colCntDsc}}</label></em>
+                                            </div>
+                                        </ion-item>
+                                        <ion-item style="border: 0px"></ion-item>
+                                    </ion-list>
+                                    <ion-infinite-scroll style="margin-bottom: 60px" infinite-scroll-text="正在加载" immediate-check="false" ng-if="finite_state" on-infinite="doGetProjCooTeamListData_loadMore()" distance="1%">
+                                    </ion-infinite-scroll>
+                                </ion-content>
+
+                                <div ng-if="doGetProjCooTeamListData.length==0" style="width: 100%;background-color: #f0f0f0;height: 100%;">
+                                    <div class="empty" ><p>暂无数据 ...</p></div>
+                                </div>
+                            </div>
+
+                            <div class="pro-warp" ng-if="bbb">
+                                <ion-content>
+                                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="getAttchList_refresh()">
+                                    </ion-refresher>
+                                    <ion-list>
+                                        <ion-item
+                                                style="font-size: 13px;line-height: 26px;border-color:#f0f0f0;border-left-color: #fff;"
+                                                class="partner-item" ng-repeat="item in getAttchListData">
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">文件名称：</label><label class="sright">{{item.attachNm}}</label></em>
+                                            </div>
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">上传人员：</label><label class="sright">{{item.blngEmpeNm}}</label></em>
+                                            </div>
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">上传部门：</label><label class="sright">{{item.blngDeptNm}}</label></em>
+                                            </div>
+                                            <div class="partnerItemInfo">
+                                                <em><label class="sleft">上传时间：</label><label class="sright" style="width: 40%">{{item.udtTm}}</label>
+                                                  <i ng-click="dowload(item)"  class="icon ion-ios-cloud-download-outline" style="color: #3839f1;float: right;margin-right: 10px;margin-right: 20px; font-size: 25px;"></i>
+                                                </em>
+                                            </div>
+                                        </ion-item>
+                                        <ion-item style="border: 0px"></ion-item>
+                                    </ion-list>
+                                    <ion-infinite-scroll style="margin-bottom: 60px" infinite-scroll-text="正在加载" immediate-check="false" ng-if="getAttchList_finite_state" on-infinite="getAttchList_loadMore()" distance="1%">
+                                    </ion-infinite-scroll>
+                                </ion-content>
+                                <div ng-if="getAttchListData.length==0" style="width: 100%;background-color: #f0f0f0;height: 100%;">
+                                    <div class="empty" ><p>暂无数据 ...</p></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div">
+                </div>
+
+            </ion-slide>
+
+            <ion-slide> <!-- 第三个切换的内容 -->
+                <ion-content>
+                    <!--已完成工作-->
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="doGetActyList_refresh()">
+                    </ion-refresher>
+                    <ion-list>
+                        <ion-item style="padding:16px 7%; padding-left:10%; font-size: 16px;line-height: 26px;" class="partner-item" ng-repeat="item in doGetActyListData">
+                            <div class="partnerItemInfo">
+                                <div class="xq-left">活动标题：</div>
+                                <div class="xq-right">{{item.actyTitle}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="xq-left">活动编号：</div>
+                                <div class="xq-right">{{item.actySn}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="xq-left">活动类型：</div>
+                                <div class="xq-right">{{item.actyTpcdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="xq-left">执行时间：</div>
+                                <div class="xq-right">{{item.exeDt}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="xq-left">执行部门：</div>
+                                <div class="xq-right">{{item.exeInsNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="xq-left">执行人员：</div>
+                                <div class="xq-right">{{item.exeEmpeNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="xq-left">活动记录人员：</div>
+                                <div class="xq-right">{{item.udtEmpNm}}</div>
+                            </div>
+                        </ion-item>
+                        <!--<ion-item style="border: 0px" ng-if="doGetActyListData.length != 0"></ion-item>-->
+                    </ion-list>
+                    <ion-infinite-scroll style="margin-bottom: 60px" infinite-scroll-text="正在加载" immediate-check="false" ng-if="doGetActyList_finite_state" on-infinite="doGetActyList_loadMore()" distance="1%">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="doGetActyListData.length==0"  style="background-color: #f0f0f0">
+                    <div class="empty" ><p>暂无数据 ...</p></div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

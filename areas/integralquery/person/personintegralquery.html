@@ -1,0 +1,112 @@
+<!--<ion-view id="personintegralquery">
+    <ion-header-bar class="bar-energized" style=""
+                    align-title="center">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">个人积分查询</h1>
+        <button class="button button-icon ion-ios-search" ui-sref="person"  style="display: block"></button>
+    </ion-header-bar>
+
+    <ion-pane class="" style="height: auto">
+        <ion-content id="orgtop" style="background-color: #f0f0f0;overflow: hidden" overflow-scroll="true" start-y="0">
+            <img src="./img/integralquery/top.png" style="   position: absolute; top: 0;height: 20%;width: 100%;">
+            </img>
+            <ion-item style="font-size: 56px;background: rgba(0, 0, 0, 0);;text-align: center;color: #FFFFFF;border-width: 0px">
+                {{pesonSum}}
+            </ion-item>
+            <ion-item style="font-size: 17px;background: rgba(0, 0, 0, 0);;text-align: center;color: #FFFFFF;border-width: 0px">
+                {{realname}}&nbsp积分总数
+            </ion-item>
+
+            <ion-item style="font-size: 0.28rem;text-align: center;color: #387ef5;line-height: 0.13rem;">
+                <div style="float: left;width: 33.33%">报告日期</div>
+                <div style="float: left;width: 33.33%">得分项</div>
+                <div style="float: left;width: 33.33%">积分值</div>
+            </ion-item>
+            <ion-item style="margin-top: 2.5%;height: 0;padding:0">
+
+            </ion-item>
+
+            </ion-list>
+        </ion-content>
+    </ion-pane>
+    <ion-pane id="perintegral" class="" style="height: initial;">
+        <ion-content style="background-color: #f0f0f0;overflow: hidden;top:0px" overflow-scroll="false" start-y="0"
+                     class="no-header">
+            <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+            </ion-refresher>
+            <ion-list style="height: 100%">
+                <ion-item style="font-size: 0.25rem;text-align: center;color: #666666;" ng-if="items.length != 0"
+                          ng-repeat="item in items">
+                    <div style="float: left;width: 33.33%">{{item.rptDt}}</div>
+                    <div style="float: left;width: 33.33%">{{item.scoreStep}}</div>
+                    <div style="float: left;width: 33.33%">{{item.ptsVal}}</div>
+                </ion-item>
+            </ion-list>
+            <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="205px">
+            </ion-infinite-scroll>
+        </ion-content>
+
+        <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="items.length == 0"
+             style="background-color: #f0f0f0;overflow: hidden;top:0px" overflow-scroll="false" start-y="0"
+             class="no-header">
+            <div class="empty"><span>暂无数据 ...</span></div>
+        </div>
+    </ion-pane>
+</ion-view>-->
+
+<ion-view id="organizationintegralquery">
+    <ion-header-bar class="bar-energized" style=""
+                    align-title="center">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">积分查询</h1>
+        <button class="button button-icon ion-ios-search" ui-sref="person" style="display: block"></button>
+    </ion-header-bar>
+    <ion-pane id="orgintegral" class="" style="margin-top: 0px">
+        <ion-content id="orgintegralContent1" scroll="false">
+            <img src="./img/integralquery/top.png" style="   position: absolute; top: 0;">
+            </img>
+            <div style="left: 0;right: 0;top: 0.5rem;position: absolute">
+                <ion-item style="font-size: 56px;background: rgba(0, 0, 0, 0);;text-align: center;color: #FFFFFF"
+                          ng-bind="pesonSum">
+
+                </ion-item>
+                <ion-item style="font-size: 21px;background: rgba(0, 0, 0, 0);;text-align: center;color: #FFFFFF">
+                    {{realname}}&nbsp积分总数
+                </ion-item>
+            </div>
+
+            <div style="left: 0;right: 0;bottom: 0;position: absolute">
+                <ion-item style="font-size: 0.28rem;text-align: center;color: #387ef5;line-height: 0.13rem;">
+                    <div style="float: left;width: 33.33%;color:#01b0e9;">报告日期</div>
+                    <div style="float: left;width: 33.33%;color:#01b0e9;">得分项</div>
+                    <div style="float: left;width: 33.33%;color:#01b0e9;">积分值</div>
+                </ion-item>
+            </div>
+        </ion-content>
+
+        <ion-content id="orgintegralContent" style="background-color: #f0f0f0;overflow: hidden;" overflow-scroll="false"
+                     start-y="0">
+            <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+            </ion-refresher>
+            <ion-list style="height: 100%;padding-bottom: 45px;margin-bottom: 45px;" id="orgdata">
+                <ion-item ng-repeat="item in items" style="font-size: 0.25rem;text-align: center;color: #666666;">
+                    <div style="float: left;width: 33.33%">{{item.rptDt}}</div>
+                    <div style="float: left;width: 33.33%">{{item.scoreStep}}</div>
+                    <div style="float: left;width: 33.33%">{{item.ptsVal}}</div>
+                </ion-item>
+            </ion-list>
+            <div style="display: flex;width: 100%;height: 45px;justify-content: space-evenly;background-color: #fff;position: fixed;bottom: 0px;">
+                <span style="padding: 12px 20px;border-bottom: 2px solid #01b0e9;color: #01b0e9" >个人积分</span>
+                <span style="padding: 12px 20px;" ng-click="fnGoNext()">机构积分</span>
+            </div>
+            <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+            </ion-infinite-scroll>
+            <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="items.length==0"
+                 style="background-color: #f0f0f0;overflow: hidden;top:0px" overflow-scroll="false" start-y="0"
+                 class="no-header">
+                <div class="empty"><span>暂无数据 ...</span></div>
+            </div>
+        </ion-content>
+
+    </ion-pane>
+</ion-view>

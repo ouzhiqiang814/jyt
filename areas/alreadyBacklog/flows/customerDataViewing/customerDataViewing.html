@@ -1,0 +1,264 @@
+<ion-view id="synergyclues">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">{{processDefineName}}审批</h1>
+    </ion-header-bar>
+    <ion-content has-header="true" id="content" scroll="false">
+        <tab-slide-box tab='0'>
+            <div class="tsb-icons">
+                <div class="tsb-ic-wrp">
+                    <ion-scroll direction="x" class="tsb-hscroll" style="width: 100%">
+                        <a href="javascript:;" class="" style=";">数据权限申请基本信息</a>
+                        <a href="javascript:;" class="" style="">数据权限申请清单</a>
+                        <a href="javascript:;" class="" style="">历史审批信息</a>
+                    </ion-scroll>
+                </div>
+            </div>
+            <div style="height:5px;background-color:#f0f0f0;"></div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <ion-content>
+                        <div class="backlogInfo_div item" style="height:80px;">
+                            <div class="backlogInfo_title" style="margin-bottom: 10px;"
+                                 ng-bind="processDefineName"></div>
+                            <em class="backlogInfo_note">环节：{{activityName | limitTo:7}}</em>
+                            <em class="backlogInfo_note" style="padding-left:20px;">时间：{{beginTime}} </em>
+                        </div>
+                        <!-- <div class="item item-input backlogInfo_div">
+                             <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                 审批历史
+                             </div>
+                             <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                 <i class="icon ion-chevron-right" style="color: #b4b4b4;float: right"></i>
+                             </div>
+                         </div>-->
+
+                        <div class="backlogInfo_div item" style="background-color: #f0f0f0;height: 30px;padding: 5px;">
+                            <div class="backlogInfo_title">
+                                <em class="backlogInfo_title_label" style="color: red">*</em><em
+                                    class="backlogInfo_title_label">数据权限申请基本信息</em>
+                            </div>
+                        </div>
+                        <ol>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    申请单号：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.appID}}
+                                    <!--<em class="backlogInfo_title_label" style="margin-right: 20px">王颖希 </em>-->
+                                    <!--<i class="icon ion-chevron-right" style="color: #b4b4b4;float: right"></i>-->
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    客户法定名称：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.cstNm}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    客户编号：
+                                </div>
+                                <div class="input-label" style="width: 65%;font-size: 15px;color: #1A1A1A;  ">
+                                    {{customerDataViewingVo.cstID}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    数据归属方：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.orgNm}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    申请人：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.empeNm}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    申请人联系信息：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.mobile}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    申请机构：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.deptNm}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    申请日期：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.applyDt}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    数据有效期：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.authEndDt}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    申请用途说明：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{customerDataViewingVo.useDsc}}
+                                </div>
+                            </div>
+                        </ol>
+
+                        <ion-item class="" style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+
+                        </ion-item>
+                    </ion-content>
+                </ion-slide>
+                <ion-slide>
+                    <ion-content>
+                        <ol class="synergymsg" ng-repeat="info in items2">
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    数据实体：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.dataEnt}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    数据属性
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.dataAttr}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    授权状态
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.authInd}}
+                                </div>
+                            </div>
+
+                            <div class="" style="background-color: #f0f0f0;height: 4px;"></div>
+                        </ol>
+                        <ol class="synergymsg" ng-repeat="info in items2">
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    数据实体：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.dataEnt}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    数据属性
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.dataAttr}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    授权状态
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.authInd}}
+                                </div>
+                            </div>
+
+                            <div class="" style="background-color: #f0f0f0;height: 4px;"></div>
+                        </ol>
+                    </ion-content>
+                </ion-slide>
+                <ion-slide>
+                    <ion-content>
+                        <ol class="synergymsg" ng-repeat="info in query_aprv_his_listItem">
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    节点名称：
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.actLinkId | getActLink }}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    审批人员:
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.aprvEmpNm}}
+                                </div>
+                            </div>
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    审批机构:
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.aprvInsNm}}
+                                </div>
+                            </div>
+
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    审批角色:
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.aprvRoleNm}}
+                                </div>
+                            </div>
+
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    审批状态:
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.aprvStCd | getStatus}}
+                                </div>
+                            </div>
+
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    审批意见:
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.aprvOpns}}
+                                </div>
+                            </div>
+
+                            <div class="item item-input backlogInfo_div">
+                                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                    审批日期:
+                                </div>
+                                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                    {{info.aprvTm}}
+                                </div>
+                            </div>
+
+                            <div class="" style="background-color: #f0f0f0;height: 4px;"></div>
+                        </ol>
+                    </ion-content>
+                </ion-slide>
+            </ion-slide-box>
+        </tab-slide-box>
+
+
+</ion-view>

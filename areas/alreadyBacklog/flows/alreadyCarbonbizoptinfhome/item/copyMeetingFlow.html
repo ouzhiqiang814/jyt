@@ -1,0 +1,195 @@
+
+<ion-content has-header="true" id="content" scroll="false">
+    <tab-slide-box tab='0'>
+        <div class="tsb-icons">
+            <div class="tsb-ic-wrp">
+                <ion-scroll direction="x" class="tsb-hscroll" style="width: 100%">
+                    <a href="javascript:;" style="width: 50%" class="" >基本信息</a>
+                    <a href="javascript:;" style="width: 50%" class="" >资料列表</a>
+                </ion-scroll>
+            </div>
+        </div>
+        <div style="height:5px;background-color:#f0f0f0;"></div>
+        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <ion-content>
+                    <div class="backlogInfo_div item" style="background-color: #f0f0f0;height: 30px;padding: 5px;">
+                        <div class="backlogInfo_title">
+                            <em class="backlogInfo_title_label" style="color: red">*</em>
+                            <em class="backlogInfo_title_label">基本信息</em>
+                        </div>
+                    </div>
+                    <ol>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                督办类型：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.sprvTpCdNm}}
+                            </div>
+                        </div>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                会议类型：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.mtgTpCdNm}}
+                            </div>
+                        </div>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                *会议名称：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.mtgNm}}
+                            </div>
+                        </div>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                责任人：
+                            </div>
+                            <div class="input-label" style="width: 65%;font-size: 15px;color: #1A1A1A;  ">
+                                {{baseData.sprvRsplPsnNm}}
+                            </div>
+                        </div>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                会议事项描述：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.mtgItmDsc}}
+                            </div>
+                        </div>
+                        <!--  <div class="item item-input backlogInfo_div">
+                              <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                  知悉人：
+                              </div>
+                              <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                  {{baseData.rmdPsnNm}}
+                              </div>
+                          </div>-->
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                开始时间：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.stTm}}
+                            </div>
+                        </div>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                结束时间：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.edTm}}
+                            </div>
+                        </div>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                事项内容：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.itemCnt}}
+                            </div>
+                        </div>
+                        <!--  <div class="item item-input backlogInfo_div">
+                              <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                  历史反馈说明：
+                              </div>
+                              <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                  {{baseData.hisComplCmnt}}
+                              </div>
+                          </div>-->
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                反馈说明：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.complCmnt}}
+                            </div>
+                        </div>
+                        <div class="item item-input backlogInfo_div">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                完成状态：
+                            </div>
+                            <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                                {{baseData.complSttnCdNm}}
+                            </div>
+                        </div>
+                        <!-- <div class="item item-input backlogInfo_div">
+                             <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                 反馈说明：
+                             </div>
+                         </div>
+                         <ol class="synergymsg">
+                             <ion-item class="item" style="padding:0 26px;border:none;">
+                                 <textarea style="width:100%;height:100px;margin-bottom:10px" placeholder="请输入审批意见"
+                                           id="complCmnt" name="complCmnt"></textarea>
+                             </ion-item>
+                         </ol>-->
+                      <!--  <ion-item class="item backlogInfo_div item-select" style="padding:5px 16px;">
+                            <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                                完成状态
+                            </div>
+                            <select id="complSttnCd" disabled="disabled">
+                                <option ng-repeat="item in complSttnCd" value="{{item.codeValue}}">
+                                    {{item.codeName}}
+                                </option>
+                            </select>
+                        </ion-item>-->
+                    </ol>
+
+                    <ion-item class="" style="height: 70px;border-width: 0px;background-color: #f0f0f0">
+                    </ion-item>
+                </ion-content>
+            </ion-slide>
+
+
+            <ion-slide>
+                <ion-content  id="">
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list>
+                        <ion-item class="partner-basic-info-item"  ng-repeat="info in xiangmu"   ng-click="showTogetherInfo(info)">
+                            <ol ng-click="tanchu($event)" on-swipe="huandong()">
+                                <div class="partner-basic-info">
+                                    <em>文件名称：</em>
+                                    <em>{{info.attachNm}}</em>
+                                </div>
+                                <div class="partner-basic-info">
+                                    <em>上传人员：</em>
+                                    <em>{{info.blngEmpeNm}}</em>
+                                </div>
+                                <div class="partner-basic-info">
+                                    <em>上传部门：</em>
+                                    <em>{{info.blngDeptNm}}</em>
+                                </div>
+                                <div class="partner-basic-info">
+                                    <em>上传时间：</em>
+                                    <em>{{info.udtTm}}</em>
+                                </div>
+                                <div class="" style="background-color: #f0f0f0;height: 1px; position: relative; z-index: 20; margin-left:-20px;"></div>
+                            </ol>
+
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+                    </ion-infinite-scroll>
+                    <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 20px">
+                </ion-content>
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="xiangmu.length==0"  style="background-color: #f0f0f0">
+                    <div class="empty" ><p>暂无数据 ...</p></div>
+                </div>
+            </ion-slide>
+
+        </ion-slide-box>
+
+    </tab-slide-box>
+</ion-content>
+<!--
+<ion-footer-bar style="height:44px;    padding: 0;">
+    &lt;!&ndash;<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>&ndash;&gt;
+    <button class=" " style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px"
+            ng-click="submitCarbonCopyInfo()">关闭
+    </button>
+</ion-footer-bar>-->

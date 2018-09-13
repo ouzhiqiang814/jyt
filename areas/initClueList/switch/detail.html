@@ -1,0 +1,299 @@
+<ion-content>
+    <!--商机基本信息-->
+    <div class="mokuai">
+        <div class="switch  backlogInfo_div  more" ng-click="switch('1');akk($event)" style="height: 30px;padding: 5px;">
+            <div class="backlogInfo_title">
+                <em class="backlogInfo_title_label" style="color: red">*</em>
+                <em class="backlogInfo_title_label">商机基本信息</em>
+            </div>
+        </div>
+        <ol class="text1">
+            <div class="column">
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        商机编号：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CLUE_NO}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        <em class="backlogInfo_title_label" style="color: red">*</em>
+                        商机名称：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CLUE_NM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        商机来源：
+                    </div>
+                    <div class="input-label" style="width: 65%;  ">
+                        {{clue.SRCCD_NAME}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        商机阶段：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.STG_TPCD_NAME}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        商机业务类型：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CLUE_BUS_TPCD_NAME}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        商机业务编号：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CLUE_BUS_ID}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        推荐人：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.RCMM_PSN_ID_NAME}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        创建时间：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CRT_DT_NAME}}
+                    </div>
+                </div>
+
+            </div>
+        </ol>
+    </div>
+
+    <!--客户识别信息-->
+    <div class="mokuai">
+        <div class="switch  backlogInfo_div" ng-click="switch('2');akk($event)" style="height: 30px;padding: 5px;">
+            <div class="backlogInfo_title">
+                <em class="backlogInfo_title_label" style="color: red">*</em>
+                <em class="backlogInfo_title_label">客户识别信息</em>
+            </div>
+        </div>
+        <ol class="text2" style="display: none">
+            <div class="column">
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        客户编号：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CST_ID}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style=" width:42%;">
+                        <em class="backlogInfo_title_label" style="color: red">*</em>
+                        客户法定名称：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CST_NM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        客户类型：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.BSOP_CST_TPCD_NAME}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        证件类型：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.IPID_TPCD_NAME}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        <em class="backlogInfo_title_label" style="color: red">*</em>
+                        联系人：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.RELA_NM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        <em class="backlogInfo_title_label" style="color: red">*</em>
+                        电话：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.TELEPHONE}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        证件号码：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.IPID_NO}}
+                    </div>
+                </div>
+
+            </div>
+        </ol>
+    </div>
+
+    <!--营销摘要信息-->
+    <div class="mokuai">
+        <div class="switch  backlogInfo_div" ng-click="switch('3');akk($event)" style="height: 30px;padding: 5px;">
+            <div class="backlogInfo_title">
+                <em class="backlogInfo_title_label" style="color: red">*</em>
+                <em class="backlogInfo_title_label">营销摘要信息</em>
+            </div>
+        </div>
+        <ol class="text3" style="display: none">
+            <div class="column">
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        <em class="backlogInfo_title_label" style="color: red">*</em>
+                        内容：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{clue.CMBSOP_DSC}}
+                    </div>
+                </div>
+            </div>
+        </ol>
+    </div>
+
+    <!--营销意向信息-->
+    <div class="mokuai">
+        <div class="switch  backlogInfo_div" ng-click="switch('4');akk($event)" style="height: 30px;padding: 5px;">
+            <div class="backlogInfo_title">
+                <em class="backlogInfo_title_label" style="color: red">*</em>
+                <em class="backlogInfo_title_label">营销意向信息</em>
+            </div>
+        </div>
+        <ol class="text4" style="display: none">
+            <div class="column" ng-repeat="item in pdlst">
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        产品线：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.PDLN_NM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        产品组
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.PD_GRP_NM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        基础产品
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.BSPD_NM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        可售产品：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.ASPD_NM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        预估业务量：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.EST_BSN_NUM}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        预估业务单位：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.EST_BNNM_UNCD_NAME}}
+                    </div>
+                </div>
+
+            </div>
+        </ol>
+    </div>
+
+    <!--商机参与人-->
+    <div class="mokuai">
+        <div class="switch  backlogInfo_div" ng-click="switch('5');akk($event)" style="height: 30px;padding: 5px;">
+            <div class="backlogInfo_title">
+                <em class="backlogInfo_title_label" style="color: red">*</em>
+                <em class="backlogInfo_title_label">商机参与人</em>
+            </div>
+        </div>
+        <ol class="text5" style="display: none;">
+            <div class="column" ng-repeat="item in stafflst">
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        编号：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.BSOP_IP_ID}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        名称：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.BSOP_IP_ID_NAME}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        电话：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.TELEPHONE}}
+                    </div>
+                </div>
+                <div class="item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="">
+                        移动电话：
+                    </div>
+                    <div class="input-label" style="width: 62%;">
+                        {{item.MOBILE}}
+                    </div>
+                </div>
+
+            </div>
+        </ol>
+    </div>
+
+    <p style="height:100px; width:100%"></p>
+    <!--<ion-item class="" style="height:114px; border-width:0px; background-color:#f0f0f0">
+
+    </ion-item>-->
+</ion-content>
+
+
+<style>
+
+
+</style>

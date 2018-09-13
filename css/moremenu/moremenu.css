@@ -1,0 +1,566 @@
+#moremenu{
+    background-image: none;
+    background-color: #fff;
+}
+
+#moremenu body{
+    overflow:hidden;
+}
+
+#moremenu #nav{
+    position:absolute;
+    top:0px;
+    bottom:0;
+    width:140px;
+    overflow:hidden;
+    background-color: #f5f5f5;
+}
+#moremenu #nav ul{
+    display:block;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+#moremenu #nav ul li{
+    border-bottom:1px solid #e0e0e0;
+    text-align:center;
+   /* line-height:50px;
+
+    height:49px;*/
+    padding: 13px 10px;
+    font-size:.23rem;
+    white-space: nowrap;
+}
+#moremenu #nav .nav-blur{
+    color:#252525;
+
+    background-color:#f5f5f5;
+}
+#moremenu #nav .nav-current{
+    color:#01b0e9;
+    background-color:#fff;
+}
+#moremenu #pro{
+    position:absolute;
+    left:140px;
+    top:0px;
+    right:0;
+    bottom:0;
+    overflow:hidden;
+}
+#moremenu .pro-scroll{
+    width:200%;
+    height:100%;
+    overflow-y:scroll;
+}
+#moremenu .pro-warp{
+    width:52%;
+    /* background-color: #fff; */
+}
+#moremenu #pro .banner{
+    margin:10px 12px;
+}
+#moremenu #pro img{
+    width:100%;
+}
+#moremenu #pro .content{
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    background-color: #fff;
+    overflow:hidden;
+}
+#moremenu #pro .content-title{
+  color: #01b0e9;
+  padding: 10px;
+  border-bottom: 2px solid #dcdcdc;
+  overflow: hidden;
+  font-size:.25rem;
+}
+#moremenu #pro .content-title span{
+  opacity: .7;
+}
+#moremenu #pro .search-product{
+    border: hidden;
+}
+
+#moremenu #pro .content-body{
+    float: left;
+    /*padding:0px 12px;*/
+    padding:0;
+    width: 100%;
+    overflow:hidden;
+    /* padding-left: 7%; */
+}
+#moremenu #pro .content-body-list{
+    /* width:50%; */
+    padding:10px 30px;
+    /* margin-top:20px; */
+    /* float:left; */
+    display: inline-block;
+    border: hidden;
+}
+
+#moremenu #pro .content-body-div{
+    /*padding-left: 25px;*/
+    border: hidden;
+}
+
+#moremenu #pro .content-body-div img{
+    width:80%;
+    height:80px;
+    border: none ;
+    margin-left: 5px;
+}
+#moremenu #pro .content-body-div span{
+    font-size:0.22rem;
+    text-align:left;
+    color:#333;
+    background:url(../../img/f08e.png) no-repeat 0 4px;
+    background-size: auto 12px;
+    padding-left: 20px;
+}
+@media only screen and (min-width:500px) {
+    #moremenu #pro .content-body-div span{
+        font-size:15px;
+    }
+}
+
+
+#moremenu .image-loader-container{
+    position: relative;
+    left: 30%;
+    top: -58%;
+    border: hidden;
+}
+
+
+#details input[type=radio]{
+    height: 0;
+    width: 0;
+}
+#details input[type=text]{
+    padding: 0;
+    margin-left: 10px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
+
+#details .clearBoth{
+    clear: both;
+}
+#details .floatLeft{
+    float: left;
+}
+#details .chicun div span{
+    width: 30px;
+    text-align: center;
+}
+#details .shuliang div{
+    margin-left: 7px;
+}
+#details ion-content{
+    overflow: scroll;
+    background-color: #efeff4;
+    padding-bottom: 60px;
+}
+
+#details  i.badge {
+    position: absolute;
+    top: 5px;
+}
+
+#details div,ul,li,h1,h2,h3,img,a{
+    font-family:'PingHei';
+    font-size:16px;
+    padding:0;
+    margin:0;
+    border:0;
+    list-style:none;
+    color:#666;
+    font-weight:300;
+}
+#details a,span{
+    display:block;
+    text-decoration:none;
+}
+#details body{
+    background-color:#f5f5f5;
+}
+#details #header{
+    display:block;
+    background-color: #333;
+    background-image:url(../../img/common/header-bg.png);
+    background-size:100% 44px;
+    width:100%;
+    height:44px;
+    overflow:hidden;
+}
+#details .header-left{
+    width:40px;
+    height:44px;
+    position:absolute;
+}
+#details .header-left span{
+    width:20px;
+    height:20px;
+    margin:12px 0 0 10px;
+    background-size:200px 200px;
+    background-position:-20px 0;
+    background-image:url(../../img/common/sprites.png);
+}
+#details .header-center{
+    height:44px;
+    position:absolute;
+    left:40px;
+    right:40px;
+}
+#details .header-center span{
+    width:96%;
+    height:30px;
+    color:#252525;
+    text-align:center;
+    line-height:44px;
+    font-size:15px;
+    font-family:'PingHei';
+}
+#details .header-right{
+    width:40px;
+    height:44px;
+    position:absolute;
+    right:0;
+}
+#details .header-right span{
+    width:20px;
+    height:20px;
+    margin:12px 0 0 10px;
+    background-size:200px 200px;
+    background-position:-60px 0;
+    background-image:url(../../img/common/sprites.png);
+}
+#details #view{
+    width:100%;
+    height:320px;
+    border-bottom:1px solid #dfdfdf;
+
+}
+#details .viewWarp{
+    width:320px;
+    height:320px;
+    margin:0 auto;
+    overflow:hidden;
+    position:relative;
+}
+#details .viewWarp img{
+    width:320px;
+    height:320px;
+}
+#details .viewText{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    background-color:rgba(0,0,0,.3);
+    width:50px;
+    height:50px;
+    text-align:center;
+    color:#fff;
+    line-height:50px;
+    border-radius:25px;
+    font-weight:500;
+}
+#details .viewText span{
+    display:inline-block;
+    font-size:20px;
+}
+#details #des{
+    margin:15px 10px;
+}
+#details #des .desText{
+    color:#000;
+}
+#details #des .desNumber{
+    margin-top:10px;
+    color:#F15353;
+    font-weight:700;
+    font-size:22px;
+    font-family:'΢���ź�';
+}
+#details #list{
+    width:100%;
+    height:150px;
+    border-top:1px solid #dfdfdf;
+    padding:10px 0 0 0;
+
+}
+#details #list span{
+    display:inline-block;
+    color:#777;
+    margin-bottom:10px;
+}
+#details #list div{
+    color:#000;
+}
+#details .listBox{
+    padding:3px 5px;
+    border:1px solid #696969;
+    color:#696969;
+    border-radius:3px;
+}
+#details .listCurrent.listBox{
+    border:1px solid #f15353;
+    color:#f15353;
+}
+#details .shuliang span{
+    display:block;
+    float:left;
+}
+#details .listLeft{
+    margin-left:15px;
+    padding:3px 10px;
+    border:1px solid #696969;
+    color:#696969;
+    border-radius:3px 0 0 3px;
+}
+#details .listNum{
+    padding:3px 20px;
+    border:1px solid #696969;
+    color:#696969;
+}
+#details .listRight{
+    padding:3px 10px;
+    border:1px solid #696969;
+    color:#696969;
+    border-radius:0px 3px 3px 0px;
+}
+#details #buy{
+    width:100%;
+    height:50px;
+    position:fixed;
+    bottom:0;
+}
+#details .buyLeft{
+    float:left;
+    width:40%;
+    height:50px;
+    background-color:rgba(0,0,0,.5);
+}
+#details .buyCenter{
+    float:left;
+    width:30%;
+    height:50px;
+    background-color:#ffb03f;
+    color:#fff;
+    text-align:center;
+    line-height:50px;
+    font-weight:500;
+    font-family:'΢���ź�';
+}
+#details .buyRight{
+    float:left;
+    width:30%;
+    height:50px;
+    background-color:#f15353;
+    color:#fff;
+    text-align:center;
+    line-height:50px;
+    font-weight:500;
+    font-family:'΢���ź�';
+}
+#details .buyLeft strong{
+    font-size:14px;
+    color:#fff;
+    font-weight:300;
+}
+#details .guanzhu{
+    width:50%;
+    height:50px;
+    text-align:center;
+    float:left;
+}
+#details .gouwuche{
+    width:50%;
+    height:50px;
+    text-align:center;
+    float:left;
+}
+#details .guanzhu span{
+    width:20px;
+    height:20px;
+    background-image:url(../../img/common/focus-icon.png);
+    background-size:100px 100px;
+    margin:10px auto 0;
+}
+#details .gouwuche span{
+    width:27px;
+    height:20px;
+    background-image:url(../../img/common/sprits_btm_new.png);
+    background-position:0 -23px;
+    background-size:50px 50px;
+    margin:10px auto 0;
+}
+
+#details #list span{
+    font-size: 14px;
+    color: #848689;
+    margin-left: 8px;
+    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+}
+
+#details #otherInfo{
+    display: inline-block;
+    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+}
+
+#details #otherInfo span,p{
+    display: inline-block;
+}
+
+#details #otherInfo span{
+    font-size: 14px;
+    color: #848689;
+    float: left;
+    margin-left: 8px;
+    width: 10%;
+}
+
+#details #otherInfo p{
+    font-size: 14px;
+    color: #000;
+    padding-right: 5px;
+    width: 80%;
+}
+
+
+#moremenu .ion-product:before{
+    content:url(../../img/moremenu/product.png);
+}
+
+#moremenu .ion-haveDo:before{
+    content:url(../../img/moremenu/33.png);
+
+}
+
+#moremenu .ion-do:before{
+    content:url(../../img/moremenu/51.png);
+
+}
+
+#moremenu .ion-31:before{
+    content:url(../../img/moremenu/31.png);
+
+}
+
+#moremenu .ion-31:before{
+    content:url(../../img/moremenu/31.png);
+
+}
+
+#moremenu .ion-32:before{
+    content:url(../../img/moremenu/32.png);
+
+}
+
+#moremenu .ion-44:before{
+    content:url(../../img/moremenu/44.png);
+
+}
+
+#moremenu .ion-41:before{
+    content:url(../../img/moremenu/41.png);
+
+}
+
+#moremenu .ion-47:before{
+    content:url(../../img/moremenu/47.png);
+
+}
+
+#moremenu .ion-43:before{
+    content:url(../../img/moremenu/43.png);
+
+}
+
+#moremenu .ion-36:before{
+    content:url(../../img/moremenu/36.png);
+
+}
+
+#moremenu .ion-61:before{
+    content:url(../../img/moremenu/61.png);
+
+}
+
+#moremenu .ion-60:before{
+    content:url(../../img/moremenu/60.png);
+
+}
+
+#moremenu .ion-72:before{
+    content:url(../../img/moremenu/72.png);
+
+}
+
+#moremenu .ion-52:before{
+    content:url(../../img/moremenu/52.png);
+
+}
+
+#moremenu .ion-48:before{
+    content:url(../../img/moremenu/48.png);
+
+}
+
+#moremenu .ion-77:before{
+    content:url(../../img/moremenu/77.png);
+
+}
+
+#moremenu .ion-34:before{
+    content:url(../../img/moremenu/34.png);
+
+}
+
+#moremenu .ion-81:before{
+    content:url(../../img/moremenu/81.png);
+
+}
+
+#moremenu .ion-82:before{
+    content:url(../../img/moremenu/82.png);
+
+}
+
+#moremenu .ion-83:before{
+    content:url(../../img/moremenu/83.png);
+
+}
+
+#moremenu .ion-91:before{
+    content:url(../../img/moremenu/91.png);
+
+}
+
+#moremenu .ion-92:before{
+    content:url(../../img/moremenu/92.png);
+
+}
+
+#moremenu .ion-93:before{
+    content:url(../../img/moremenu/93.png);
+
+}
+
+#moremenu .ion-94:before{
+    content:url(../../img/moremenu/94.png);
+
+}
+
+
+#moremenu .ion-role:before{
+    content:url(../../img/moremenu/role.png);
+
+}
+
+#moremenu .scroll{
+    height: 100%;
+}

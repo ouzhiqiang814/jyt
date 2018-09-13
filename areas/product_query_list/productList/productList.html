@@ -1,0 +1,87 @@
+<ion-view id="partnerList" class="" view-title="商机列表页" cache-view="true">
+    <div>
+        <ion-side-menus>
+            <!--题头-->
+            <ion-header-bar align-title="center" class="bar-energized header-bar" id="header-bar">
+                <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"
+                        style="color: #FFFFFF;"></button>
+                <h1 class="title" style="color: #FFFFFF;">产品列表</h1>
+                <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+            </ion-header-bar>
+
+            <!-- 中间内容 -->
+            <ion-side-menu-content>
+                <ion-content>
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list id="partnerionlist">
+                        <ion-item class="partner-item" ng-if="xiangmu.length != 0" ng-repeat="item in xiangmu"
+                                  on-finish-render-filters ng-click="show_info(item)">
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">可售产品编号：</div>
+                                <div class="hz-right">{{item.aspdId}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">可售产品名称：</div>
+                                <div class="hz-right">{{item.aspdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">产品经理：</div>
+                                <div class="hz-right">{{item.realname}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">基础产品：</div>
+                                <div class="hz-right">{{item.bspdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">产品组：</div>
+                                <div class="hz-right">{{item.pdgroupNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">产品线：</div>
+                                <div class="hz-right">{{item.pdlineNm}}</div>
+                            </div>
+                        </ion-item>
+                        <div style="height:60px"></div>
+                    </ion-list>
+                    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="xiangmu.length == 0"  style="background-color: #f0f0f0">
+                    <div class="empty" ><p>暂无数据 ...</p></div>
+                </div>
+            </ion-side-menu-content>
+
+            <!-- 右侧菜单 -->
+            <ion-side-menu style="z-index: initial">
+                <nav class="hidden  cehua">
+                    <p class="ceng" ng-click="guan()"></p>
+                    <div class="kuang">
+                        <ion-content class="padding" style="padding :0px;">
+                            <div class="item item-input">
+                                <div class="input-label">
+                                    可售产品编号：
+                                </div>
+                                <input type="text" id="aspdId" name="aspdId" placeholder="请输入产品编号">
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">
+                                    可售产品名称：
+                                </div>
+                                <input type="text" id="aspdNm" name="aspdNm" placeholder="请输入产品名称">
+                            </div>
+                        </ion-content>
+                        <ion-footer-bar style="height: 43px;padding: 0;">
+                            <button class="btn-reset" ng-click="func_reset()">重 置
+                            </button>
+                            <button class="btn-confirm" ng-click="func_ok()">完 成
+                            </button>
+                        </ion-footer-bar>
+                    </div>
+                </nav>
+            </ion-side-menu>
+
+        </ion-side-menus>
+    </div>
+</ion-view>

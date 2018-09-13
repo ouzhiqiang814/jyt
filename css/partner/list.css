@@ -1,0 +1,51 @@
+
+#partnerList .partner-item {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    padding: 0 !important;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#partnerList .partnerItemInfo {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px;
+}
+#partnerList .partnerItemInfo em{
+    font-size:14px;
+    color:#4d4d4d;
+}
+
+#partnerList button{
+    font-size: 16px;
+    letter-spacing:5px;
+}
+
+#partnerList .btn-reset {
+    color: #01B0E9;
+    width: 50%;
+    background-color: #E6F9FF;
+}
+
+#partnerList .btn-ok{
+    color: #FFFFFF;
+    background-color: #01B0E9;
+    width: 50%;
+    left: 50%;
+    border:none;
+}
+
+#partnerionlist .list{
+  margin: 0;
+  padding:10px;
+  background:#f0f0f0;
+  border-radius: 0;
+}
+
+
+#partnerionlist + ion-infinite-scroll{
+  background: #f0f0f0;
+}

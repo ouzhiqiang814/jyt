@@ -1,0 +1,90 @@
+<ion-content>
+    <!--<div class="backlogInfo_div" style="height: 30px;padding: 5px;">
+        <div class="backlogInfo_title">
+            <em class="backlogInfo_title_label">需求调查</em>
+        </div>
+    </div>-->
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+    </ion-refresher>
+    <div class="synergymsg" id="diaocha" ng-repeat="item in xiangmu" ng-if="xiangmu.length != 0"  on-finish-render-filters  ng-click="show_info(item)">
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                客户拜访编号:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.cstVstId}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                客户法定名称:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.cstNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                客户编号:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.cstId}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                拜访时间:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.vstTm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                创建人:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.crtEmpNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                拜访来源:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.vstSrcCdNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                拜访方式:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.vstMtdCdNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                拜访目的:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.vstPpsCdNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                拜访状态:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.vstStCdNm}}
+            </div>
+        </div>
+        <!-- <div class="" style="height: 4px;"></div> -->
+    </div>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div id="" ng-if="xiangmu.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

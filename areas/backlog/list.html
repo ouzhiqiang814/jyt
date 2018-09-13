@@ -1,0 +1,129 @@
+<ion-view>
+    <div>
+        <ion-side-menus id="backlogList" class="begin-right">
+            <ion-header-bar class="bar-energized ion-header-bar " align-title="center" style=""
+                            id="headerBar">
+                <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+                <h1 class="title">待办事项查询</h1>
+                <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+                <!--<button class="button button-icon ion-ios-search" menu-toggle="right" style="display: block"></button>-->
+            </ion-header-bar>
+            <ion-side-menu-content drag-content="false">
+                <ion-content style="background-color: #f0f0f0">
+                    <div style="display: flex;width: 100%;height: 39px;justify-content: space-evenly;background-color: #fff;">
+                        <span style="padding: 12px 20px;border-bottom: 2px solid #01b0e9;color: #01b0e9">待办事项</span>
+                        <span style="padding: 12px 20px;" ng-click="fnGoNext()">已办事项</span>
+                    </div>
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list id="backlogIocList">
+                        <ion-item class="backlog-item"
+                                  ng-repeat="item in xiangmu" on-finish-render-filters ng-click="approve(item)">
+                            <div class="backlog-item-up-div" style="">
+                                <div class="backlog-item-img-left">
+                                    <img ng-if="item.formKey.indexOf('cpc') >= 0" src="img/backlog/xt.png" alt="">
+                                    <img ng-if="item.formKey.indexOf('crm') >= 0" src="img/backlog/kh.png" alt="">
+                                </div>
+                                <div class="backlogContent">
+                                    <span class="backlog-item-title">{{item.processName}}</span>
+                                    <span class="backlog-item-text">
+                                        由　<em ng-if="item.formKey.indexOf('cpc') >= 0" class="backlog-item-name-xt">{{item.applyUserNm}}</em>
+                                            <em ng-if="item.formKey.indexOf('crm') >= 0" class="backlog-item-name-kh">{{item.applyUserNm}}</em>
+                                        <br/>
+                                        发起于 {{item.beginTime}}
+                                    </span>
+                                </div>
+                                <div class="backlogProgress">
+                                    <div style="margin-top: 5px;" class="GaugeMeter" data-percent="50" data-append="%"
+                                         data-size="50" data-color="#0c93e1" data-width="4"
+                                         data-animate_gauge_colors="0" data-animate_text_colors="1" data-label=""
+                                         data-style="Arch" data-label_color="#b8b8b8">
+                                    </div>
+                                    <span class="backlogProgressText">部门副经理</span>
+                                </div>
+                            </div>
+                            <div class="backlog-item-down-div">
+                                <div class="backlog-item-down-left">
+                                    流程：{{item.processDefineName}}
+                                </div>
+                                <div class="backlog-item-down-right">
+                                    上一步审批人：{{item.preUserNm}}
+                                </div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()"
+                                         distance="10px">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="xiangmu.length==0">
+                    <div class="empty"><p>暂无数据 ...</p></div>
+                </div>
+            </ion-side-menu-content>
+
+            <!--<ion-side-menu side="right">
+                <header class="bar bar-header bar-stable">
+                </header>
+                <ion-content class="has-header">
+                    <div class="item item-input">
+                        <div class="input-label">
+                            申请标题
+                        </div>
+                        <input type="text" id="auditTitle">
+                    </div>
+                    <div class="item item-input">
+                        <div class="input-label">
+                            申请人
+                        </div>
+                        <input type="text" id="auditPeople">
+                    </div>
+                    <div class="shanxian"></div>
+                    &lt;!&ndash;  闪现 必加  &ndash;&gt;
+                </ion-content>
+                <ion-footer-bar style="height: 43px;padding: 0;">
+                    <button class="btn-reset" ng-click="func_reset()">重 置
+                    </button>
+                    <button class="btn-confirm" ng-click="func_ok()">完 成
+                    </button>
+                </ion-footer-bar>
+            </ion-side-menu>-->
+
+            <ion-side-menu style="z-index: initial">
+                <nav class="hidden  cehua">
+                    <p class="ceng" ng-click="guan()"></p>
+                    <div class="kuang">
+                        <header class="bar bar-header bar-stable">
+                        </header>
+                        <ion-content class="has-header">
+                            <div class="item item-input">
+                                <div class="input-label">
+                                    申请标题：
+                                </div>
+                                <input type="text" id="auditTitle" placeholder="请输入申请标题">
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">
+                                    申请人：
+                                </div>
+                                <input type="text" id="auditPeople" placeholder="请输入申请人">
+                            </div>
+                            <div class="shanxian"></div>
+                            <!--  闪现 必加  -->
+                        </ion-content>
+                        <ion-footer-bar style="height: 43px;padding: 0;">
+                            <button class="btn-reset" ng-click="func_reset()">重 置
+                            </button>
+                            <button class="btn-confirm" ng-click="func_ok()">完 成
+                            </button>
+                        </ion-footer-bar>
+                    </div>
+                </nav>
+            </ion-side-menu>
+
+
+
+
+        </ion-side-menus>
+    </div>
+</ion-view>

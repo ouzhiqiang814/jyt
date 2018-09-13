@@ -1,0 +1,46 @@
+<ion-content id="companyCustomerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh4()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items4.length != 0" ng-repeat="info in items4">
+            <div class="cus-basic-info">
+                <em>联系人类型:</em>
+                <em>{{info.CST_AND_RELPSN_RETPCD == '*'?'*':info.CST_AND_RELPSN_RETPCDNm}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>联系人名称:</em>
+                <em>{{info.RELPSN_NM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>电话:</em>
+                <em>{{info.RELPSN_TEL}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>电子邮箱:</em>
+                <em>{{info.RELPSNEAMIL}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>证件类型:</em>
+                <em>{{info.RELPSN_CRDT_TP == '*'?'*':info.RELPSN_CRDT_TPNm}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>证件号码:</em>
+                <em>{{info.RELPSN_CRDT_NO}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>关联人职务:</em>
+                <em>{{info.RELPSN_POST}}</em>
+            </div>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state4" on-infinite="loadMore4()" distance="1%">
+    </ion-infinite-scroll>
+
+    <!--<ion-item class="" style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+    </ion-item>-->
+    <!-- <div style="height:70px"></div> -->
+</ion-content>
+
+<div id="" ng-if="items4.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

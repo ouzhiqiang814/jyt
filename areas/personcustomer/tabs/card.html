@@ -1,0 +1,48 @@
+<ion-content id="personCustomerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh2()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items2.length != 0" ng-repeat="cardInfo in items2">
+            <div class="cus-basic-info">
+                <em>是否主证件:</em>
+                <em>{{cardInfo.PRIMCRDTIND}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>证件类型:</em>
+                <em>{{cardInfo.IPIDTPCDNm | showAsterisk : cardInfo.IPIDTPCD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>证件发行国:</em>
+                <em>{{cardInfo.ISSUCTYCDNm | showAsterisk : cardInfo.ISSUCTYCD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>证件号码:</em>
+                <em>{{cardInfo.IPIDNO}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>签发日期:</em>
+                <em>{{cardInfo.CRDTDFDT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>到期日期:</em>
+                <em>{{cardInfo.CRDTEXDAT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>签发地:</em>
+                <em>{{cardInfo.ISSUCTFAHRNM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>签发机关:</em>
+                <em>{{cardInfo.ISSUCTFAHRLO}}</em>
+            </div>
+        </ion-item>
+
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state2" on-infinite="loadMore2()" distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div id="" ng-if="items2.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

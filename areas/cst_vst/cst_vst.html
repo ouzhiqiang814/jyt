@@ -1,0 +1,110 @@
+<ion-view id="partnerList"  view-title="拜访记录查询页" cache-view="true">
+    <div>
+        <ion-side-menus>
+            <!--题头-->
+            <ion-header-bar align-title="center" class="bar-energized header-bar" id="header-bar">
+                <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"
+                        style="color: #FFFFFF;"></button>
+                <h1 class="title" style="color: #FFFFFF;">拜访记录查询</h1>
+                <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+            </ion-header-bar>
+
+            <!-- 中间内容 -->
+            <ion-side-menu-content>
+                <ion-content>
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list id="partnerionlist">
+                        <ion-item class="partner-item" ng-repeat="item in xiangmu" ng-click="show_info(item)">
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">客户拜访编号：</div>
+                                <div class="hz-right">{{item.cstVstId}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">客户法定名称：</div>
+                                <div class="hz-right">{{item.cstNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">客户编号：</div>
+                                <div class="hz-right">{{item.cstId}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">拜访时间：</div>
+                                <div class="hz-right">{{item.vstTm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">创建人：</div>
+                                <div class="hz-right">{{item.crtEmpNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">拜访来源：</div>
+                                <div class="hz-right">{{item.vstSrcCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">拜访方式：</div>
+                                <div class="hz-right">{{item.vstMtdCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">拜访目的：</div>
+                                <div class="hz-right">{{item.vstPpsCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">拜访状态：</div>
+                                <div class="hz-right">{{item.vstStCdNm}}</div>
+                            </div>
+                        </ion-item>
+                        <div style="height:60px"></div>
+                    </ion-list>
+                    <ion-infinite-scroll ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="xiangmu.length == 0"  style="background-color: #f0f0f0">
+                    <div class="empty" ><p>暂无数据 ...</p></div>
+                </div>
+            </ion-side-menu-content>
+
+            <!-- 右侧菜单 -->
+            <ion-side-menu style="z-index: initial">
+                <nav class="hidden  cehua">
+                    <p class="ceng" ng-click="guan()"></p>
+                    <div class="kuang">
+                        <ion-content class="has-header">
+                            <div class="item item-input">
+                                <div class="input-label">客户法定名称：</div>
+                                <input type="text" id="cstNm" name="cstNm" placeholder="请输入名称">
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">客户编号：</div>
+                                <input type="text" id="cstId" name="cstId" placeholder="请输入客户编号">
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">开始时间：</div>
+                                <input type="date" id="vstStTm" name="vstStTm" placeholder="请输入拜访时间">
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">结束时间：</div>
+                                <input type="date" id="vstEdTm" name="vstEdTm" placeholder="请输入拜访时间">
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">拜访状态：</div>
+                                <input type="text" id="vstStCd" name="vstStCd" placeholder="请输入拜访状态">
+                            </div>
+
+                            <div class="shanxian"></div>
+                            <!--  闪现 必加  -->
+                        </ion-content>
+                        <ion-footer-bar style="height: 43px;padding: 0;">
+                            <button class="btn-reset" ng-click="func_reset()">重 置
+                            </button>
+                            <button class="btn-confirm" ng-click="func_ok()">完 成
+                            </button>
+                        </ion-footer-bar>
+                    </div>
+                </nav>
+            </ion-side-menu>
+
+
+        </ion-side-menus>
+    </div>
+</ion-view>

@@ -1,0 +1,99 @@
+<ion-view id="sprvinfhomepage">
+    <div>
+        <ion-header-bar align-title="center" class="bar-energized" id="header-bar">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+            <h1 class="title" id ="title">督办详情</h1>
+            <button ng-click="fnActionSheets()" class="button button-icon  ion-navicon" ng-if="fnBtnFlag"></button>
+        </ion-header-bar>
+
+        <ion-content class="duban-detail" has-header="true" id="content" scroll="false">
+            <tab-slide-box tab='0' ng-if="flag">
+                <div class="tsb-icons">
+                    <div class="tsb-ic-wrp">
+                        <ion-scroll direction="x" class="tsb-hscroll">
+                            <a href="javascript:;" class="" style="width:33.3%;">基本信息</a>
+                            <a href="javascript:;" class="" style="width:33.3%;">督办事项列表</a>
+                            <a href="javascript:;" class="" style="width:33.3%;"> 审核信息</a>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div style="height:5px;background-color:#f0f0f0;"></div>
+                <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                    <ion-slide>
+                        <div ng-include="'areas/querysprvinfpage/sprvinfhomepage/tabs/base.html'">
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div ng-include="'areas/querysprvinfpage/sprvinfhomepage/tabs/together.html'">
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <ion-content  id="partnerInfoChild">
+                            <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh3()">
+                            </ion-refresher>
+                            <ion-list>
+                                <ion-item class="partner-basic-info-item"  ng-repeat="info in checkData">
+                                    <ol>
+                                        <div class="partner-basic-info">
+                                            <div class="cx-left">审核人员：</div>
+                                            <div class="cx-right" style="width:68%;">{{info.aprvEmpNm}}</div>
+                                        </div>
+                                        <div class="partner-basic-info">
+                                            <div class="cx-left">审核时间：</div>
+                                            <div class="cx-right" style="width:68%;">{{info.aprvTm}}</div>
+                                        </div>
+                                        <div class="partner-basic-info">
+                                            <div class="cx-left">审核结果：</div>
+                                            <div class="cx-right" style="width:68%;">{{info.aprvResultDsc}}</div>
+                                        </div>
+                                        <div class="partner-basic-info">
+                                            <div class="cx-left">审核意见：</div>
+                                            <div class="cx-right" style="width:68%;">{{info.aprvOpns}}{{info.attachNmStr}}{{info.attachIdStr}}</div>
+                                        </div>
+                                    </ol>
+                                </ion-item>
+                            </ion-list>
+                            <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore3()" distance="1%">
+                            </ion-infinite-scroll>
+                            <!--<ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 40px">-->
+                            <div style="height: 110px"></div>
+                        </ion-content>
+
+                        <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="checkData.length==0"  style="background-color: #f0f0f0">
+                            <div class="empty" ><p>暂无数据 ...</p></div>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+            </tab-slide-box>
+
+            <tab-slide-box tab='0' ng-if="!flag">
+                <div class="tsb-icons">
+                    <div class="tsb-ic-wrp">
+                        <ion-scroll direction="x" class="tsb-hscroll">
+                            <a href="javascript:;" class="" style="width:50%;">基本信息</a>
+                            <a href="javascript:;" class="" style="width:50%;">督办事项列表</a>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div style="height:5px;background-color:#f0f0f0;"></div>
+                <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                    <ion-slide>
+                        <div ng-include="'areas/querysprvinfpage/sprvinfhomepage/tabs/base.html'">
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div ng-include="'areas/querysprvinfpage/sprvinfhomepage/tabs/together.html'">
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+            </tab-slide-box>
+        </ion-content>
+
+        <ion-footer-bar style="height:44px;    padding: 0;"  ng-if="flag">
+            <!--<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>-->
+            <button class=" " style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                    ng-click="chooseAprvCooteamEmpe()">提交
+            </button>
+        </ion-footer-bar>
+    </div>
+</ion-view>

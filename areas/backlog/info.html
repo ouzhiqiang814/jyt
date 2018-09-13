@@ -1,0 +1,39 @@
+<ion-view id="backlogInfo">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">审批详情</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="backlogInfo_div" style="height:80px;">
+            <div class="backlogInfo_title">{{backlogInfo.title}}</div>
+            <em class="backlogInfo_note">类型：{{backlogInfo.step}}</em>
+            <em class="backlogInfo_note" style="padding-left:20px;">时间：{{backlogInfo.date}}</em>
+        </div>
+        <div class="backlogInfo_div">
+            <div class="backlogInfo_title" ng-click="goAuditingHistory()">
+                <em class="backlogInfo_title_label">审批历史</em>
+                <em class="goDetail"> > </em>
+            </div>
+        </div>
+        <div class="backlogInfo_div">
+            <div class="backlogInfo_title" ng-click="goPersonInfo()">
+                <em class="backlogInfo_title_label">申请人</em>
+                <em class="goDetail"> {{backlogInfo.people}} &nbsp;&nbsp;> </em>
+            </div>
+        </div>
+        <div ng-include="'areas/backlog/child/customerdata.html'" ng-if="backlogInfo.category=='客户数据查看权限'">
+        </div>
+        <div ng-include="'areas/backlog/child/tendinstitution.html'" ng-if="backlogInfo.category=='客户管户机构调整'">
+        </div>
+        <div ng-include="'areas/backlog/child/partner.html'" ng-if="backlogInfo.category=='合作伙伴'">
+        </div>
+        <div ng-include="'areas/backlog/child/thingsend.html'" ng-if="backlogInfo.category=='合作事项移交'">
+        </div>
+        <div ng-include="'areas/backlog/child/partnerseerole.html'" ng-if="backlogInfo.category=='合作伙伴查看权限申请'">
+        </div>
+    </ion-content>
+    <ion-footer-bar style="height:44px;">
+        <button class="button button-icon" ng-click="goBack()" ng-if="backlogInfo.category=='客户数据查看权限' || backlogInfo.category=='客户管户机构调整'">驳回</button>
+        <button ng-click="goAuditing()" class="btn-auditing">审批</button>
+    </ion-footer-bar>
+</ion-view>

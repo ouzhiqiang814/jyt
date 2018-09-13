@@ -1,0 +1,144 @@
+<ion-view class="begin-right">
+    <div>
+        <ion-side-menus id="finishedtaskList">
+            <ion-header-bar class="bar-energized" align-title="center" style=""
+                            id="headerBar">
+                <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+                <h1 class="title">已办事项查询</h1>
+                <button class="button button-icon ion-search" menu-toggle="right"></button>
+            </ion-header-bar>
+            <ion-side-menu-content drag-content="false">
+                <ion-content style="background-color: #f0f0f0">
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list id="finishedtaskIocList">
+                        <ion-item class="finishedtask-item" ng-repeat="item in items" on-finish-render-filters
+                                  ng-click="finishedtaskItemClick(item)">
+                            <div class="finishedtask-item-up-div" style="">
+                                <div ng-show="item.level==3?true:false" class="finishedtask-item-important-div">
+                                    <img class="finishedtask-item-important-img" image-lazy-src="img/finishedtask/jiaji.png"
+                                         alt="" image-lazy-loader="android">
+                                </div>
+                                <div class="finishedtask-item-img-left">
+                                    <img image-lazy-src="{{item.statusrc}}" alt="" image-lazy-loader="android">
+                                </div>
+                                <div class="finishedtaskContent">
+                                    <span class="finishedtask-item-title">{{item.title}}</span>
+                            <span class="finishedtask-item-text">
+                                由
+                                <em ng-class="item.type=='xt'?'finishedtask-item-name-xt':item.type=='yx'?'finishedtask-item-name-yx':'finishedtask-item-name-kh'">{{item.people}}</em>
+                                发起于{{item.date}}
+                            </span>
+                                </div>
+                                <div class="finishedtaskProgress">
+                                    <div style="margin-top: 5px;margin-right:10px;" class="GaugeMeter"
+                                         data-percent="{{item.percent}}" data-append="%"
+                                         data-size="50" data-color="{{item.color}}" data-width="4"
+                                         data-animate_gauge_colors="0" data-animate_text_colors="1"
+                                         data-label="" data-style="Arch" data-label_color="#b8b8b8"></div>
+                                    <span class="finishedtaskProgressText">{{item.post}}</span>
+                                </div>
+                            </div>
+                            <div class="finishedtask-item-down-div">
+                                <div class="finishedtask-item-down-left">
+                                    {{item.step}}
+                                </div>
+                                <div class="finishedtask-item-down-right">
+                                    下一审批人：{{item.next}}
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="finishedtask-item"  ng-click="clues()">
+                            <div class="finishedtask-item-up-div" style="">
+
+                                <div class="finishedtask-item-img-left">
+                                    <img src="img/finishedtask/xt.png" alt="" >
+                                </div>
+                                <div class="finishedtaskContent">
+                                    <span class="finishedtask-item-title">线索创建0519-2</span>
+                            <span class="finishedtask-item-text">
+                                由
+                                <em ng-class="finishedtask-item-name-xt" style="color: #0c93e1">丁亮</em>
+                                    发起于2017-05-19
+                            </span>
+                                </div>
+                                <div class="finishedtaskProgress">
+                                    <div style="margin-top: 5px;margin-right:10px;" class="GaugeMeter"
+                                         data-percent="50" data-append="%"
+                                         data-size="50" data-color="#0c93e1" data-width="4"
+                                         data-animate_gauge_colors="0" data-animate_text_colors="1"
+                                         data-label="" data-style="Arch" data-label_color="#b8b8b8"></div>
+                                    <span class="finishedtaskProgressText">部门副经理</span>
+                                </div>
+                            </div>
+                            <div class="finishedtask-item-down-div">
+                                <div class="finishedtask-item-down-left">
+                                    环节：直属领导审批
+                                </div>
+                                <div class="finishedtask-item-down-right">
+                                    上一步审批人：丁亮
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="finishedtask-item"  ng-click="chance()">
+                            <div class="finishedtask-item-up-div" style="">
+
+                                <div class="finishedtask-item-img-left">
+                                    <img src="img/finishedtask/xt.png" alt="" >
+                                </div>
+                                <div class="finishedtaskContent">
+                                    <span class="finishedtask-item-title">机会创建0519-2</span>
+                            <span class="finishedtask-item-text">
+                                由
+                                <em ng-class="finishedtask-item-name-xt" style="color: #0c93e1">丁亮</em>
+                                    发起于2017-05-19
+                            </span>
+                                </div>
+                                <div class="finishedtaskProgress">
+                                    <div style="margin-top: 5px;margin-right:10px;" class="GaugeMeter"
+                                         data-percent="50" data-append="%"
+                                         data-size="50" data-color="#0c93e1" data-width="4"
+                                         data-animate_gauge_colors="0" data-animate_text_colors="1"
+                                         data-label="" data-style="Arch" data-label_color="#b8b8b8"></div>
+                                    <span class="finishedtaskProgressText">部门副经理</span>
+                                </div>
+                            </div>
+                            <div class="finishedtask-item-down-div">
+                                <div class="finishedtask-item-down-left">
+                                    环节：直属领导审批
+                                </div>
+                                <div class="finishedtask-item-down-right">
+                                    上一步审批人：丁亮
+                                </div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                </ion-content>
+            </ion-side-menu-content>
+            <ion-side-menu side="right">
+                <header class="bar bar-header bar-stable">
+                </header>
+                <ion-content class="has-header">
+                    <div class="item item-input">
+                        <div class="input-label">
+                            申请标题
+                        </div>
+                        <input type="text" id="auditTitle">
+                    </div>
+                    <div class="item item-input">
+                        <div class="input-label">
+                            申请人
+                        </div>
+                        <input type="text" id="auditPeople">
+                    </div>
+                </ion-content>
+                <ion-footer-bar style="height: 9%;padding: 0;">
+                    <button class="btn-reset" ng-click="func_reset()">重 置
+                    </button>
+                    <button class="btn-ok" ng-click="func_ok()">完 成
+                    </button>
+                </ion-footer-bar>
+            </ion-side-menu>
+        </ion-side-menus>
+    </div>
+</ion-view>

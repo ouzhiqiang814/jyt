@@ -1,0 +1,33 @@
+<ion-content id="personCustomerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh6()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items6.length != 0" ng-repeat="info in items6">
+            <div class="cus-basic-info">
+                <em>资产编号:</em>
+                <em>{{info.AST_ID}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>资产类型:</em>
+                <em>{{info.AST_TPCD == '*'?'*':info.AST_TPCDNm}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>资产评估价值（万元）:</em>
+                <em>{{info.AST_ASES_VAL}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>资产描述:</em>
+                <em>{{info.AST_DSC}}</em>
+            </div>
+        </ion-item>
+        <!--<ion-item class=""  style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+        </ion-item>-->
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state6" on-infinite="loadMore6()" distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div ng-if="items6.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

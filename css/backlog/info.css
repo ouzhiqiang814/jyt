@@ -1,0 +1,379 @@
+#backlogInfo .backlogInfo_div {
+    height:50px;
+    padding: 15px;
+    border-bottom:2px #f0f0f0 solid;
+}
+#backlogInfo .backlogInfo_div .backlogInfo_title {
+    margin-left:10px;
+    height:30px;
+}
+#backlogInfo .backlogInfo_div .backlogInfo_title .backlogInfo_title_label {
+    font-size: 15px;
+    color:#1A1A1A;
+}
+#backlogInfo .backlogInfo_div .backlogInfo_note {
+    margin-left:10px;
+    font-size: 13px;
+    color:#999999;
+}
+#backlogInfo .backlogInfo_div .goDetail {
+    position:absolute;
+    right:10px;
+    font-size: 15px;
+    color:#999;
+}
+#backlogInfo .btn-auditing {
+    color: #01B0E9;
+    font-size: 16px;
+    background-color: #E6F9FF;
+    position: absolute;
+    right: 0;
+    border: none;
+    letter-spacing: 10px;
+    height: 43px;
+    display: inline-block;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
+#backlogInfo .backlogInfo_base_info {
+    height: 50px;
+    width: 100%;
+    white-space: normal;
+    padding: 15px;
+    border-bottom:2px #f0f0f0 solid;
+}
+#backlogInfo .backlogInfo_base_info label {
+    font-size: 15px;
+    color:#333333;
+}
+#backlogInfo .backlogInfo_base_info em {
+    font-size: 15px;
+    color:#999;
+    left: 155px;
+    position: absolute;
+    vertical-align: middle;
+}
+#backlogInfo .list-data-info-item {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    padding: 10px 0px 0px 20px;
+    border-top-color:#f0f0f0;
+}
+#backlogInfo .list-data-info {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    padding-bottom: 15px;
+}
+#backlogInfo .list-data-info em{
+    font-size:14px;
+    color:#4d4d4d;
+}
+
+#backlogInfo .tsb-hscroll.scroll-view{
+    white-space:nowrap;
+    margin:0px;
+}
+
+#backlogInfo .second_title{
+    height:30px;
+    background-color:#f0f0f0;
+    line-height: 30px;
+}
+#backlogInfo .second_title .label{
+    font-size:15px;
+    color:#999999;
+    padding-left:15px;
+}
+
+
+#backlogInfoHistory .history-info-item {
+    height: 130px;
+    width: 100%;
+    padding:12px;
+}
+
+#backlogInfoHistory .history-info {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+}
+#backlogInfoHistory .history-info em{
+    color:#1A1A1A;
+    font-size:15px;
+}
+#backlogInfoHistory .history-img-left{
+    position:absolute;
+    top: 45px;
+    left:18px;
+    width: 65px;
+    height: 65px;
+    border-color: #d6d6d6;
+    border:1px;
+    box-shadow: 1px 1px 5px 1px #E8E8E8;
+    border-radius:3px;
+    text-align: center;
+}
+#backlogInfoHistory .history-img-left img{
+    width: 50px;
+    height: 50px;
+    margin-top:7px;
+}
+#backlogInfoHistory .history-img-right-info{
+    width: 75%;
+    position:absolute;
+    top: 65px;
+    left:94px;
+}
+#backlogInfoHistory .history-img-right-info em{
+    color:#999999;
+    font-size:15px;
+}
+
+#backlogInfoPersonInfo .person-info-item {
+    height: 50px;
+    width: 100%;
+    white-space: normal;
+    padding: 15px;
+}
+#backlogInfoPersonInfo .person-base-info label {
+    font-size: 15px;
+    color:#333333;
+}
+#backlogInfoPersonInfo .person-base-info em {
+    font-size: 15px;
+    color:#999;
+    left: 125px;
+    position: absolute;
+    vertical-align: middle;
+}
+#backlogInfoAuditing .backlogInfo_div {
+    height:50px;
+    padding: 15px;
+    border-bottom:2px #f0f0f0 solid;
+}
+#backlogInfoAuditing .backlogInfo_div .backlogInfo_title {
+    margin-left:10px;
+    height:30px;
+}
+#backlogInfoAuditing .backlogInfo_div .backlogInfo_title .backlogInfo_title_label {
+    font-size: 15px;
+    color:#1A1A1A;
+}
+#backlogInfoAuditing .backlogInfo_div .backlogInfo_note {
+    margin-left:10px;
+    font-size: 13px;
+    color:#999999;
+}
+#backlogInfoAuditing .goDetail {
+    position:absolute;
+    right:10px;
+    font-size: 15px;
+    color:#999;
+    padding-top:7px;
+}
+
+
+#synergyclues .backlogInfo_div {
+  padding: 10px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+/*#synergyclues .input-label{
+    display: inline-block;
+    vertical-align: middle;
+}*/
+
+#backlogInfoList .item{
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#synergyclues .backlogInfo_div .input-label:nth-child(2){
+    width:66%;
+}
+
+#synergyclues .backlogInfo_div .backlogInfo_title .backlogInfo_title_label {
+    font-size: 15px;
+    color:#1A1A1A;
+}
+#synergyclues .backlogInfo_div .backlogInfo_note {
+    margin-left:10px;
+    font-size: 13px;
+    color:#999999;
+}
+#synergyclues .backlogInfo_div .goDetail {
+    position:absolute;
+    right:10px;
+    font-size: 15px;
+    color:#999;
+}
+
+#synergyclues .item{
+    white-space: inherit;
+}
+
+#synergyclues .synergymsg .item{
+    border-width:0;
+}
+
+
+.bar-footer {
+    padding: 1px 0;
+}
+
+#backlogInfoAuditing .searchbtn {
+    width: 80%;
+    background-color: #eeb81a;
+    margin: 0 auto;
+    color: #fff;
+    -moz-border-radius: 42px;
+    -webkit-border-radius: 42px;
+    border-radius: 42px;
+}
+
+#backlogInfoAuditing .tijiao{
+    font-size: 0.25rem;
+    letter-spacing: 0.5rem;
+    line-height: 0;
+    height: 0;
+    padding: 5% 0;
+}
+
+
+#backlogInfoAuditing .checkbox input, .checkbox-icon {
+    width: 20px;
+    height: 20px;
+}
+
+#backlogInfoAuditing .item-checkbox .checkbox{
+    top: 60%;
+}
+#backlogInfoAuditing  .checkbox input:after, .checkbox-icon:after{
+    top: 27%;
+    left: 22.4%;
+    width: 11px;
+    height: 6px;
+}
+
+#backlogInfoAuditing .checkbox input:checked+.checkbox-icon:before, .checkbox input:checked:before {
+    background: #66cc33;
+    border-color: #66cc33;
+}
+
+
+/* 选择审批人 */
+#synergyselect .list li{
+    padding:4% 7%;
+    letter-spacing: 0.02rem;
+}
+#synergyselect .list li span{
+    display: inline-block;
+}
+#synergyselect .list li span:nth-child(1){
+    width:40%
+}
+#synergyselect .list li span:nth-child(2){
+    width:55%;
+}
+#synergyselect .list .title{
+    font-size: 0.26rem;
+    color: #000;
+}
+#synergyselect .list ul li{
+    font-size: 0.25rem;
+    color: #969696;
+}
+#synergyselect .item-radio .item-content{
+    padding:0;
+}
+#synergyselect .item-radio .radio-icon{
+    padding: 2% 5%;
+}
+
+.bar button:active{
+    background:#ccc!important;
+}
+#alreadyQueryCooptnBscInf .checkbox input:checked+.checkbox-icon:before,#alreadyQueryCooptnBscInf .checkbox input:checked:before{
+    background: #ddd;
+    border-color: #ddd;
+}
+
+
+
+
+
+/* 左列宽度 修改 */
+#synergyclues .input-label {
+    vertical-align: middle;
+    max-width: initial;
+    padding: 0;
+    margin:0;
+    font-size: .25rem;
+    color:#000;
+}
+#synergyclues .input-label:nth-child(1){
+    margin-right:3%;
+    color:#999;
+}
+.backlogInfo_div .backlogInfo_title {
+    margin-left: 10px;
+    margin-right: 1%;
+}
+
+#synergyclues ol .backlogInfo_div .backlogInfo_title {
+    margin-left: 10px;
+    width: initial;
+    margin-right: 5%;
+}
+.item-checkbox{
+    padding:16px 26px!important;
+    font-family: "Microsoft Yahei", sans-serif;
+    font-size:.25rem;
+    color:#999;
+}
+.biaotou{
+    margin-left:10px!important;
+    width:initial;
+}
+.riqi{
+    font-size: 15px;
+    position: relative;
+    top: 3px;
+}
+.zuokuang .backlogInfo_title{
+    width:initial;
+    margin-right:5%!important;
+}
+.zuokuang2 .backlogInfo_title {
+    width: 76px;
+    margin-right: 5%!important;
+}
+
+#diaocha {
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#cstDetail{
+  background: transparent;
+}
+
+#cstDetail .item-input{
+  margin:  0 10px;
+  background-color: #fff;
+}
+
+#cstDetail .item-input:first-child{
+    border-top-left-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+    margin-top: 10px;
+}
+
+#cstDetail .item-input:last-child{
+border-bottom-right-radius:10px 10px;
+  border-bottom-left-radius:10px 10px;
+}

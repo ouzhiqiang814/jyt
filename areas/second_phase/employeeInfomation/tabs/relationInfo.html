@@ -1,0 +1,20 @@
+<ion-content style="overflow: scroll;margin-bottom: 60px;">
+    <!-- <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="">
+    </ion-refresher>  -->
+    <div class="list ow-list-bottom">
+        <div class="item" ng-class="{'ow-radius-top':item.top,'ow-radius-bottom':item.bottom}" ng-repeat="item in relBaseInfo">
+            <span class="ow-span-title {{item.class}} ow-span-left ow-com-font-size">{{ item.title }}</span>
+            <span class="item-note ow-span-right ow-com-font-size">{{ item.info }}</span>
+        </div>
+    </div>
+    <div class="list ow-list-bottom">
+        <div class="item" ng-class="{'ow-radius-top':item.top,'ow-radius-bottom':item.bottom}" ng-repeat="item in relSecInfo">
+            <span class="ow-span-title {{item.class}} ow-span-left ow-com-font-size">{{ item.title }}</span>
+            <span class="item-note ow-span-right ow-com-font-size">{{ item.info }}</span>
+        </div>
+    </div>
+
+</ion-content>
+<div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="relBaseInfo.length==0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div> 

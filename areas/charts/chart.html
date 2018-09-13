@@ -1,0 +1,76 @@
+<ion-view id="chart" view-title="首页" cache-view="true">
+
+	<ion-header-bar align-title="center" class="bar-light" id="header-bar">
+		<b class="title top-title">图表</b>
+		<select class="menu"
+			ng-model="selectValue" 
+			ng-options="item.id as item.value for item in datas">
+			<option value="">饼图</option>
+		</select>
+	</ion-header-bar>
+
+	<ion-content id="content">
+		<div ng-switch="selectValue">
+			<div ng-switch-default >
+				<div ng-include="'areas/charts/pie.html'">
+				</div>
+			</div>
+			<div ng-switch-when="1">
+				<div ng-include="'areas/charts/scatter.html'">
+				</div>
+			</div>
+			<div ng-switch-when="2">
+				<div ng-include="'areas/charts/line.html'">
+				</div>
+			</div>
+			<div ng-switch-when="3">
+				<div ng-include="'areas/charts/bar.html'">
+				</div>
+			</div>
+			<div ng-switch-when="4">
+				<div ng-include="'areas/charts/map.html'">
+				</div>
+			</div>
+			<div ng-switch-when="5">
+				<div ng-include="'areas/charts/radar.html'">
+				</div>
+			</div>
+			<!--<div ng-switch-when="6">
+				<div ng-include="'areas/charts/k_line.html'">
+				</div>
+			</div>
+			<div ng-switch-when="7">
+				<div ng-include="'areas/charts/box_line.html'">
+				</div>
+			</div>
+			<div ng-switch-when="8">
+				<div ng-include="'areas/charts/hot.html'">
+				</div>
+			</div>-->
+			<div ng-switch-when="9">
+				<div ng-include="'areas/charts/relation.html'">
+				</div>
+			</div>
+			<!--<div ng-switch-when="10">
+				<div ng-include="'areas/charts/rect.html'">
+				</div>
+			</div>
+			<div ng-switch-when="11">
+				<div ng-include="'areas/charts/parallel.html'">
+				</div>
+			</div>
+			<div ng-switch-when="12">
+				<div ng-include="'areas/charts/sankey.html'">
+				</div>
+			</div>-->
+			<div ng-switch-when="13">
+				<div ng-include="'areas/charts/funnel.html'">
+				</div>
+			</div>
+			<div ng-switch-when="14">
+				<div ng-include="'areas/charts/dashboard.html'">
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

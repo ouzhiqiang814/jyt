@@ -1,0 +1,286 @@
+#integralquery .scroll {
+    position: absolute;
+    bottom: 48px;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#integralquery .overflow-scroll{
+     overflow-y: hidden;
+ }
+
+#integralquery .button {
+    margin-bottom: 0px;
+    color: #ffffff;
+}
+
+
+
+/** tab滑动样式个性化  **/
+#integralquery .slidingTabs {
+    margin-top: 0px;
+}
+
+#integralquery  .slider{
+    height: 97%;
+}
+
+#integralquery .scroll-bar-v{
+    display: none;
+}
+
+#integralquery .slidingTabs ul li {
+    width: 50%;
+}
+
+
+
+#integralquery {
+    background: white;
+    -webkit-transition-property: opacity, top;
+    transition-property: opacity, top;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -webkit-animation: pop .5s forwards;
+    animation: pop .5s forwards;
+}
+
+#person .item {
+    border-width: 0.8px;
+}
+
+#organizationintegralquery .item {
+    border-width: 0px;
+}
+
+#orgdata .item {
+    border-width: 0.8px;
+}
+
+#personintegralquery  .item {
+    border-width: 0px;
+}
+
+#organization .item {
+    border-width: 0.8px;
+}
+
+#integralquery .bar-footer{
+    bottom: 12%;
+    background-color: #f0f0f0;
+    border-top-width:0px;
+    background-image: linear-gradient(0deg,#f0f0f0,#f0f0f0 50%,transparent 50%);
+}
+
+/* 查询侧滑栏 */
+.hidden{
+    background: rgba(0,0,0,0.6);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+.hidden .ceng{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.cehua .kuang, .cehua2 .kuang{
+    position: fixed;
+    right: -72%;
+    top: 0;
+    height: 100%;
+    width: 72%;
+    max-width: 400px;
+    background: #F5F5F5;
+    overflow: scroll;
+}
+
+.cehua .lei{
+    padding:2% 8%;
+    color:#C2BEC3;
+}
+.cehua .kuang ul {
+    background: #fff;
+}
+.cehua .kuang ul li {
+    padding: 5% 8%;
+    font-family: "microsoft yahei";
+    border-bottom: 1px solid #F6F6F6;
+    font-size:0.25rem;
+}
+.cehua .kuang ul li:last-child {
+    border-bottom:none;
+}
+
+
+.searchlei {
+    background: #FAFAFA;
+    position: fixed;
+    width: 72%;
+    max-width: 400px;
+    padding: 10px 0;
+    margin-top: 43px;
+    z-index: 2;
+}
+.searchlei ol{
+    background: #fff;
+    width: 90%;
+    padding: 0;
+    padding-left: 4%;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+.searchlei img {
+    width: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.searchlei input {
+    width: 80%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 7px 0;
+    background: none;
+    text-align: center;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 0.03rem;
+}
+.searchlei input::-webkit-input-placeholder {
+    color:#7FD7F3;
+    letter-spacing: 0.2rem;
+}
+.searchlei input:-moz-placeholder {
+    color: #7FD7F3;
+    letter-spacing: 0.2rem;
+}
+.searchlei input::-moz-placeholder {
+    color: #7FD7F3;
+    letter-spacing: 0.2rem;
+}
+.searchlei input:-ms-input-placeholder {
+    color: #7FD7F3;
+    letter-spacing: 0.2rem;
+}
+
+.cehua .kuang dl {
+    margin-top: 96px;
+}
+
+.fenclass{
+    width:92%;
+    display: inline-block;
+    vertical-align: top;
+    float:left
+}
+.toplace {
+    width: 7%;
+    display: inline-block;
+    font-size: 0.18rem;
+    background: #fff;
+    height: 76%;
+    position: fixed;
+    padding-top: 2%;
+    right: 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/* Let's do some animations! */
+@-webkit-keyframes pop {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pop {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes poprev {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@keyframes poprev {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@-webkit-keyframes popup {
+    from {
+        top: 10px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes popup {
+    from {
+        top: 10px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}

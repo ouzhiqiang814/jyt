@@ -1,0 +1,50 @@
+<ion-view id="moremenu">
+    <div>
+        <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+            <button ng-click="func_goBack()" class="button button-icon ion-ios-arrow-left"></button>
+            <h1 class="title">更多</h1>
+        </ion-header-bar>
+
+        <ion-content has-header="true" scroll="false">
+            <nav id="nav">
+                <ul>
+                    <li ng-class="$index==0?'nav-current':'nav-blur'"
+                        ng-repeat="item in categoryData"
+                        ng-click="categoryLeftClick($event);getCategoryDetailData(item.typeNumber)">
+                        {{item.name}}
+                    </li>
+                </ul>
+            </nav>
+            <div id="pro">
+                <ion-content lazy-scroll>
+                    <div class="pro-scroll">
+                        <div class="pro-warp">
+                            <div ng-repeat="item in categoryDetailData">
+                                <div class="content">
+                                    <div class="content-title">
+                                        <img ng-src="{{item.src}}" style="width: 25px;float: left"/> <span
+                                            style="float: left;padding-top: 4px" ng-bind="item.title"></span>
+                                    </div>
+                                    <!-- <div style="top: 35px;position: absolute;height: 2px;width: 100%;background-color: #f0f0f0"></div> -->
+                                    <div class="content-body">
+                                        <ul>
+                                            <a   ng-repeat="item1 in item.data" href="#/{{item1.sref}}">
+                                                <li class="content-body-list">
+                                                    <!--ui-sref="goodsList({typeNumber:{{item.typeNumber}}})">-->
+                                                    <div class="content-body-div">
+                                                        <span>{{item1.name}}</span>
+                                                    </div>
+                                                </li>
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-content>
+
+            </div>
+        </ion-content>
+    </div>
+</ion-view>

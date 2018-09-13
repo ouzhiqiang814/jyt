@@ -1,0 +1,106 @@
+<ion-content id="partnerInfoChild">
+    <ion-list style="display: block" class="duban-list">
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>督办频次：</em>
+                <em>{{basic.sprvTpCdNm}}</em>
+            </div>
+        </ion-item>
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>督办类型：</em>
+                <em>{{basic.mtgTpCdNm}}</em>
+            </div>
+        </ion-item>
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>*会议名称：</em>
+                <em>{{basic.mtgNm}}</em>
+            </div>
+        </ion-item>
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>督办人：</em>
+                <em>{{basic.sprvRsplPsnNm}}</em>
+            </div>
+        </ion-item>
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>督办人部门：</em>
+                <em>{{basic.sprvRsplPsnDeptNm}}</em>
+            </div>
+        </ion-item>
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>创建时间：</em>
+                <em>{{basic.stTm}}</em>
+            </div>
+        </ion-item>
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>会议事项描述：</em>
+                <em>{{basic.mtgItmDsc}}</em>
+            </div>
+        </ion-item>
+        <ion-item class="partner-base-item">
+            <div class="partner-base-info">
+                <em>督办状态：</em>
+                <em>{{basic.sprvStCdNm}}</em>
+            </div>
+        </ion-item>
+
+        <!-- <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px; padding:0; padding-bottom:11px; margin-bottom: 0">
+        </ion-item> -->
+    </ion-list>
+
+    <ion-list ng-if="flag&&actLinkId!='ACT3'">
+        <div style="border: none;">
+            <ion-item class="partner-base-item" style="width: initial">
+                <div class="partner-base-info">
+                    <em class="dbzt-left">审批人员：</em>
+                    <em style="margin: 0">{{shenpi.aprvEmpNm}}</em>
+                </div>
+            </ion-item>
+            <ion-item class="partner-base-item" style="width: initial">
+                <div class="partner-base-info">
+                    <em class="dbzt-left">审批时间：</em>
+                    <em style="margin: 0">{{shenpi.aprvTm}}</em>
+                </div>
+            </ion-item>
+            <ion-item class="partner-base-item" style="width: initial;padding-bottom:8px;">
+              <div class="partner-base-info">
+                <div style="font-size: 0.25rem!important;height: 40px;color: #a2a2a2;">审批结果：</div>
+                <div class="" style="text-align: center;">
+                    <ion-item class="item-checkbox" style="padding-left: 16px;border:0;">
+                      <label class="checkbox">
+                            <input type="radio" style="float: left;" name="aprvResult" checked="" value="1">
+                        </label>同意
+                    </ion-item>
+                    <ion-item class="item-checkbox" style="padding-left: 16px;border:0;">
+                        <label class="checkbox">
+                            <input type="radio" style="float: left;"  name="aprvResult" value="0">
+                        </label>不同意
+                    </ion-item>
+                    <ion-item class="item-checkbox" style="padding-left: 16px;border:0;">
+                        <label class="checkbox">
+                            <input type="radio" style="float: left;"  name="aprvResult" value="4">
+                        </label>退回
+                    </ion-item>                   
+                  </div>
+              </div>
+            </ion-item>
+
+
+            <ion-item class="partner-base-item" style="width: initial">
+                <div class="partner-base-info">
+                    <em style="width:initial; margin-right:2%;vertical-align: top;">审核意见：</em>
+                    <textarea style="margin-top:0;padding-top:3px; height:150px;width:63%;display:inline-block"  onfocusin="if(this.value=='点此处，最多输入1000字'){this.value=''}" onfocusout="if(this.value==''){this.value='点此处，最多输入1000字'; this.className=''}" oninput="this.className='hasvalue'" name="aprvOpns" id="aprvOpns" rows="5" cols="95">点此处，最多输入1000字</textarea>
+                </div>
+            </ion-item>
+        </div>
+    </ion-list>
+
+    <!--<ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 25px">
+    </ion-item>-->
+    <div style="height: 110px"></div>
+</ion-content>

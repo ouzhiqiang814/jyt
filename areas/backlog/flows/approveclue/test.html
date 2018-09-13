@@ -1,0 +1,29 @@
+<ion-content>
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载"
+                   on-refresh="doGetProjCooTeamListData_refresh()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item
+                style="font-size: 13px;line-height: 26px;border-color:#f0f0f0;border-left-color: #fff;"
+                class="partner-item" ng-repeat="item in doGetProjCooTeamListData">
+            <div class="partnerItemInfo">
+                <em>协同机构：{{item.instNm}}</em>
+            </div>
+            <div class="partnerItemInfo">
+                <em>协同接口人：{{item.crtEmpNm}}</em>
+            </div>
+            <div class="partnerItemInfo">
+                <em>合作伙伴：{{item.cooPtnNm}}</em>
+            </div>
+            <div class="partnerItemInfo">
+                <em>协同内容描述：{{item.colCntDsc}}</em>
+            </div>
+        </ion-item>
+        <!--   <ion-item style="border: 0px"></ion-item>-->
+
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state"
+                         on-infinite="doGetProjCooTeamListData_loadMore()"
+                         distance="60px">
+    </ion-infinite-scroll>
+</ion-content>

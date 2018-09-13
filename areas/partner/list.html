@@ -1,0 +1,79 @@
+<ion-view>
+    <div>
+        <ion-side-menus id="partnerList" class="begin-right">
+            <ion-header-bar class="bar-energized" align-title="center">
+                <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+                <h1 class="title">合作伙伴查询</h1>
+                <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+            </ion-header-bar>
+            <ion-side-menu-content drag-content="false">
+                <ion-content>
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list id="partnerionlist">
+                        <ion-item class="partner-item" ng-repeat="item in items" ng-click="partnerItemClick(item)">
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">合作伙伴名称：</div>
+                                <div class="hz-right">{{item.cooPtnNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">合作伙伴类型：</div>
+                                <div class="hz-right">{{item.cooPtnTpCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">所属行业：</div>
+                                <div class="hz-right">{{item.cooIdyCdNm}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">管理机构：</div>
+                                <div class="hz-right">{{item.blngDeptName}}</div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()"
+                                         distance="1%">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="items.length == 0">
+                    <div class="empty" ><p>暂无数据 ...</p></div>
+                </div>
+            </ion-side-menu-content>
+
+            <!-- 右侧菜单 -->
+            <ion-side-menu style="z-index: initial">
+                <nav class="hidden  cehua">
+                    <p class="ceng" ng-click="guan()"></p>
+                    <div class="kuang">
+                        <ion-content class="has-header">
+                            <div class="item item-input">
+                                <div class="input-label">合作伙伴名称：</div>
+                                <input type="text" id="cooPtnNm" name="cooPtnNm" placeholder="请输入名称" style="text-align:right;">
+                            </div>
+                            <div class="item item-input item-select">
+                                <div class="input-label">合作伙伴类型：</div>
+                                <select id="cooPtnTpCd" name="cooPtnTpCd">
+                                    <option value="">全部</option>
+                                    <option value="{{item.codeValue}}" ng-repeat="item in cooPtnTpCdData">{{item.codeName}}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="shanxian"></div>
+                            <!--  闪现 必加  -->
+                        </ion-content>
+                        <ion-footer-bar style="height:43px; padding: 0;">
+                            <button class="btn-reset" ng-click="func_reset()">重 置
+                            </button>
+                            <button class="btn-ok" ng-click="func_ok()">完 成
+                            </button>
+                        </ion-footer-bar>
+                    </div>
+                </nav>
+            </ion-side-menu>
+
+
+
+        </ion-side-menus>
+    </div>
+</ion-view>

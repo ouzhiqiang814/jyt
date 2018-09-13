@@ -1,0 +1,77 @@
+<div ng-if="xiangmu5.length != 0" class="feikong">
+    <ion-content>
+        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh5()">
+        </ion-refresher>
+        <div class="synergymsg">
+            <div class="synergymsg" ng-repeat="item in xiangmu5">
+                <div class="item item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                        活动标题：
+                    </div>
+                    <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                        {{item.actyTitle}}
+                    </div>
+                </div>
+                <div class="item item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                        活动编号：
+                    </div>
+                    <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                        {{item.actySn}}
+                    </div>
+                </div>
+                <div class="item item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                        活动类型：
+                    </div>
+                    <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                        {{item.actyTpcdNm}}
+                    </div>
+                </div>
+                <div class="item item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                        执行时间：
+                    </div>
+                    <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                        {{item.exeDt}}
+                    </div>
+                </div>
+                <div class="item item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                        执行部门：
+                    </div>
+                    <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                        {{item.exeInsNm}}
+                    </div>
+                </div>
+                <div class="item item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                        执行人员：
+                    </div>
+                    <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                        {{item.exeEmpeNm}}
+                    </div>
+                </div>
+                <div class="item item-input backlogInfo_div">
+                    <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                        活动记录人员：
+                    </div>
+                    <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                        {{item.udtEmpNm}}
+                    </div>
+                </div>
+                <div class="" style="background-color: #f0f0f0;height: 4px;"></div>
+            </div>
+        </div>
+        <ion-infinite-scroll immediate-check="false" ng-if="finite_state5" on-infinite="loadMore5()" distance="1%">
+        </ion-infinite-scroll>
+        <!--<ion-item class="" style="height: 55px;border-width: 0px;background-color: #f0f0f0">
+        </ion-item>-->
+        <div style="height: 100px"></div>
+    </ion-content>
+</div>
+
+<div ng-if="xiangmu5.length == 0" style="width: 100%; height: 100%;"  class="weikong">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>
+

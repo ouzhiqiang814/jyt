@@ -1,0 +1,357 @@
+
+html{
+  font-family: "Microsoft Yahei", sans-serif !important;
+}
+#partnerInfo .mytab-scroll{
+    height:40px;
+    white-space: nowrap;
+    margin-top:10px;
+    SCROLLBAR-FACE-COLOR:blue;
+    SCROLLBAR-BASE-COLOR:blue;
+}
+#partnerInfo .mytab-scroll.scroll-view{
+    white-space: nowrap;
+    margin:0 auto;
+}
+#partnerInfo .mytab-scroll.scroll-view .scroll-bar{
+    visibility:hidden;
+}
+#partnerInfo .mytab-scroll.scroll-view .scroll.onscroll{
+    -webkit-transition: -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
+}
+#partnerInfo .mytab-scroll td{
+    width:30%;
+    height:100%;
+    font-size: 15px;
+    line-height: 1.5em;
+    text-decoration: none;
+    margin-left: 15px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:10px;
+    text-align:center;
+    color:#4d4d4d;
+}
+#partnerInfo .mytab-scroll td.active {
+    color: #6a3906;
+    border-bottom: 2px solid #6a3906;
+}
+
+#partnerInfoChild .partner-base-item {
+    width: 100%;
+    white-space: normal;
+    padding: 15px 3%;
+    border-top-color: #f0f0f0;
+}
+#partnerInfoChild .partner-base-info label {
+    font-size: 0.25rem;
+    color: #999;
+    width: 26%;
+    max-width: 138px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#partnerInfoChild .partner-base-info em {
+    font-size: 15px;
+    color: #000;
+    vertical-align: middle;
+    display: inline-block;
+    width: 68%;
+    /* margin-left: 3%; */
+}
+#partnerInfoChild .partner-basic-info-item {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    padding: 0;
+    padding-bottom: 0;
+    border-top-width: 0px;
+}
+#partnerInfoChild .partner-basic-info {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    /* padding-bottom: 15px; */
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px;
+}
+#partnerInfoChild .partner-base-info em,
+#partnerInfoChild .partner-basic-info em {
+    font-size: .25rem;
+    color: #999;
+    display: inline-block;
+    vertical-align: top;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+#partnerInfoChild .partner-base-info em:first-child,
+#partnerInfoChild .partner-basic-info em:first-child {
+    margin-right: 3%;
+    font-size: 0.25rem;
+    width:33%;
+}
+#partnerInfoChild .partner-base-info em:nth-child(2),
+#partnerInfoChild .partner-basic-info em:nth-child(2) {
+    width: 62%;
+    font-size: 0.25rem;
+    color:#000;
+    text-shadow: 0 0;
+}
+#partnerInfoChild .second_title{
+    height:30px;
+    background-color:#f0f0f0;
+    line-height: 30px;
+}
+#partnerInfoChild .second_title .label{
+    font-size:15px;
+    color:#999999;
+    padding-left:15px;
+}
+#partnerInfo .tsb-hscroll{
+    width: 100%;
+}
+#partnerInfo .tsb-hscroll a{
+    width: 50%;
+}
+
+#partnerInfoChild .getAttchFileList{
+    margin-bottom: 5px;
+}
+
+
+@media only screen and (min-width:500px) {
+    #partnerInfoChild .partner-base-info label {
+        font-size: 15px;
+    }
+    #partnerInfoChild .partner-base-info em {
+        font-size: 15px
+    }
+}
+
+/*���������������*/
+#partnerInfoChild .duban-list .partner-base-item {
+    padding: 15px 3%;
+}
+#partnerInfoChild .duban-list .partner-base-info label {
+    width: 30%!important;
+    max-width: initial;
+    text-align: left;
+    margin-right: 3%;
+    font-size: 0.25rem;
+    font-family: "microsoft Yahei", sans-serif;
+}
+#partnerInfoChild .duban-list .partner-base-info em {
+    margin-left: 0%;
+}
+
+#partnerInfoChild .duban-list2 .partner-base-item {
+    padding-right: 4%;
+}
+#partnerInfoChild .duban-list2 .partner-base-item {
+    padding-right: 4%;
+}
+#partnerInfoChild .duban-list2 .partner-base-info .dbzt-left {
+    font-size: 0.27rem;
+}
+#partnerInfoChild .duban-list2 .partner-base-info em {
+    width: 69%!important;
+    font-size: 0.27rem;
+    line-height: 142%;
+}
+#partnerInfoChild .duban-list2 .partner-base-info label {
+    font-size: 0.27rem;
+}
+#partnerInfoChild .duban-list2 .partner-base-info textarea{
+    width: 100%;
+    line-height: 21px;
+    color: #999;
+}
+#partnerInfoChild .duban-list2 .item-checkbox {
+    padding: 16px 7%!important;
+    font-size: 0.27rem;
+}
+#partnerInfoChild .duban-list2 .item-checkbox .checkbox {
+    right: 4%;
+}
+
+#partnerInfoChild .duban-list3 .partner-basic-info em{
+  font-size:.25rem;
+  font-family: "microsoft yahei";
+  display: inline-block;
+  vertical-align: top;
+}
+
+#partnerInfoChild .duban-list3 .partner-basic-info em:first-child {
+    width: 30%;
+    text-align: left;
+    margin-right: 3%;
+    font-size:.25rem;
+    color:#999;
+}
+#partnerInfoChild .duban-list3 .partner-basic-info em:nth-child(2) {
+    width: 62%!important;
+    color: #000;
+    font-size:.25rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#partnerInfoChild .duban-list3 .partner-basic-info-item {
+    padding: 12px 3%;
+    border-radius: 10px;
+    margin: 0 0 20px;
+}
+#partnerInfoChild .duban-list3 .item-checkbox,
+#partnerInfoChild .partner-base-info .item-checkbox{
+    padding: 5px 10px 5px 42px !important;
+    font-size: 0.25rem;
+    display: inline-block;
+    border:0 !important;
+    margin-top: -5px;
+    color:#000;
+}
+
+.duban-list3 .item-input {
+    padding: 6px 3%;
+}
+.duban-list3 .backlogInfo_div .input-label:first-child {
+    width: 34%;
+    text-align: left;
+    margin-left: 0;
+    font-size: 0.25rem!important;
+    font-family: "microsoft yahei";
+    color:#999;
+}
+.duban-list3 .backlogInfo_div  .input-label:nth-child(2) {
+    width: 70%!important;
+    padding-right: 0;
+    color: #000;
+    font-family: "microsoft yahei";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 0.25rem !important;
+}
+
+#partnerInfoChild .partner-basic-info textarea {
+    text-indent: 6%;
+    width: 100%;
+    color: #969696;
+    line-height: 142%;
+    padding: 0 3%;
+}
+#partnerInfoChild .duban-list3 .partner-basic-info textarea::-webkit-input-placeholder{
+    /* text-indent: 6%; */
+}
+#partnerInfoChild .duban-list3 .partner-basic-info textarea:-moz-placeholder{
+    /* text-indent: 6%; */
+}
+#partnerInfoChild .duban-list3 .partner-basic-info textarea::-moz-placeholder{
+    /* text-indent: 6%; */
+}
+#partnerInfoChild .duban-list3 .partner-basic-info textarea:-ms-input-placeholder{
+    /* text-indent: 6%; */
+}
+#partnerInfoChild .duban-list3 .partner-basic-info .item-checkbox .checkbox,
+#partnerInfoChild .partner-base-info .item-checkbox .checkbox {
+    /* text-indent: 6%; */
+    right:auto;
+    left:0;
+    width:92px !important;
+    vertical-align: top;
+}
+
+.checkbox .checkbox-icon:before, .checkbox input:before{
+  border-color:#999;
+}
+
+#partnerInfoChild .duban-list4  .partner-basic-info em:first-child {
+    margin-right: 3%;
+    font-size: 0.25rem;
+}
+#partnerInfoChild .duban-list4 .partner-basic-info em:nth-child(2) {
+    width: 62%;
+    font-size: 0.25rem;
+    color: #000;
+font-family: "microsoft Yahei";
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.ichecked-wrap{
+  display: inline-block;
+  width:62%;
+}
+
+#changecss29 .partner-basic-info-item{
+  padding: 0 !important;
+}
+
+#changecss29 .partner-basic-info{
+  padding: 15px 10px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+#changecss29 .partner-basic-info em{
+  vertical-align: top !important;
+}
+
+textarea::-webkit-input-placeholder{ /*WebKit browsers*/
+color: red;
+font-size: .25rem;
+}
+
+textarea::-moz-input-placeholder{ /*Mozilla Firefox*/
+color: red;
+font-size: .25rem;
+}
+
+textarea::-ms-input-placeholder{ /*Internet Explorer*/
+color: red;
+font-size: .25rem;
+}
+
+/* textarea:focus::-webkit-input-placeholder{
+  color: transparent;
+} */
+#partnerInfoChild .partner-basic-info textarea{
+  color:red;
+}
+#partnerInfoChild .partner-basic-info .hasvalue{
+  color:#000;
+}
+.list{
+  border-radius: 10px;
+  margin: 10px;
+  padding-bottom: 45px;
+}
+
+.list  .partner-base-item:first-child{
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+.list .partner-base-item:last-child{
+  border-bottom-right-radius:10px 10px;
+    border-bottom-left-radius:10px 10px;
+}
+
+.list .partner-basic-info-item{
+  border-radius: 10px
+}
+
+#basicInfoList .item-input{
+  background-color: #fff;
+  margin: 0 10px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+
+#basicInfoList .item-input:first-child{
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+  margin-top: 10px;
+}
+
+#basicInfoList .item-input:last-child{
+  border-bottom-right-radius:10px 10px;
+    border-bottom-left-radius:10px 10px;
+}

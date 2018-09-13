@@ -1,0 +1,18 @@
+<ion-tabs id="foot" class="tabs-icon-top tabs-color-active-positive tab-div">
+
+    <ion-tab title="首页中心" icon-off="bar-home-off tab-icon icon-left" icon-on="bar-home-on tab-icon icon-left" href="#/foot/index">
+        <ion-nav-view name="foot-index"></ion-nav-view>
+    </ion-tab>
+
+    <div id="foot-border">
+        <div ng-class="'border-div'">
+            <img ng-class="'img'" src="img/foot/logo.png" style="width: 32px; height: 32px;
+            position:relative; top:18%; left:18%;">
+        </div>
+    </div>
+
+    <ion-tab title="数据统计" icon-off="tab-count-off tab-icon" icon-on="tab-count-on tab-icon" href="#/foot/count">
+        <ion-nav-view name="foot-count"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>

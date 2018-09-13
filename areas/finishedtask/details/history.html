@@ -1,0 +1,26 @@
+<ion-view id="finishedtaskInfoHistory">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">审批历史</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="info in historys">
+                <ion-item class="history-info-item">
+                    <div class="history-info">
+                        <em>{{info.title}}</em>
+                    </div>
+                    <div class="history-img-left">
+                        <img image-lazy-src="{{info.portrait}}" alt="" image-lazy-loader="android">
+                    </div>
+                    <div class="history-img-right-info">
+                        <em>{{info.info}}</em>
+                    </div>
+                </ion-item>
+                <div style="text-align: center;" ng-show="$index<historys.length-1">
+                    <i class="icon ion-chevron-down"></i>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-content id="partnerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="partner-basic-info-item" ng-if="togethers.length != 0"  ng-repeat="info in togethers" ng-click="showTogetherInfo(info)">
+            <div class="partner-basic-info">
+                <div class="hz-left" style="width: 39%;">合作事由：</div>
+                <div class="hz-right">{{info.cooItemDsc}}</div>
+            </div>
+            <div class="partner-basic-info">
+                <div class="hz-left" style="width: 39%;">合作时间：</div>
+                <div class="hz-right">{{info.cooItemTm}}</div>
+            </div>
+            <div class="partner-basic-info">
+                <div class="hz-left" style="width: 39%;">对接部门：</div>
+                <div class="hz-right">{{info.deptName}}</div>
+            </div>
+            <div class="partner-basic-info">
+                <div class="hz-left" style="width: 39%;">对接人员：</div>
+                <div class="hz-right">{{info.empeName}}</div>
+            </div>
+            <div class="partner-basic-info">
+                <div class="hz-left" style="width: 39%;">是否具有查看权限：</div>
+                <div class="hz-right">{{info.limtInd}}</div>
+            </div>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+    </ion-infinite-scroll>
+    <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 20px">
+
+</ion-content>
+
+<div ng-if="togethers.length == 0">
+    <div class="empty"><span>暂无数据 ...</span></div>
+</div>

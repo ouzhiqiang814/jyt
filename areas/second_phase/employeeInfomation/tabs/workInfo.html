@@ -1,0 +1,20 @@
+<ion-content id="" style="overflow: scroll;margin-bottom: 60px;">
+    <!-- <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="">
+    </ion-refresher>  -->
+    <div class="list ow-list-bottom" ng-repeat="item in worknfo" >
+        <div class="item" ng-repeat="del in item.dels" ng-if="del.code" ng-class="{'ow-radius-top':del.top,'ow-radius-bottom':del.bottom}">
+            <span class="ow-span-title {{del.class}} ow-span-left ow-com-font-size">{{ del.title }}</span>
+            <span class="item-note ow-span-right ow-com-font-size">{{ del.info }}</span>           
+        </div>
+        <div class="item"  ng-repeat="del in item.dels" ng-if="del.codes" ng-class="{'ow-radius-top':del.top,'ow-radius-bottom':del.bottom}">
+            <span class="input-label ow-span-left">{{del.title}}</span>
+            <label class="item item-input">                   
+                <textarea cols="30" rows="4" readonly class="ow-span-right ow-com-font-size" style="background-color: #fff;">{{del.info}}</textarea>
+            </label>           
+        </div>
+    </div> 
+  
+</ion-content>
+<div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="worknfo.length==0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div> 

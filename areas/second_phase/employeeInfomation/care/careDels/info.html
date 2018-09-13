@@ -1,0 +1,49 @@
+<ion-view id="careDels">
+    <ion-header-bar class="bar-calm" id="header-bar"  align-title="center" >
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">员工关怀推送详情</h1>
+        <!-- <button ng-click="fnActionSheets()" class="button button-icon  ion-navicon" ng-if="item.pushStateBtn"></button> -->
+    </ion-header-bar>
+    <ion-content has-header="true" scroll="false">
+        <div class="list ow-list-bottom">
+            <div class="item ow-radius-top">
+                <span class="ow-span-title ow-span-left ow-com-font-size">关怀类型：</span>
+                <span class="item-note ow-span-right ow-com-font-size">{{ item.title }}</span>
+            </div>
+            <!-- <div class="item">
+                <span class="ow-span-title ow-span-left ow-com-font-size">创建人：</span>
+                <span class="item-note ow-span-right ow-com-font-size">{{ item.person }}</span>
+            </div> -->
+            <div class="item">
+                <span class="ow-span-title ow-span-left ow-com-font-size">创建时间：</span>
+                <span class="item-note ow-span-right ow-com-font-size">{{ item.createTime }}</span>
+            </div>
+            <!-- <div class="item">
+                <span class="ow-span-title ow-span-left ow-com-font-size">推送时间：</span>
+                <span class="item-note ow-span-right ow-com-font-size">{{ item.pushTime }}</span>
+            </div> -->
+            <!-- <div class="item">
+                <span class="ow-span-title ow-span-left ow-com-font-size">事件时间：</span>
+                <span class="item-note ow-span-right ow-com-font-size">{{ item.time }}</span>
+            </div>
+            <div class="item" style="height: 55px;">
+                <span class="ow-span-title ow-span-left ow-com-font-size">接收人员：</span>
+                <span class="item-note ow-span-right">
+                    <button class="button button-small button-stable" style="top:-5px;" ng-click="fnGetPersonsList()">查看列表</button>
+                </span>
+            </div> -->
+            <div class="item">
+                <span class="ow-span-title ow-span-left ow-com-font-size">节日祝语：</span>
+                <label class="item item-input" style="border: none;">                   
+                    <textarea cols="30" rows="4" readonly class="ow-span-right ow-com-font-size" style="background-color: #fff;line-height: 0.35rem;">{{item.info}}</textarea>
+                </label> 
+            </div>
+            <div class="item ow-radius-bottom">
+                <span class="ow-span-title ow-span-left ow-com-font-size">发送结果：</span>
+                <span class="item-note ow-span-right ow-com-font-size">{{ item.ifPush }}</span>
+            </div>
+
+        </div>
+    </ion-content>
+
+</ion-view>

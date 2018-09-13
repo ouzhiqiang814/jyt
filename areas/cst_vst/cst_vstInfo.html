@@ -1,0 +1,52 @@
+<ion-view id="synergyclues" class="begin-right" view-title="查看拜访记录" cache-view="true">
+    <ion-side-menus  class="cst_vstinfo">
+        <!--题头-->
+        <ion-header-bar align-title="center" class="bar-energized header-bar" id="header-bar">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left" style="color: #FFFFFF;"></button>
+            <h1 class="title" style="color: #FFFFFF;">查看拜访记录</h1>
+        </ion-header-bar>
+
+        <!-- 中间内容 -->
+        <ion-side-menu-content>
+            <ion-content has-header="true" id="content" scroll="false">
+				<tab-slide-box tab='0'>
+					<div class="tsb-icons">
+						<div class="tsb-ic-wrp">
+							<ion-scroll direction="x" class="tsb-hscroll">
+								<a href="javascript:;" class="">基本信息</a>
+								<a href="javascript:;" class="">拜访对象信息</a>
+								<a href="javascript:;" class="">拜访人信息</a>
+								<a href="javascript:;" class="">附件信息</a>
+								<a href="javascript:;" class="">任务列表</a>
+							</ion-scroll>
+						</div>
+					</div>
+					<div style="height:5px;background-color:#f0f0f0;"></div>
+					<ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+						<ion-slide>
+							<div ng-include="'areas/cst_vst/switch/basic.html'">
+							</div>
+						</ion-slide>
+						<ion-slide>
+							<div ng-include="'areas/cst_vst/switch/object.html'">
+							</div>
+						</ion-slide>
+						<ion-slide>
+							<div ng-include="'areas/cst_vst/switch/visiter.html'">
+							</div>
+						</ion-slide>
+						<ion-slide>
+							<div ng-include="'areas/cst_vst/switch/fujian.html'">
+							</div>
+						</ion-slide>
+						<ion-slide>
+							<div ng-include="'areas/cst_vst/switch/task.html'">
+							</div>
+						</ion-slide>
+					</ion-slide-box>
+				</tab-slide-box>
+			</ion-content>
+        </ion-side-menu-content>
+
+    </ion-side-menus>
+</ion-view>

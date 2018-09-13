@@ -1,0 +1,77 @@
+<ion-content>
+    <!-- <div class="backlogInfo_div" style="background-color: #f0f0f0;height: 30px;padding: 5px;">
+
+    </div> -->
+    <div class="synergymsg" id="diaocha" ng-repeat="item in list_down_tsk">
+      <!-- <div class="backlogInfo_title">
+          <em class="backlogInfo_title_label">任务列表</em>
+      </div> -->
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                任务编号：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.tskId}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                任务名称：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.tskNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                发起人：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.ittEmpNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                发起日期：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.ittDtStr}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                任务描述：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.tskDsc}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                任务状态：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.tskStCdNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                执行人：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.execEmpNm}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title  chak-left" style="">
+                执行日期：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.tskEdDtStr}}
+            </div>
+        </div>
+        <!--<div class="" style="background-color: #f0f0f0;height: 4px;"></div>-->
+    </div>
+    <!-- <div style="height:70px"></div> -->
+
+</ion-content>

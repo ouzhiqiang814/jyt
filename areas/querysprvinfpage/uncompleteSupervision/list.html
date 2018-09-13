@@ -1,0 +1,43 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-energized header-bar" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"
+                style="color: #FFFFFF;"></button>
+        <h2 class="title" style="color: #FFFFFF;">未完成事项</h2>
+    </ion-header-bar>
+    <ion-content>
+        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="fnRefresh()"></ion-refresher>
+        <ion-list ng-init="fnGetData()">
+            <ion-item  class="ow-list-card" ng-repeat="item in items">                
+                <div class="item">
+                    <span class="ow-span-title ow-span-left ow-com-font-size">反馈人</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.person }}</span>
+                </div>
+                <div class="item">
+                    <span class="ow-span-title  ow-span-left ow-com-font-size">反馈日期</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.time }}</span>
+                </div>
+                <div class="item">
+                    <span class="input-label ow-span-left">事项内容</span>
+                    <label class="item item-input" style="border: none;">                   
+                        <textarea cols="30" rows="3" readonly class="ow-span-right ow-com-font-size" style="background-color: #fff;">{{item.dsc}}</textarea>
+                    </label>           
+                </div>  
+                <div class="item">
+                    <span class="ow-span-title  ow-span-left ow-com-font-size">督办类型</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.type }}</span>
+                </div> 
+                <div class="item">
+                    <span class="ow-span-title  ow-span-left ow-com-font-size">完成状态</span>
+                    <span class="item-note ow-span-right ow-com-font-size">{{ item.state }}</span>
+                </div>
+                <div class="item">
+                    <span class="input-label ow-span-left">完成说明</span>
+                    <label class="item item-input" style="border: none;">                   
+                        <textarea cols="30" rows="3" readonly class="ow-span-right ow-com-font-size" style="background-color: #fff;">{{item.info}}</textarea>
+                    </label>           
+                </div>                     
+            </ion-item>                                          
+        </ion-list>
+        <ion-infinite-scroll immediate-check="false"  ng-if="finite_state"  on-infinite="fnLoadMore()"  distance="5px"></ion-infinite-scroll>        
+    </ion-content>
+</ion-view>

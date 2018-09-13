@@ -1,0 +1,73 @@
+<ion-view id="personCustomerInfo">
+
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">客户信息</h1>
+    </ion-header-bar>
+
+    <ion-content has-header="true" id="content" scroll="false">
+        <div class="tsb-icons">
+            <div class="tsb-ic-wrp" id="scroll_tab_div">
+                <ion-scroll direction="x" class="mytab-scroll">
+                    <table style="height:40px;">
+                        <tr style="height:100%">
+                            <td ng-class="scollTabIndex==0?'active':'sleep'" ng-click="slideChange(0)">基础信息</td>
+                            <td ng-class="scollTabIndex==1?'active':'sleep'" ng-click="slideChange(1)">证件信息</td>
+                            <td ng-class="scollTabIndex==2?'active':'sleep'" ng-click="slideChange(2)">联系信息</td>
+                            <td ng-class="scollTabIndex==3?'active':'sleep'" ng-click="slideChange(3)">工作与教育背景</td>
+                            <td ng-class="scollTabIndex==4?'active':'sleep'" ng-click="slideChange(4)">关联方信息</td>
+                            <td ng-class="scollTabIndex==5?'active':'sleep'" ng-click="slideChange(5)">资产信息</td>
+                            <td ng-class="scollTabIndex==6?'active':'sleep'" ng-click="slideChange(6)">不良评价信息</td>
+                            <td ng-class="scollTabIndex==7?'active':'sleep'" ng-click="slideChange(7)">管理机构信息</td>
+                            <td ng-class="scollTabIndex==8?'active':'sleep'" ng-click="slideChange(8)">管理团队信息</td>
+                            <td ng-class="scollTabIndex==9?'active':'sleep'" ng-click="slideChange(9)">客户标签</td>
+                        </tr>
+                    </table>
+                </ion-scroll>
+            </div>
+        </div>
+        <div style="height:5px;background-color:#f0f0f0;"></div>
+        <ion-slide-box id="slidebox" show-pager="false" class="slide-tabs"  has-header="true" on-slide-changed="activeScollTab(index)" style="height:100%;">
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/base.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/card.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/relation.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/workeducation.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/correlation.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/asset.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/evaluate.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/manager.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/managerTeam.html'">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'areas/personcustomer/tabs/label.html'">
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

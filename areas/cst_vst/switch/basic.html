@@ -1,0 +1,136 @@
+<ion-content>
+    <!--商机基本信息-->
+    <!-- <div class="backlogInfo_div item" style="background-color: #f0f0f0;height: 30px;padding: 5px;">
+        <div class="backlogInfo_title">
+            <em class="backlogInfo_title_label" style="color: red">*</em>
+            <em class="backlogInfo_title_label">基本信息</em>
+        </div>
+    </div> -->
+    <ol class="text1">
+        <div class="column" ng-repeat="item in cst_vstInfo">
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                    客户拜访编号：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.cstVstId}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0;font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    客户编号：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.cstId}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                    客户法定名称：
+                </div>
+                <div class="input-label" style="width: 65%;font-size: 15px;color: #1A1A1A;  ">
+                    {{item.cstNm}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                    拜访状态：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.vstMtdCd}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0;font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    拜访目的：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.vstPpsCd}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0;font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    拜访来源：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.vstSrcCd}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="font-size: 15px;color: #1A1A1A;">
+                    来源业务编号：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0;font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    拜访方式：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.vstStCd}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0;font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    拜访时间：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.vstTm}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0;font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    执行地点：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.execPlc}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0; width:37%; font-size:15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    客户提供信息：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.cstPrvdInf}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0; width:37%; font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    我方现场意见：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.weSptOpin}}
+                </div>
+            </div>
+            <div class="item item-input backlogInfo_div">
+                <div class="input-label backlogInfo_title" style="margin-left:0;font-size: 15px;color: #1A1A1A;">
+                    <em class="backlogInfo_title_label" style="color: red">*</em>
+                    下一步行动：
+                </div>
+                <div class="input-label" style="width: 62%;font-size: 15px;color: #1A1A1A;">
+                    {{item.nxtStepActn}}
+                </div>
+            </div>
+        </div>
+    </ol>
+
+    <div style="height:70px"></div>
+    <!--<ion-item class="" style="height:114px; border-width:0px; background-color:#f0f0f0">
+
+    </ion-item>-->
+</ion-content>
+
+
+<style>
+
+</style>

@@ -1,0 +1,90 @@
+<!--
+<ion-content>
+    <div style="margin-top: 2%">
+        <div class="item item-input" ng-click="huadong2()">
+            <div class="input-label">
+                机构名称
+            </div>
+            <input class="icon" type="text" ng-model="blngDeptName" value="{{blngDeptName}}" >
+              <i class="icon ion-chevron-right" style="margin-right:20px;color: #b4b4b4"></i>
+        </div>
+        <div class="item item-input">
+            <div class="input-label">
+                开始时间
+            </div>
+            <input class="icon" type="date" id="orgRptDt1" name="orgRptDt1" placeholder="请选择开始时间">
+            <i class="icon ion-chevron-right" style="margin-right:20px;color: #b4b4b4"></i>
+        </div>
+        <div class="item item-input">
+            <div class="input-label">
+                结束时间
+            </div>
+            <input class="icon" type="date" id="orgRptDt2" name="orgRptDt2" placeholder="请选择结束时间">
+            <i class="icon ion-chevron-right" style="margin-right:20px;color: #b4b4b4"></i>
+        </div>
+    </div>
+</ion-content>
+<ion-footer-bar style="height: 9%;padding: 0;">
+    <button class="radiusbtn" style="" ng-click="querOrg()">查询
+    </button>
+</ion-footer-bar>-->
+
+<ion-view>
+    <div>
+        <ion-header-bar class="bar-energized" style=""
+                        align-title="center">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-back"></button>
+            <h1 class="title">机构积分查询</h1>
+        </ion-header-bar>
+        <ion-content class="padding" style="padding :0px;">
+            <div class="item item-input" ng-click="huadong2()">
+                <div class="input-label">
+                    机构名称
+                </div>
+                <input type="text" type="text" ng-model="blngDeptName" value="{{blngDeptName}}" style="background: none" disabled>
+                <i class="icon ion-ios-arrow-right" style="margin-right:20px;color: #b4b4b4;font-size: 20px"></i>
+            </div>
+            <div class="item item-input">
+                <div class="input-label">
+                    开始时间
+                </div>
+                <input type="date" id="orgRptDt1" name="orgRptDt1" placeholder="请选择开始时间">
+                <i class="icon ion-ios-arrow-right" style="margin-right:20px;color: #b4b4b4;font-size: 20px"></i>
+            </div>
+            <div class="item item-input">
+                <div class="input-label">
+                    结束时间
+                </div>
+                <input type="date" type="date" id="orgRptDt2" name="orgRptDt2" placeholder="请选择结束时间">
+                <i class="icon ion-ios-arrow-right" style="margin-right:20px;color: #b4b4b4;font-size: 20px"></i>
+            </div>
+        </ion-content>
+        <!-- 机构积分查询，机构选择 -->
+        <nav class="hidden  cehua2">
+            <p class="ceng" ng-click="hdclose2()"></p>
+
+            <div class="kuang">
+                <div class="searchlei">
+                    <ol>
+                        <img ng-click="query()" src="img/integralquery/search.png" alt=""/>
+                        <input class="wou" id="orgSearch" ng-model="orgSearch" type="text" placeholder="请输入机构的关键字"/>
+                    </ol>
+                </div>
+                <dl>
+                    <dt class="fenclass">
+                    <ul>
+                        <li ng-click="chooseOrg(item)" ng-repeat="item in orgList"><span
+                                ng-bind="item.orgName"></span></li>
+                    </ul>
+
+                    </dt>
+
+                </dl>
+            </div>
+        </nav>
+        <ion-footer-bar style="height: 9%;padding: 0;margin-bottom: 10%;z-index: 0;border-top-width:0px;background-image: none">
+            <button class="radiusbtn" style="" ng-click="querOrg()">查询
+            </button>
+        </ion-footer-bar>
+    </div>
+</ion-view>

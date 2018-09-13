@@ -1,0 +1,46 @@
+<ion-content>
+    <!-- <div class="backlogInfo_div" style="height: 30px;padding: 5px;">
+
+    </div> -->
+    <div class="synergymsg" id="diaocha" ng-repeat="item in vstPsnList">
+      <!-- <div class="backlogInfo_title">
+          <em class="backlogInfo_title_label">拜访人信息</em>
+      </div> -->
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title  noleft" style="">
+                员工名称：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.realname}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title  noleft" style="">
+                所属机构：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.orgName}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title  noleft" style="">
+                所属部门：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.deptName}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title  noleft" style="">
+                联系方式：
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.mobile}}
+            </div>
+        </div>
+        <!-- <div class="" style="height: 4px;"></div> -->
+    </div>
+    <!-- <div style="height:70px"></div> -->
+
+
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-view id="personintegralquery">
+    <ion-header-bar class="bar-energized" style=""
+                    align-title="center">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">个人积分查询</h1>
+    </ion-header-bar>
+
+    <ion-pane>
+        <ion-content style="background-color: #f0f0f0;overflow: hidden" has-bouncing="false" overflow-scroll="true" start-y="0">
+            <ion-list style="">
+                <ion-item style="font-size: 56px;background-color: #eeb81a;text-align: center;color: #6a3906">
+                    {{pesonSum}}
+                </ion-item>
+                <ion-item style="font-size: 17px;background-color: #eeb81a;text-align: center;color: #6a3906">
+                    {{realname}}&nbsp积分总数
+                </ion-item>
+                <ion-item style="font-size: 17px;text-align: center;color: #6a3906">
+                    <div style="float: left;width: 33.33%;color:#01b0e9;">报告日期</div>
+                    <div style="float: left;width: 33.33%;color:#01b0e9;">得分项</div>
+                    <div style="float: left;width: 33.33%;color:#01b0e9;">积分值</div>
+                </ion-item>
+                <ion-item style="margin-top: 2.5%;height: 0;padding:0">
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-pane>
+        <ion-pane id="perintegral" class="" style="height: initial;margin-top: 205px">
+            <ion-content style="background-color: #f0f0f0;overflow: hidden;top:0px" overflow-scroll="false" start-y="0" class="no-header">
+                <ion-list style="height: 100%" >
+                    <ion-item style="font-size: 15px;text-align: center;color: #666666;" ng-repeat="item in items">
+                        <div style="float: left;width: 33.33%">{{item.rptDt}}</div>
+                        <div style="float: left;width: 33.33%">{{item.scoreStep}}</div>
+                        <div style="float: left;width: 33.33%">{{item.ptsVal}}</div>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+    </ion-pane>
+</ion-view>

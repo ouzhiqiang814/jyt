@@ -1,0 +1,98 @@
+<ion-view id="partnerList" class="" view-title="商机列表页" cache-view="true">
+    <div>
+        <ion-side-menus>
+            <!--题头-->
+            <ion-header-bar align-title="center" class="bar-energized header-bar" id="header-bar">
+                <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left" style="color: #FFFFFF;"></button>
+                <h1 class="title" style="color: #FFFFFF;">商机列表</h1>
+                <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+            </ion-header-bar>
+
+            <!-- 中间内容 -->
+            <ion-side-menu-content>
+                <ion-content>
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list id="partnerionlist">
+                        <ion-item class="partner-item" ng-if="xiangmu.length != 0" ng-repeat="item in xiangmu"
+                                  on-finish-render-filters ng-click="show_info(item)">
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">商机编号：</div>
+                                <div class="hz-right">{{item.CLUE_NO}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">商机名称：</div>
+                                <div class="hz-right">{{item.CLUE_NM}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">客户法定名称：</div>
+                                <div class="hz-right">{{item.CST_NM}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">商机来源：</div>
+                                <div class="hz-right">{{item.SRCCD_NAME}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">商机阶段：</div>
+                                <div class="hz-right">{{item.STG_TPCD_NAME}}</div>
+                            </div>
+                            <div class="partnerItemInfo">
+                                <div class="hz-left">创建日期：</div>
+                                <div class="hz-right">{{item.SRCCD_NAME}}</div>
+                            </div>
+                        </ion-item>
+                        <div style="height:60px"></div>
+                    </ion-list>
+                    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;height: 100%;" ng-if="xiangmu.length==0"  style="background-color: #f0f0f0">
+                <div class="empty" ><p>暂无数据 ...</p></div>
+            </div>
+            </ion-side-menu-content>
+
+            <!-- 右侧菜单 -->
+
+            <ion-side-menu style="z-index: initial">
+                <nav class="hidden  cehua">
+                    <p class="ceng" ng-click="guan()"></p>
+                    <div class="kuang">
+                        <ion-content class="has-header">
+                            <div class="item-input">
+                                <div class="input-label">商机编号：</div>
+                                <input type="text" id="CLUE_NO" name="CLUE_NO" placeholder="请输入商机编号">
+                            </div>
+                            <div class="item-input">
+                                <div class="input-label">客户编号：</div>
+                                <input type="text" id="CST_ID" name="CST_ID" placeholder="请输入客户编号">
+                            </div>
+                            <div class="item-input">
+                                <div class="input-label">客户法定名称：</div>
+                                <input type="text" id="CST_NM" name="CST_NM" placeholder="请输入法定名称">
+                            </div>
+                            <div class="item-input">
+                                <div class="input-label">商机来源：</div>
+                                <input type="text" id="SRCCD" name="SRCCD" placeholder="请输入商机来源">
+                            </div>
+                            <div class="item-input">
+                                <div class="input-label">商机名称：</div>
+                                <input type="text" id="CLUE_NM" name="CLUE_NM" placeholder="请输入商机名称">
+                            </div>
+
+                            <div class="shanxian"></div>
+                            <!--  闪现 必加  -->
+                        </ion-content>
+                        <ion-footer-bar style="height: 43px;padding: 0;">
+                            <button class="btn-reset" ng-click="func_reset()">重 置
+                            </button>
+                            <button class="btn-confirm" ng-click="func_ok()">完 成
+                            </button>
+                        </ion-footer-bar>
+                    </div>
+                </nav>
+            </ion-side-menu>
+
+        </ion-side-menus>
+    </div>
+</ion-view>

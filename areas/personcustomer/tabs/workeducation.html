@@ -1,0 +1,186 @@
+<div id="personCustomerInfoChild" style="height: 100%; width:100%; position: absolute;">
+    <div id="moremenu" class="zuola">
+        <nav id="nav">
+            <ul>
+                <li class="nav-current" ng-click="categoryLeftClick($event)">
+                    工作情况
+                </li>
+                <li class="nav-blur" ng-click="categoryLeftClick($event)">
+                    教育背景
+                </li>
+            </ul>
+        </nav>
+        <div id="pro" style="background: #fff">
+            <div class="pro-scroll">
+                <div class="pro-warp">
+                    <ion-content>
+                        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh4a()">
+                        </ion-refresher>
+                        <ion-list>
+                            <ion-item class="cus-basic-info-item" ng-if="items4a.length != 0" ng-repeat="info in items4a">
+                                <div class="cus-basic-info">
+                                    <em>工作经历起始日期:</em>
+                                    <em>{{info.WRKEXPRNCSTDT}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>工作经历结束日期:</em>
+                                    <em>{{info.WRKEXPRNCEDDT}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>是否现工作单位:</em>
+                                    <em>{{info.CRNCO_WRK_IND==1?'是':'否'}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>所属行业:</em>
+                                    <em>{{info.BLIY_TPCD  == '*'?'*':info.BLIY_TPCDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>工作单位名称:</em>
+                                    <em>{{info.WRK_UNIT_NM}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>工作单位性质:</em>
+                                    <em>{{info.WRK_UNIT_CHAR_CD == '*'?'*':info.WRK_UNIT_CHAR_CDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>职务描述:</em>
+                                    <em>{{info.POST_DSC}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>工作经历描述:</em>
+                                    <em>{{info.WRK_EXPRNC_DSC}}</em>
+                                </div>
+                            </ion-item>
+                            <!-- <div style="height:50px"></div> -->
+                        </ion-list>
+                        <ion-infinite-scroll immediate-check="false" ng-if="finite_state4a" on-infinite="loadMore4a()" distance="1%">
+                        </ion-infinite-scroll>
+                    </ion-content>
+                    <div id="personCustomerInfoChild" ng-if="items4a.length ==0">
+                        <div class="empty"><p>暂无数据 ...</p></div>
+                    </div>
+                </div>
+                <div class="pro-warp" style="display: none">
+                    <ion-content>
+                        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh4b()">
+                        </ion-refresher>
+                        <ion-list>
+                            <ion-item class="cus-basic-info-item" ng-if="items4b.length != 0" ng-repeat="info in items4b">
+                                <div class="cus-basic-info">
+                                    <em>教育开始时间:</em>
+                                    <em>{{info.EDSTTM}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>教育结束时间:</em>
+                                    <em>{{info.EDEDTM}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>院校名称:</em>
+                                    <em>{{info.UNVRST_NM}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>学历:</em>
+                                    <em>{{info.EDDGR_CD  == '*'?'*':info.EDDGR_CDNm}}</em>
+                                </div>
+                                <div class="cus-basic-info">
+                                    <em>专业:</em>
+                                    <em>{{info.PROF_DSC}}</em>
+                                </div>
+                            </ion-item>
+                            <!-- <div style="height:50px"></div> -->
+                        </ion-list>
+                        <ion-infinite-scroll immediate-check="false" ng-if="finite_state4b" on-infinite="loadMore4b()" distance="1%">
+                        </ion-infinite-scroll>
+                    </ion-content>
+                    <div id="personCustomerInfoChild" ng-if="items4b.length ==0">
+                        <div class="empty"><p>暂无数据 ...</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--<div class="second_title" ng-if="educateA.length != 0">
+        <span class="label">工作情况</span>
+    </div>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="educateA.length != 0" ng-repeat="info in educateA">
+            <div class="cus-basic-info">
+                <em>工作经历起始日期:</em>
+                <em>{{info.WRKEXPRNCSTDT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>工作经历结束日期:</em>
+                <em>{{info.WRKEXPRNCEDDT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>是否现工作单位:</em>
+                <em ng-if="info.CRNCO_WRK_IND == 1">是</em>
+                <em ng-if="info.CRNCO_WRK_IND == 2">否</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>所属行业:</em>
+                <em>{{info.BLIY_TPCD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>工作单位名称:</em>
+                <em>{{info.WRK_UNIT_NM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>工作单位性质:</em>
+                <em>{{info.WRK_UNIT_CHAR_CD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>职务描述:</em>
+                <em>{{info.POST_DSC}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>工作经历描述:</em>
+                <em>{{info.WRK_EXPRNC_DSC}}</em>
+            </div>
+        </ion-item>
+    </ion-list>
+    <div class="second_title" ng-if="educateB.length != 0">
+        <span class="label">教育背景</span>
+    </div>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="educateB.length != 0" ng-repeat="info in educateB">
+            <div class="cus-basic-info">
+                <em>教育开始时间:</em>
+                <em>{{info.EDSTTM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>教育结束时间:</em>
+                <em>{{info.EDEDTM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>院方名称:</em>
+                <em>{{info.UNVRST_NM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>学历:</em>
+                <em>{{info.EDDGR_CD}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>专业:</em>
+                <em>{{info.PROF_DSC}}</em>
+            </div>
+        </ion-item>
+        <ion-item class=""  style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+
+        </ion-item>
+    </ion-list>-->
+
+
+
+
+</div>
+
+
+<div id="personCustomerInfoChild" ng-if="educateA.length == 0 && educateB.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

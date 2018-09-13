@@ -1,0 +1,38 @@
+<div class="backlogInfo_base_info">
+    <label>申请单号:</label>
+    <em>{{cusDataFormData.billno}}</em>
+</div>
+<div class="backlogInfo_base_info">
+    <label>客户法定名称:</label>
+    <em>{{cusDataFormData.name}}</em>
+</div>
+<div class="backlogInfo_base_info">
+    <label>客户编号:</label>
+    <em>{{cusDataFormData.cusNO}}</em>
+</div>
+<div class="backlogInfo_base_info">
+    <label>客户归属方:</label>
+    <em>{{cusDataFormData.belong}}</em>
+</div>
+<div class="backlogInfo_base_info">
+    <label>申请用途:</label>
+    <em>{{cusDataFormData.desc}}</em>
+</div>
+<div class="item item-divider item_head" ng-click="showDataList()" >
+    <div style="float: left;">申请客户数据</div>
+    <div>
+        <img style="float: right;height: 20px;width: 20px;" ng-src="{{cusDataListDivImgUrl}}">
+    </div>
+</div>
+<div ng-if="cusDataListShow">
+    <ion-item class="list-data-info-item" ng-repeat="info in cusDataListDatas">
+        <div class="list-data-info">
+            <em>数据信息类别:</em>
+            <em>{{info.type}}</em>
+        </div>
+        <div class="list-data-info">
+            <em>数据信息项:</em>
+            <em>{{info.message}}</em>
+        </div>
+    </ion-item>
+</div>

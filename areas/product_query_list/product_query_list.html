@@ -1,0 +1,94 @@
+<ion-view id="moremenu" cache-view="true">
+    <div>
+        <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+            <h1 class="title">产品分类</h1>
+            <button menu-toggle="right" class="button button-icon" style="display: block" ng-click="showSortPage()">筛选
+            </button>
+        </ion-header-bar>
+
+        <ion-content has-header="true" scroll="false">
+            <nav id="nav">
+                <ul>
+                    <li ng-class="$index==0?'nav-current':'nav-blur'"
+                        ng-repeat="item in categoryData"
+                        ng-click="categoryLeftClick($event);getCategoryDetailData(item.id)">
+                        {{item.name}}
+                    </li>
+                </ul>
+            </nav>
+            <div id="pro">
+                <ion-content lazy-scroll>
+                    <div class="pro-scroll">
+                        <div class="pro-warp">
+                            <div ng-repeat="item in categoryDetailData">
+                                <div class="content">
+                                    <a ng-click="modal.hide()" href="#/{{item.sref}}">
+                                        <div class="content-title">
+                                            <img ng-src="{{item.src}}" style="width: 25px;float: left"/>
+                                            <span style="float: right;width:calc(100% - 30px);" ng-bind="item.name"></span>
+                                        </div>
+                                    </a>
+
+                                    <!-- <div style="top: 35px;position: absolute;height: 2px;width: 100%;background-color: #f0f0f0"></div> -->
+                                    <div class="content-body">
+                                        <ul>
+                                            <a ng-repeat="item1 in item.data" ng-click="modal.hide()"
+                                               href="#/{{item1.sref}}">
+                                                <li class="content-body-list">
+                                                    <!--ui-sref="goodsList({typeNumber:{{item.typeNumber}}})">-->
+                                                    <div class="content-body-div">
+                                                        <span>{{item1.name}}</span>
+                                                    </div>
+                                                </li>
+                                            </a>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </ion-content>
+
+                <div ng-if="categoryDetailData.length == 0"  style="width: 100%; height: 100%;">
+                    <div class="empty" ><p>暂无数据 ...</p></div>
+                </div>
+            </div>
+        </ion-content>
+    </div>
+</ion-view>
+
+<script id="templates/sortProduct.html" type="text/ng-template">
+    <ion-modal-view >
+        <ion-header-bar class="bar-energized" style=""
+                        align-title="center">
+            <button ng-click="modal.hide()" class="button button-icon ion-ios-arrow-back"></button>
+            <h1 class="title">产品查询</h1>
+
+
+        </ion-header-bar>
+        <ion-content class="padding" style="padding :0px;">
+            <div class="item item-input">
+                <div class="input-label">
+                    可售产品编号
+                </div>
+                <input type="text" id="aspdId" name="aspdId" placeholder="请输入可售产品编号">
+            </div>
+            <div class="item item-input">
+                <div class="input-label">
+                    可售产品名称
+                </div>
+                <input type="text" id="aspdNm" name="aspdNm" placeholder="请输入可售产品名称">
+            </div>
+        </ion-content>
+        <ion-footer-bar style="height: 43px;padding: 0;">
+            <button class="btn-reset" ng-click="func_reset()">重 置
+            </button>
+            <button class="btn-confirm" ng-click="func_ok();modal.hide()">完 成
+            </button>
+        </ion-footer-bar>
+    </ion-modal-view>
+</script>

@@ -1,0 +1,22 @@
+#count #content{
+    padding-top: 20px;
+}
+
+#count .count_div{
+    height: 40px;
+    width: 100%;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; /* Safari 6.1+ */
+    -webkit-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#count .count_div_line{
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    border-radius: 50px;
+    background-color: #F0F0F0;
+}

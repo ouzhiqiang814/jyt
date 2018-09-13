@@ -1,0 +1,32 @@
+<ion-content id="companyCustomerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh6()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items6.length != 0" ng-repeat="info in items6">
+            <div class="cus-basic-info">
+                <em>股东名称:</em>
+                <em>{{info.SHRH_NM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>实际出资金额（万元）:</em>
+                <em>{{info.FNDD_AMT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>持股比例（%）:</em>
+                <em>{{info.HOLDSHRPCT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>控股股东标志:</em>
+                <em>{{info.HLDGSHRHIND}}</em>
+            </div>
+        </ion-item>
+
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state6" on-infinite="loadMore6()" distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div id="" ng-if="items6.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

@@ -1,0 +1,12 @@
+<ion-view id="partnerInfoChild">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">协同抄送流程审批</h1>
+    </ion-header-bar>
+    <div ng-if="goalBsnEtyType=='SPRV'" ng-include="'areas/backlog/flows/carbonbizoptinfhome/item/copyMeetingFlow.html'">
+    </div>
+    <div ng-if="goalBsnEtyType=='20'"  ng-include="'areas/backlog/flows/carbonbizoptinfhome/item/cfmtbizoptinfhome.html'">
+    </div>
+    <div ng-if="goalBsnEtyType=='30'"  ng-include="'areas/backlog/flows/carbonbizoptinfhome/item/cmtdataprojbscinfpage.html'">
+    </div>
+</ion-view>

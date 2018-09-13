@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!--公共css-->
+
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/gaugemeter/styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="lib/ionicNew/css/ionic.min.css">
+
+    <link rel="stylesheet" href="lib/calendar/dist/css/calendar.min.css">
+
+    <!-- 二期新增css（员工管理） -->
+    <link rel="stylesheet" href="css/second_phase/employee.css">
+    <!-- <link rel="stylesheet" href="css/fullCalendar/fullcalendar.css"> -->
+    <!-- <link rel="stylesheet" href="lib/calendar/dist/css/calendar.min.css"> -->
+
+
+    <!--功能模sss块css-->
+    <link href="css/home/home.css" rel="stylesheet">
+    <link href="css/home/message.css" rel="stylesheet">
+    <link href="css/chart/chart.css" rel="stylesheet">
+    <!--公司客户样式-->
+    <link href="css/companycustomer/list.css" rel="stylesheet">
+    <link href="css/companycustomer/info.css" rel="stylesheet">
+    <!--个人客户样式-->
+    <link href="css/personcustomer/list.css" rel="stylesheet">
+    <link href="css/personcustomer/info.css" rel="stylesheet">
+    <!--合作伙伴样式-->
+    <link href="css/partner/list.css" rel="stylesheet">
+    <link href="css/partner/info.css" rel="stylesheet">
+    <!--合作伙伴样式-->
+    <link href="css/backlog/list.css" rel="stylesheet">
+    <link href="css/backlog/info.css" rel="stylesheet">
+    <link href="css/finishedtask/list.css" rel="stylesheet">
+    <link href="css/finishedtask/info.css" rel="stylesheet">
+    <!--公司数据申请模块-->
+    <link href="css/companydata/companydata.css" rel="stylesheet">
+    <!--积分查询模块-->
+    <link href="css/integralquery/integralquery.css" rel="stylesheet">
+    <link href="lib/Swiper/dist/css/swiper.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/anim-in-out/anim-in-out.css"/>
+
+
+    <!-- 财务报表  -->
+    <link rel="stylesheet" href="lib/tabella/css/tabella.css">
+
+      <style>
+          .ios .bar {
+              height: 65px;
+          }
+
+          .ios .bar .title {
+              height: 65px;
+              line-height: 75px;
+              font-weight: 700;
+              font-weight: 600;
+          }
+
+          .bar .title {
+
+          }
+
+
+
+
+          .ios .bar .button {
+              margin-top: 10px;
+          }
+
+          .ios .has-header {
+              top: 65px;
+          }
+
+      </style>
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+  </body>
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+   <link href="css/ionic.app.css" rel="stylesheet">
+   -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+<!--  <script src="cordova.js"></script>-->
+
+
+
+  <!-- 全局js文件 -->
+
+  <script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="lib/anim-in-out/anim-in-out.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/route.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="areas/common/common.js"></script>
+  <script src="areas/common/indexdb.js"></script>
+  <script src="js/directives.js"></script>
+
+  <!--数据字典对应的js-->
+  <script src="js/base_dict.js"></script>
+
+  <!--功能模块js-->
+  <script src="areas/tab/tab_controller.js"></script>
+  <script src="areas/tab/tab_route.js"></script>
+
+  <script src="areas/home/home_controller.js"></script>
+  <script src="areas/home/home_route.js"></script>
+  <script src="areas/home/home_service.js"></script>
+  <!--公司客户查询js-->
+  <script src="areas/companycustomer/companycustomer_controller.js"></script>
+  <script src="areas/companycustomer/public_customers_list/public_customers_list_controller.js"></script>
+  <script src="areas/companycustomer/companycustomer_route.js"></script>
+  <!--个人客户查询js-->
+  <script src="areas/personcustomer/personcustomer_controller.js"></script>
+  <script src="areas/personcustomer/person_cust_search/person_cust_search_controller.js"></script>
+  <script src="areas/personcustomer/personcustomer_route.js"></script>
+  <!--合作伙伴查询js-->
+  <script src="areas/partner/partner_controller.js"></script>
+  <script src="areas/partner/partner_route.js"></script>
+  <!--待办事项查询js-->
+  <script src="areas/backlog/backlog_controller.js"></script>
+  <script src="areas/backlog/backlog_route.js"></script>
+  <script src="areas/finishedtask/finishedtask_controller.js"></script>
+  <script src="areas/finishedtask/finishedtask_route.js"></script>
+  <script src="areas/charts/chart_controller.js"></script>
+  <script src="areas/charts/chart_route.js"></script>
+  <script src="areas/charts/china.js"></script>
+  <script src="areas/charts/world.js"></script>
+  <script src="areas/charts/beijing.js"></script>
+  <script src="areas/charts/bmap.min.js"></script>
+  <script src="areas/charts/dataTool.min.js"></script>
+  <script src="areas/backlog/flows/aprvCstApp/aprvCstApp_controller.js"></script>
+  <script src="areas/backlog/flows/queryCooptnBscInf/queryCooptnBscInf_controller.js"></script>
+  <script src="areas/backlog/flows/queryCoPtnerViewAply/queryCoPtnerViewAply_controller.js"></script>
+  <script src="areas/backlog/flows/queryCooPtnCtcInfVO/queryCooPtnCtcInfVO_controller.js"></script>
+  <script src="areas/backlog/flows/approveclue/approveclue_controller.js"></script>
+  <script src="areas/backlog/flows/cfmtbizoptinfhome/cfmtbizoptinfhome_controller.js"></script>
+  <script src="areas/backlog/flows/cmtdataprojbscinfpage/cmtdataprojbscinfpage_controller.js"></script>
+  <script src="areas/backlog/flows/power_mana_approve/power_mana_approve_controller.js"></script>
+  <script src="areas/backlog/flows/fbksprvinfhomepage/fbksprvinfhomepage_controller.js"></script>
+  <script src="areas/backlog/flows/carbonbizoptinfhome/carbonbizoptinfhome_controller.js"></script>
+
+  <script src="areas/backlog/finishedFlows/finishedFlows_route.js"></script>
+  <script src="areas/backlog/finishedFlows/finishedApplyInfolView/finishedApplyInfolView_controller.js"></script>
+
+  <script src="areas/backlog/noSupportMobile/noSupportMobile_controller.js"></script>
+
+  <script src="areas/alreadyBacklog/alreadyBacklog_route.js"></script>
+  <script src="areas/alreadyBacklog/alreadyBacklog_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/customerDataViewing/customerDataViewing_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyAprvCstApp/alreadyAprvCstApp_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyQueryCooptnBscInf/alreadyQueryCooptnBscInf_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyQueryCooPtnCtcInfVO/alreadyQueryCooPtnCtcInfVO_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyQueryCoPtnerViewAply/alreadyQueryCoPtnerViewAply_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyApproveclue/alreadyApproveclue_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyCfmtbizoptinfhome/alreadyCfmtbizoptinfhome_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyCmtdataprojbscinfpage/alreadyCmtdataprojbscinfpage_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadySprvinfhomepage/alreadySprvinfhomepage_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyCarbonbizoptinfhome/alreadyCarbonbizoptinfhome_controller.js"></script>
+  <script src="areas/alreadyBacklog/flows/alreadyFbksprvinfhomepage/alreadyFbksprvinfhomepage_controller.js"></script>
+
+  <!--公司数据申请模块-->
+  <script src="areas/companydata/companydata_controller.js"></script>
+  <script src="areas/companydata/companydata_route.js"></script>
+  <script src="areas/companydata/companydata_service.js"></script>
+
+  <script src="areas/persondata/persondata_controller.js"></script>
+  <script src="areas/persondata/persondata_route.js"></script>
+  <script src="areas/persondata/persondata_service.js"></script>
+
+  <!--积分查询模块-->
+  <script src="areas/integralquery/integralquery_controller.js"></script>
+  <script src="areas/integralquery/integralquery_route.js"></script>
+  <script src="areas/integralquery/integralquery_service.js"></script>
+
+  <script src="areas/integralquery/person/personintegralquery_controller.js"></script>
+  <script src="areas/integralquery/person/personintegralquery_route.js"></script>
+  <script src="areas/integralquery/person/personintegralquery_service.js"></script>
+
+  <script src="areas/integralquery/organization/organizationintegralquery_controller.js"></script>
+  <script src="areas/integralquery/organization/organizationintegralquery_route.js"></script>
+  <script src="areas/integralquery/organization/organizationintegralquery_service.js"></script>
+
+  <script src="areas/integralquery/organizationdetail/organizationdetailintegralquery_controller.js"></script>
+  <script src="areas/integralquery/organizationdetail/organizationdetailintegralquery_route.js"></script>
+  <script src="areas/integralquery/organizationdetail/organizationdetailintegralquery_service.js"></script>
+
+
+
+
+
+   
+
+
+  <!--线索，机会，项目查询-->
+  <script src="areas/clue/clue_controller.js"></script>
+  <script src="areas/clue/clue_service.js"></script>
+  <script src="areas/clue/clue_route.js"></script>
+  <link rel="stylesheet" href="css/clue/clue.css"/>
+
+  <!--首页标签-->
+  <script src="areas/foot/foot_controller.js"></script>
+  <script src="areas/foot/foot_route.js"></script>
+  <link rel="stylesheet" href="css/foot/foot.css"/>
+
+  <!--首页-->
+  <script src="areas/index/index_controller.js"></script>
+  <script src="areas/index/index_route.js"></script>
+  <script src="areas/index/index_service.js"></script>
+  <link rel="stylesheet" href="css/index/index.css"/>
+
+  <!--统计数据页面-->
+  <script src="areas/count/count_controller.js"></script>
+  <script src="areas/count/count_route.js"></script>
+  <link rel="stylesheet" href="css/count/count.css">
+
+  <!--更多菜单-->
+  <script src="areas/moremenu/moremenu_controller.js"></script>
+  <script src="areas/moremenu/moremenu_route.js"></script>
+  <script src="areas/moremenu/allMenu_controller.js"></script>
+  <link rel="stylesheet" href="css/moremenu/moremenu.css"/>
+
+  <!--商机列表-->
+  <script src="areas/initClueList/initClueList_controller.js"></script>
+  <script src="areas/initClueList/initClueList_route.js"></script>
+  <script src="areas/initClueList/cst_vst_add/cst_vst_add_controller.js"></script>
+
+
+  <!--拜访记录查询-->
+  <script src="areas/cst_vst/cst_vst_controller.js"></script>
+  <script src="areas/cst_vst/cst_vst_route.js"></script>
+
+  <!--机会查询详细信息-->
+  <script src="areas/backlog/flows/history/history_controller.js"></script>
+
+  <script src="areas/querysprvinfpage/querysprvinfpage_controller.js"></script>
+  <script src="areas/querysprvinfpage/sprvinfhomepage/sprvinfhomepage_controller.js"></script>
+  <script src="areas/querysprvinfpage/sprvinfhomepage/querysprviteminfpage/querysprviteminfpage_controller.js"></script>
+  <script src="areas/querysprvinfpage/sprvinfhomepage/getsprviteminflist/getsprviteminflist_controller.js"></script>
+  <script src="areas/querysprvinfpage/querysprvinfpage_route.js"></script>
+
+  <!--产品查询-->
+  <script src="areas/product_query_list/product_query_list_controller.js"></script>
+  <script src="areas/product_query_list/product_query_list_route.js"></script>
+  <script src="areas/product_query_list/productList/productList_controller.js"></script>
+  <script src="areas/product_query_list/productList/product_edit_addaspd_controller.js"></script>
+  <!--第三方插件js-->
+  <script src="lib/Swiper/dist/js/swiper.js"></script>
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/ionic-image-lazy-load/ionic-image-lazy-load.js"></script>
+
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <script src="lib/gaugemeter/gaugeMeter-2.0.0.min.js"></script>
+
+  <link href="lib/slide-tab/css/slidingTabs.css" rel="stylesheet"/>
+  <script src="lib/slide-tab/js/slidingTabsDirective.js"></script>
+
+  <link href="lib/tabSlideBox/tabSlideBox.css" rel="stylesheet"/>
+  <script src="lib/tabSlideBox/tabSlideBox.js"></script>
+  <script type="text/javascript" src="js/ObjTree.js"></script>
+  <script type="text/javascript" src="js/jkl-dumper.js"></script>
+
+
+  <script src="js/moment.js"></script>
+  <script src="js/fontsize.js"></script>
+  <script src="js/pinying.js"></script>
+    
+  
+    <script type="text/javascript" src="lib/calendar/dist/js/calendar-tpls.js"></script>
+    <script type="text/javascript" src="lib/calendar/dist/js/angular-locale_zh-cn.js"></script>
+    <script type="text/javascript" src="areas/second_phase/employeeInfomation/care/calendar_controller.js"></script>
+
+
+
+      <!--公司员工信息js-->
+  <script src="areas/second_phase/employeeInfomation/employee_controller.js"></script>
+  <script src="areas/second_phase/employeeInfomation/employee_route.js"></script>
+
+  <script src="areas/second_phase/employeeInfomation/statistics/statistics_controller.js"></script>
+  <script src="areas/querysprvinfpage/supervisionStatistics/supervisionStatistics_controller.js"></script>
+  <script src="areas/second_phase/employeeInfomation/care/careDels/calendar_controller.js"></script>
+  <script src="areas/querysprvinfpage/uncompleteSupervision/uncompleteSupervision_controller.js"></script>
+
+      <!-- 财务报表测试 -->
+   <script src="lib/tabella/js/tabella.js"></script>
+   <script src="areas/second_phase/report/report_route.js"></script>
+   <script src="areas/second_phase/report/report_controller.js"></script>
+
+
+  <script type="text/javascript">
+      (function () {
+          var agent = navigator.userAgent;
+          if (/iphone|ipad|ipod/i.test(agent)) {
+              $('body').addClass('ios');
+              $('.button-full').css("top","65px");
+          }
+      }());
+  </script>
+</html>

@@ -1,0 +1,160 @@
+<ion-view id="clue_info" class="history">
+    <div>
+        <!--  <ion-header-bar align-title="center" style="" class="bar-energized" id="header-bar">
+              <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+              <h1 class="title">协同审批概况</h1>
+          </ion-header-bar>-->
+
+        <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+            <h1 class="title">协同审批概况</h1>
+        </ion-header-bar>
+
+        <!--  <ion-content scroll="false" has-header="true">-->
+
+        <ion-content style="    background-color: #f0f0f0;">
+            <div>
+                <!--新建线索-->
+                <div id="clueDetail" class="card" ng-repeat="item in queryHistoryInfoDate">
+                    <div class="item item-divider item_head card-head"
+                         ng-click="show_survey($event,(item.aprvList.length != 0)||item.bscInfVo != null)">
+                        <img class="card-img" ng-src="img/clue/clue1.png" src="img/clue/clue1.png"
+                             ng-if="item.prcDsc == '新建线索'&&item.stTm !=null">
+                        <img class="card-img" ng-src="img/clue/clue2.png" src="img/clue/clue2.png"
+                             ng-if="item.prcDsc == '线索审批'&&item.stTm !=null">
+                        <img class="card-img" ng-src="img/clue/clue3.png" src="img/clue/clue3.png"
+                             ng-if="item.prcDsc == '新建机会'&&item.stTm !=null">
+                        <img class="card-img" ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                             ng-if="item.prcDsc == '机会认定'&&item.stTm !=null">
+                        <img class="card-img" ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                             ng-if="item.prcDsc == '机会管理'&&item.stTm !=null">
+                        <img class="card-img" ng-src="img/clue/clue5.png" src="img/clue/clue5.png"
+                             ng-if="item.prcDsc == '项目立项'&&item.stTm !=null">
+                        <img class="card-img" ng-src="img/clue/clue6.png" src="img/clue/clue6.png"
+                             ng-if="item.prcDsc == '项目审批'&&(item.stTm !=null||queryHistoryInfoDate[$index+1].stTm !=null)">
+                        <img class="card-img" ng-src="img/clue/clue7.png" src="img/clue/clue7.png"
+                             ng-if="item.prcDsc == '合同签署'&&item.stTm !=null">
+                        <img class="card-img" ng-src="img/clue/clue8.png" src="img/clue/clue8.png"
+                             ng-if="item.prcDsc == '结束'&&item.stTm !=null">
+
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue1.png" src="img/clue/clue1.png"
+                             ng-if="item.prcDsc == '新建线索'&&item.stTm ==null">
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue2.png" src="img/clue/clue2.png"
+                             ng-if="item.prcDsc == '线索审批'&&item.stTm ==null">
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue3.png" src="img/clue/clue3.png"
+                             ng-if="item.prcDsc == '新建机会'&&item.stTm ==null">
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                             ng-if="item.prcDsc == '机会认定'&&item.stTm ==null">
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue4.png" src="img/clue/clue4.png"
+                             ng-if="item.prcDsc == '机会管理'&&item.stTm ==null">
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue5.png" src="img/clue/clue5.png"
+                             ng-if="item.prcDsc == '项目立项'&&item.stTm ==null">
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue6.png" src="img/clue/clue6.png"
+                             ng-if="item.prcDsc == '项目审批'&&(item.stTm ==null&&queryHistoryInfoDate[$index+1].stTm ==null)">
+
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue7.png" src="img/clue/clue7.png"
+                             ng-if="item.prcDsc == '合同签署'&&item.stTm ==null">
+                        <img class="card-img" style="-webkit-filter: grayscale(1);filter:'gray;filter: grayscale(1);"
+                             ng-src="img/clue/clue8.png" src="img/clue/clue8.png"
+                             ng-if="item.prcDsc == '结束'&&item.stTm ==null">
+
+                        <div class="head-title" style="width:50%;">{{item.prcDsc}}
+                            <div style="float: right" ng-if="item.stTm!=null">{{item.stTm}}</div>
+                        </div>
+                        <div class="biao " ng-if="item.aprvList.length != 0||item.bscInfVo != null"></div>
+                    </div>
+                    <div class="list" ng-if="item.prcDsc != '合同签署'" style="display: none"
+                         ng-repeat="aprvListItem in item.aprvList">
+                        <label class="item item-input label_item">
+                            <span class="input-label">执行人员：</span>
+
+                            <div class="tableInfo-title">{{aprvListItem.aprvEmpNm}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label">执行机构：</span>
+
+                            <div class="tableInfo-title">{{aprvListItem.aprvInsNm}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label">执行结果：</span>
+
+                            <div class="tableInfo-title" style="color: #01b0e9;">{{aprvListItem.aprvResultDsc}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label">执行时间：</span>
+
+                            <div class="tableInfo-title">{{aprvListItem.aprvTm}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label" style="width: 82px;">耗时(小时)：</span>
+
+                            <div class="tableInfo-title">{{aprvListItem.tmPrd}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label">执行状态：</span>
+
+                            <div class="tableInfo-title" style="color: #01b0e9;">{{aprvListItem.aprvStCdDsc}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label">执行进度：</span>
+
+                            <div class="tableInfo-title">{{aprvListItem.procsNum}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label">执行意见：</span>
+
+                            <div class="tableInfo-title">{{aprvListItem.aprvOpns}}</div>
+                        </label>
+                    </div>
+                    <div class="list" ng-if="item.prcDsc == '合同签署'" style="display: none">
+                        <label class="item item-input label_item">
+                            <span class="input-label">合同签署时间：</span>
+
+                            <div class="tableInfo-title">{{item.bscInfVo.ctrctDt}}</div>
+                        </label>
+                        <label class="item item-input label_item">
+                            <span class="input-label">合同金额（元）：</span>
+
+                            <div class="tableInfo-title">{{item.bscInfVo.ctrctAmt}}</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="div" style="height:50px;">
+            </div>
+        </ion-content>
+
+        <!--    </ion-content>-->
+    </div>
+</ion-view>
+
+<style>
+    .biao {
+        background: url(img/clue/more.png);
+        background-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .biao.close {
+        background: url(img/clue/less.png);
+        background-size: 20px;
+    }
+
+    #clue_info .list {
+        margin-bottom: 0px;
+        border-top: none;
+    }
+
+    #clue_info .list ol {
+        border-top: 2px solid #F0F0F0;
+    }
+</style>

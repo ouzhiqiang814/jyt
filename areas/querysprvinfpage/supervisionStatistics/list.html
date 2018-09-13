@@ -1,0 +1,28 @@
+<ion-view id="supervisionStatistics">
+    <ion-header-bar class="bar-calm" id="header-bar"  align-title="center" >
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">督办事项统计</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="ow-e-box">
+            <div id="supervision" class="ow-echart-box" ng-init="fnGetData()"></div>
+            <div class="ow-line"></div>
+            <div>
+                <div class="ow-table-border-box">
+                    <table class="bordered" cellspacing="0" border="0" id="ow-table">
+                        <tr class="ow-first-title">
+                            <th>完成进度</th>
+                            <th>数量</th>
+                            <th>占比</th>
+                        </tr>
+                        <tr ng-repeat="item in items">
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.value }}</td>
+                            <td>{{ item.point }}</td>
+                        </tr>
+                    </table>
+                </div>                            
+            </div>
+        </div> 
+    </ion-content>
+</ion-view>

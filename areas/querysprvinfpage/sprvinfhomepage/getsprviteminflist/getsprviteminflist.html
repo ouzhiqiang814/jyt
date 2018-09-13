@@ -1,0 +1,113 @@
+<ion-view id="sprvinfhomepage">
+    <div>
+        <ion-header-bar align-title="center" class="bar-energized" id="header-bar">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+            <h1 class="title" id ="title">督办详情</h1>
+        </ion-header-bar>
+
+        <ion-content has-header="true" id="content" scroll="false">
+            <tab-slide-box tab='0'>
+                <div class="tsb-icons">
+                    <div class="tsb-ic-wrp">
+                        <ion-scroll direction="x" class="tsb-hscroll">
+                            <a href="javascript:;" class="" style="width:50%">基本信息</a>
+                            <a href="javascript:;" class="" style="width:50%">事项明细</a>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div style="height:5px;background-color:#f0f0f0;"></div>
+                <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                    <ion-slide>
+                        <div>
+                            <ion-content id="partnerInfoChild">
+                                <ion-list style="display: block">
+                                    <ion-item class="partner-base-item">
+                                        <div class="partner-base-info">
+                                            <label>反馈人：</label>
+                                            <em>{{data.fdbkPsnNm}}</em>
+                                        </div>
+                                    </ion-item>
+                                    <ion-item class="partner-base-item">
+                                        <div class="partner-base-info">
+                                            <label>反馈机构：</label>
+                                            <em>{{data.fdbkPsnInstNm}}</em>
+                                        </div>
+                                    </ion-item>
+                                    <ion-item class="partner-base-item">
+                                        <div class="partner-base-info">
+                                            <label>反馈部门：</label>
+                                            <em>{{data.fdbkPsnDeptNm}}</em>
+                                        </div>
+                                    </ion-item>
+                                    <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px; padding:0; padding-bottom:11px; margin-bottom: 0">
+                                    </ion-item>
+                                </ion-list>
+
+
+
+                                <div style="height: 110px"></div>
+                            </ion-content>
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div>
+                            <ion-content id="partnerInfoChild" class="duban-detail" >
+                                <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                                </ion-refresher>
+                                <ion-list>
+                                    <ion-item class="partner-basic-info-item"  ng-repeat="info in items"   ng-click="showTogetherInfo(info)">
+                                        <ol ng-click="tanchu(info)">
+                                            <div class="partner-basic-info">
+                                                <em>事项编号：</em>
+                                                <em>{{info.itmID}}</em>
+                                            </div>
+                                            <div class="partner-basic-info">
+                                                <em>事项内容：</em>
+                                                <em>{{info.itemCnt}}</em>
+                                            </div>
+                                            <div class="partner-basic-info">
+                                                <em>开始时间：</em>
+                                                <em>{{info.stTm}}</em>
+                                            </div>
+                                            <div class="partner-basic-info">
+                                                <em style="">反馈截止时间：</em>
+                                                <em style="width: initial">{{info.edTm}}</em>
+                                            </div>
+                                            <div class="partner-basic-info">
+                                                <em>完成说明：</em>
+                                                <em>{{info.complCmnt}}</em>
+                                            </div>
+                                            <div class="partner-basic-info" ng-if="!flag">
+                                                <em>完成状态：</em>
+                                                <em>{{info.complSttnCdNm}}</em>
+                                            </div>
+                                            <div class="" style="background-color: #f0f0f0;height: 1px; position: relative; z-index: 20; margin-left:-20px;"></div>
+                                        </ol>
+
+                                    </ion-item>
+                                </ion-list>
+                                <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+                                </ion-infinite-scroll>
+                                <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 40px"></ion-item>
+                                <div style="height: 110px"></div>
+                            </ion-content>
+
+                            <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="items.length==0"  style="background-color: #f0f0f0">
+                                <div class="empty" ><p>暂无数据 ...</p></div>
+                            </div>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+            </tab-slide-box>
+        </ion-content>
+
+
+
+      <!--  <ion-footer-bar style="height:44px;    padding: 0;"  ng-if="flag">
+            &lt;!&ndash;<button class=" " style="width: 50%;background-color: #eeb81a;color:  #6a3906; border-width: 0px" ui-sref="backlogInfoAuditing">审批</button>&ndash;&gt;
+            <button class=" " style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px"
+                    ng-click="chooseAprvCooteamEmpe()">提交
+            </button>
+        </ion-footer-bar>-->
+    </div>
+</ion-view>

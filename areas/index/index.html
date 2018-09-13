@@ -1,0 +1,80 @@
+<ion-view id="index" view-title="首页" cache-view="true">
+    <div>
+        <!--题头-->
+        <ion-header-bar align-title="left" class="bar-energized header-bar">
+            <div class="header-div" style="left: 0px;" ng-click="show_list()">
+                <div class="left"></div>
+            </div>
+            <div class="header-title">
+                <img class="logo" src="img/index/logo.png">
+                <span style="display:inline; color: #FFFFFF; font-size: 18px;">金圆集团</span>
+            </div>
+            <div class="header-div" style="right: 0px;width: auto" ng-click="modal.show()">
+                <div class="right"></div>
+                <div style="font-size: 0.04rem;float: left">切换岗位</div>
+            </div>
+        </ion-header-bar>
+
+        <ion-content id="home-content" overflow-scroll="true" class="scroll-content" scroll="true">
+            <!--头部背景图-->
+            <img src="img/index/back.png" class="back">
+            <!--问候语-->
+            <div class="greet">您好！</div>
+
+            <!-- 功能导航 -->
+            <nav id="nav">
+			<span ui-sref="{{item.href}}" ng-repeat="item in nav_list">
+				<img class="nav-img" ng-src="{{item.img_src}}" alt="">
+				<h2>{{item.title}}</h2>
+			</span>
+			<!--<span ng-click="getmore()">
+				<img class="nav-img" ng-src="img/index/nav7.png" alt="">
+				<h2>更多</h2>
+			</span>-->
+                <span ui-sref="moremenu">
+                    <img  ng-src="img/index/nav7.png" alt="">
+                       <h2>更多</h2>
+                </span>
+            </nav>
+
+            <!--待办事项-->
+            <div class="floor">
+                <div class="floor-head">
+                    <img src="img/index/todo.png" class="floor-img">
+                    <span class="floor-title">待办事项</span>
+                </div>
+
+                <ion-list>
+                    <ion-item class="todo-item" ng-repeat="item in todo_list" ng-click="func_msgClick(item)">
+                        <div class="todo-time">
+                            <div class="todo-time-div">{{item.time}}</div>
+                            <div class="todo-time-div">{{item.year}}</div>
+                        </div>
+                        <div class="todo-state" style="background-color: {{item.color}}">
+
+                        </div>
+                        <div class="todo-content">
+                            <span class="con-title" style="color: #333333;">{{item.title}}</span>
+                            <span class="con-title" style="color: #666666;">{{item.content}}</span>
+                            <span class="con-title" style="color: #999999;">申请人：{{item.name}}</span>
+                        </div>
+                </ion-list>
+            </div>
+        </ion-content>
+    </div>
+</ion-view>
+
+<script id="templates/modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar-energized" style=""
+                        align-title="center">
+            <button ng-click="modal.hide()" class="button button-icon ion-ios-arrow-back"></button>
+            <h1 class="title">切换岗位</h1>
+        </ion-header-bar>
+        <ion-content class="padding" style="padding :0px;">
+            <div class="list">
+                <ion-radio ng-model="choice" ng-repeat="item in position.groups">{{item.groupName}}</ion-radio>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>

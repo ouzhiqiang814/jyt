@@ -1,0 +1,42 @@
+#companydata .scroll{
+    height: 100%;
+}
+
+#companydata .button{
+    margin-bottom: 0px;
+    color: #ffffff;
+}
+
+
+
+
+#companydata {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+#companydata .container {
+    width: 800px;
+    width: 750px;
+    text-align: center;
+    height: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+#companydata .item-options .button{
+    height: 50%;
+    float: left;
+    width: 100%;
+}
+
+#companydata .item-options{
+    width: 30%;
+}

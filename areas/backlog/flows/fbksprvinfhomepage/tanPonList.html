@@ -1,0 +1,93 @@
+<ion-view id="synergyselect" ng-init="fnGetData()">
+    <ion-side-menus>
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">选择转发人</h1>
+        <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+    </ion-header-bar>
+    <ion-side-menu-content drag-content="false">
+        <ion-content has-header="true" id="content" scroll="true" >
+            <ion-item class="item-input">      
+                <span class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input id="search" type="search" placeholder="请输出您想查找的人员姓名" ng-model="searchCont.key">
+                    <i class="icon ion-close-circled placeholder-icon" style="vertical-align: middle;" on-tap="fnClearSearch()" ng-if="searchCont.key.length"></i>                
+                </span>
+                <button class="button button-clear button-positive"  style="margin-left:0px" ng-click="fnSearch()">搜索</button>
+            </ion-item> 
+            <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="fuRefresh()">
+            </ion-refresher>
+            <div class="list" id="personBox">
+                <ul class="select" ng-if="!isCheckbox" >
+                    <ion-radio  ng-change="selectUser(item)" ng-value="item.userNum" ng-model="choice.data" ng-repeat="item in items"><li><span>{{item.realname}}</span> <span>{{item.orgName}}</span> <i class="radio-icon disable-pointer-events icon ion-checkmark"></i></li></ion-radio>
+                </ul>
+                <ul class="select" ng-if="isCheckbox">
+                    <!--<ion-radio  ng-change="selectUser(item)" ng-value="item.userNum" ng-model="choice.data" ng-repeat="item in items"><li><span>{{item.realname}}</span> <span>{{item.orgName}}</span> <i class="radio-icon disable-pointer-events icon ion-checkmark"></i></li></ion-radio>-->
+                    <ion-checkbox ng-repeat="item in items"  ng-change="selectedUser(item)"  ng-model="item.checked">
+                        <li><span>{{item.realname}}</span> <span>{{item.orgName}}</span></li>
+                    </ion-checkbox>
+                </ul>
+            </div>
+            <div>{{item.checked}}</div>
+
+            <!-- <div class="shanxian"></div>  -->
+            <ion-infinite-scroll  immediate-check="false" ng-if="finite_state" on-infinite="fnLoadMore()" distance="10px">
+            </ion-infinite-scroll>
+        </ion-content>
+        <ion-footer-bar style="height:44px; padding: 0; z-index:1;">
+            <button ng-click="submit()" class="btn-sumbit" style="width: 100%;background-color:#01B0E9; color:#fff; border-width: 0px" >提 交</button>
+        </ion-footer-bar>
+    </ion-side-menu-content>
+
+    <ion-side-menu style="z-index: initial">
+        <nav class="hidden  cehua">
+            <p class="ceng" ng-click="guan()"></p>
+            <div class="kuang">
+                <header class="bar bar-header bar-stable">
+                </header>
+                <ion-content class="has-header">
+                    <div class="item item-input item-select">
+                        <div class="input-label">单位：</div>
+                        <select ng-model="$parent.$parent.selected1" ng-options="s.orgName for s in list"  ng-change="c()" >
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                    <div class="item item-input item-select"  ng-show="$parent.$parent.selected1.child.length">
+                        <div class="input-label">子公司：</div>
+                        <select ng-model="$parent.$parent.selected2" ng-options="sh.orgName for sh in $parent.$parent.selected1.child" ng-change="c2()" >
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                    <div class="item item-input item-select" ng-show="$parent.$parent.selected2.child.length">
+                        <div class="input-label">部门：</div>
+                        <select ng-model="$parent.$parent.selected3" ng-options="x.orgName for x in $parent.$parent.selected2.child" ng-change="c3()" >
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                    <div class="item item-input item-select" ng-show="$parent.$parent.selected3.child.length">
+                        <div class="input-label">子部门：</div>
+                        <select  ng-model="$parent.$parent.selected4" ng-options="x.orgName for x in $parent.$parent.selected3.child" ng-change="c4()" >
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                    <div class="item item-input item-select" ng-show="$parent.$parent.selected4.child.length">
+                        <div class="input-label">组：</div>
+                        <select  ng-model="$parent.$parent.selected5" ng-options="x.orgName for x in $parent.$parent.selected4.child" ng-change="c5()" >
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>                    
+                    <div class="shanxian"></div>
+                    <!--  闪现 必加  -->
+                </ion-content>
+                <ion-footer-bar style="height: 43px;padding: 0;">
+                    <button class="btn-reset" ng-click="fnReset()">重 置
+                    </button>
+                    <button class="btn-confirm" ng-click="fnOk()">完 成
+                    </button>
+                </ion-footer-bar>
+            </div>
+        </nav>
+    </ion-side-menu>
+    </ion-side-menus>
+
+</ion-view>

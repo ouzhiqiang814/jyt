@@ -1,0 +1,96 @@
+<ion-content>
+    <!-- <div class="backlogInfo_div" style="height: 30px;padding: 5px;">
+
+    </div> -->
+    <div class="synergymsg" id="diaocha" ng-repeat="item in pdPlanlst">
+      <div class="backlogInfo_title">
+          <em class="backlogInfo_title_label">商机结果总结</em>
+      </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                产品线:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.PDLN_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                产品组:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.PD_GRP_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                基础产品:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.BSPD_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                可售产品:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.ASPD_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                是否成功:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.CFG_SCSIND==1?'是':'否'}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                竞争对手:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.MATCHER}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                失败原因:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.FALRS_CD_NAME}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                其他原因:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.OTHR_RSCM}}
+            </div>
+        </div>
+
+        <!--<div class="" style="height: 4px;"></div>-->
+    </div>
+
+
+    <!-- <div class="backlogInfo_div" style="height: 30px;padding: 5px;">
+
+    </div> -->
+    <div class="synergymsg" id="diaocha">
+      <div class="backlogInfo_title">
+          <em class="backlogInfo_title_label">商机总结</em>
+      </div>
+      <div class="item-input finishedtaskInfo_div">
+          <div class="input-label finishedtaskInfo_title" style="">
+              商机结果：
+          </div>
+          <div class="input-label" style="width: 62%;">
+            {{clue.RSLT_RDSC}}
+          </div>
+      </div>
+    </div>
+
+    <!-- <div style="height: 50px;"></div> -->
+</ion-content>

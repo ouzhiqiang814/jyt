@@ -1,0 +1,308 @@
+#clue .header-bar{
+    background-color: #01b0e9;
+}
+
+#clue tbody{
+    width: 100%;
+    position: absolute;
+}
+
+#clue .list{
+    height: 100%;
+/*    margin-bottom: 0px;
+    padding: 5px 0px;
+    border-bottom: 2px solid #F0F0F0;*/
+}
+#partnerionlist .partner-item {
+    height: auto;
+    width: 100%;
+    white-space: normal;
+    padding: 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#partnerionlist .partnerItemInfo{
+  padding: 10px;
+  border-bottom: 1px solid #dcdcdc;
+  width: 100% !important;
+}
+
+#clue .item{
+ /*   border-color: #FFFFFF;
+    height: 30px;*/
+}
+#clue .item span{
+    font-size: 14px;
+    width: auto;
+}
+
+#clue .item div{
+    font-size: 14px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width: 65%;
+}
+
+#clue .right-list{
+    border-bottom: 1px solid #F0F0F0;
+    padding: 0px;
+}
+
+#clue .right-padding{
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+    height: 43px;
+}
+
+#clue .right-button{
+    margin: 0px;
+    padding: 0px;
+    width: 50%;
+    position: absolute;
+    float: left;
+    border-radius: 0px;
+}
+
+#clue .right-div{
+    width: 320px;
+}
+
+#clue .right-item{
+    height: 50px;
+    border-color: #f0f0f0;
+}
+
+#clue .ion-search-right{
+    width: 30px;
+    height: 30px;
+    background:url(../../img/clue/search.png) no-repeat center;
+    background-size:cover;
+    top: auto;
+}
+
+#clue .menu-content{
+    /*box-shadow: -1px 0 2px rgb(0, 0, 0), 1px 0 2px rgba(255, 255, 255, 0);*/
+}
+
+
+
+
+/*详情页面样式*/
+#clue_info .slide-tabs{
+    width: 100%;
+}
+
+#clue_info .item_head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#clue_info .table{
+    background-color: #EFEFEF;
+}
+
+#clue_info .card-head{
+    background-color: #FFFFFF;
+    height: 50px;
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-between; /* Safari 6.1+ */
+    display: flex;
+    align-items: center;
+}
+
+#clueDetail .list{
+  border-top: 15px solid #F0F0F0;
+  padding-bottom: 0;
+  border-radius: 10px;
+   /* border-top: 2px solid #F0F0F0;*/
+}
+
+#clue_info .card .list{
+    /* margin-left: 6%;
+    margin-top: 2%; */
+    margin: 0;
+}
+
+
+#clue_info .head-title{
+    left: 55px;
+    position: absolute;
+    float: left;
+    top: 15px;
+}
+
+#clue_info .card{
+    margin: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+#clue_info .card-img{
+    width: 26px;
+    height: 26px;
+    float: left;
+}
+
+#clue_info .slidingTabs ul li.tab-active{
+    color: #6a3906;
+}
+
+#clue_info .slidingTabs .tab-indicator-wrapper .tab-indicator{
+    background-color: #6a3906;
+}
+
+#clue_info .tableInfo-title{
+    text-align: left;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width: auto;
+    font-size: 14px;
+}
+
+#clue_info .tableInfo-name{
+    text-align: left;
+    width: 70px;
+    font-size: 14px;
+}
+
+#clue_info .tableInfo-div{
+    height: 25px;
+    display: flex;
+    align-items: center;;
+}
+
+#clue_info .item-text-wrap{
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#clue_info .label_item {
+    /* border-color: #FFFFFF; */
+    padding: 5px;
+    border-bottom: 1px solid #dcdcdc;
+    padding-left: 50px;
+}
+#clue_info .label_item span {
+    font-size: 13px;
+    width: auto;
+    white-space: nowrap;
+    color:#999;
+}
+
+#clue_info .label_item div {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 65%;
+    color:#000;
+}
+
+#clue_info .slider-pager{
+    display: none;
+}
+
+#clue_info .scroll-list{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+}
+
+#clue_info .scroll-a{
+    flex: 1;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    -webkit-flex: 1;
+    color: #4d4d4d;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+#clue_info .div{
+    height: 42px;
+    width: 100%;
+}
+
+#clue_info .action{
+    color: #01b0e9;
+    border-bottom: 2px solid #01b0e9;
+}
+
+
+#clue_info .biao {
+    background: url(../../img/clue/more.png);
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+#clue_info .biao.close {
+    background: url(../../img/clue/less.png);
+    background-size: 20px;
+}
+
+#clue_info .partnerItemInfo {
+     padding: 10px;
+     border-bottom: 1px solid #dcdcdc;
+ }
+
+#clue_info .partnerItemInfo .sleft {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.21rem;
+    font-weight: normal;
+    width: 36%;
+    max-width:120px;
+    margin-right: 3%;
+    color:#999;
+}
+#clue_info .partnerItemInfo .sright {
+    display: inline-block;
+    width: 61%;
+    vertical-align: middle;
+    font-size: 0.21rem;
+    color:#000;
+}
+@media only screen and (min-width:500px){
+    #clue_info .partnerItemInfo .sleft, #clue_info .partnerItemInfo .sright{
+        font-size:15px;
+    }
+}
+
+
+#clue_info .partnerItemInfo em{
+    display: inline-block;
+    width:100%;
+}
+
+#clue_info .overflow-scroll>.scroll.overscroll{
+    position: inherit;
+}
+
+
+
+
+/*
+#clue_info .test{
+    transition: all linear 0.5s;
+}
+
+#clue_info .ng-hide {
+    height: 0;
+}*/
+
+
+.pro-scroll .list{
+  margin: 0 10px;
+}
+
+.pro-scroll .list .item{
+  padding: 0;
+}

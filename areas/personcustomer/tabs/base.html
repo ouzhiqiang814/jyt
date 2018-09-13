@@ -1,0 +1,321 @@
+<ion-content id="personCustomerInfoChild">
+    <ion-list class="kehu-detail" style="height: 100%">
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    客户法定名称:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.ipNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    客户编号:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.cstId}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    主证件类型:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.ipIdTpcd == '*'?'*':basic.ipIdTpcdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    主证件号码:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.ipIdNo}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    性别:
+                </div>
+                <div ng-if="basic.gndCd == 01" class="input-label" style="width:55%;">
+                    <div>男</div>
+                </div>
+                <div ng-if="basic.gndCd == 02" class="input-label" style="width:55%;">
+                    <div>女</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    出生年月:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.brthDt}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    国籍:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.natCd == '*'?'*':basic.natCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    民族:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.ethnctCd == '*'?'*':basic.ethnctCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    客户管理机构:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.orgNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    客户管户人员:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.empNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    婚姻状况:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.marStCd == '*'?'*':basic.marStCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    学历:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.edDgrCd == '*'?'*':basic.edDgrCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    政治面貌:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.pltclPartyCd == '*'?'*':basic.pltclPartyCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    参加工作时间:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.pcpWrkTm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    宗教信仰:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.rlgCd == '*'?'*':basic.rlgCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    个人兴趣爱好:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.hbbDSC}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    个人身份描述:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.idvIdntDsc}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    居住状况:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.rsdntStCd == '*'?'*':basic.rsdntStCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    家庭现有住房数:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.famExstHsNum}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    主要经济来源:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.mainEcnSrcCd == '*'?'*':basic.mainEcnSrcCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    其他经济来源描述:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.othrEcnSrcDsc}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    财务负担描述:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.fncBrdnDsc}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    参加养老保险标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.pcpPnsnInsInd | getYesOrNo}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    参加医疗保险标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.pcpMdclInsInd | getYesOrNo}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    非居民标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.nooRsdntInd | getYesOrNo}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    失业保险参加标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.unempInsPcpInd | getYesOrNo}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    家庭情况描述:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.famStnDsc}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    家庭人口数:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.famPpnNum}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    子女状况:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.chlSttnCd == '*'?'*':basic.chlSttnCdNm}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    抚养子女数量:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.rsChlNum}}</div>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="" style="padding: 0px;font-size: 14px;white-space:inherit">
+            <div class="item-input"style="">
+                <div class="input-label  kh-left">
+                    个人其他情况描述:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    <div>{{basic.idvOthrStnDsc}}</div>
+                </div>
+            </div>
+        </ion-item>
+
+        <!--<ion-item class="" style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+        </ion-item>-->
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+</ion-content>

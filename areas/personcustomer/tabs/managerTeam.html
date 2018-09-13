@@ -1,0 +1,49 @@
+<ion-content id="personCustomerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh9()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items9.length !=0" ng-repeat="info in items9">
+            <div class="cus-basic-info">
+                <em>管理对象类型:</em>
+                <em>{{info.MGTTPCD == '*'?'*':info.MGTTPCDNm}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>管理对象名称:</em>
+                <em>{{info.EMPNM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>管理对象编号:</em>
+                <em>{{info.EMPID}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>关系类型:</em>
+                <em>{{info.CSTANDEMPERETPCD == '*'?'*':info.CSTANDEMPERETPCDNm}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>管理业务类型:</em>
+                <em>{{info.BSNTPCD  == '*'?'*':info.BSNTPCDNm}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>所属机构名称:</em>
+                <em>{{info.EMPORG}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>所属部门名称:</em>
+                <em>{{info.EMPDEPT}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>联系电话:</em>
+                <em>{{info.MOBILE}}</em>
+            </div>
+        </ion-item>
+        <!--<ion-item class=""  style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+        </ion-item>-->
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state9" on-infinite="loadMore9()" distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div ng-if="items9.length ==0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

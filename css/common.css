@@ -1,0 +1,958 @@
+/*屏幕自适应*/
+/*html{*/
+/*font-size: 16px;!important;*/
+/*}*/
+
+/*@media (min-width: 960px)  {*/
+/*html{*/
+/*font-size: 14px;!important;*/
+/*}*/
+/*}*/
+
+/*@media (min-width: 960px) and (max-width: 1200px) {*/
+/*html{*/
+/*font-size: 16px;!important;*/
+/*}*/
+/*}*/
+/*@media (max-width: 1200px)  {*/
+/*html{*/
+/*font-size: 18px;!important;*/
+/*}*/
+/*}*/
+
+/*!*1rem=fontsize*!*/
+
+/*div{*/
+/*width:2rem;*/
+/*}*/
+
+/*rem html的fontsize全局*/
+/*em  父元素的fontsize*/
+
+ion-view {
+    /*background-image:url('../img/common/bg960@2x.png');*/
+    background-color: #ccc;
+    background-size: 100% 100%;
+}
+
+/* Empty. Add your own CSS if you like */
+
+/**
+ * Action Sheets for Android
+ * --------------------------------------------------
+ */
+.platform-android .action-sheet-backdrop {
+    -webkit-transition: background-color 150ms ease-in-out;
+    transition: background-color 150ms ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.platform-android .action-sheet-backdrop.active {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.platform-android .action-sheet-wrapper {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    -webkit-transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+    transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.platform-android .action-sheet-up {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.platform-android .action-sheet {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: auto;
+    z-index: 11;
+    overflow: hidden;
+}
+
+.platform-android .action-sheet .button {
+    display: block;
+    padding: 1px;
+    width: 100%;
+    border-radius: 0;
+    border-color: #d1d3d6;
+    background-color: transparent;
+    color: #007aff;
+    font-size: 21px;
+}
+
+.platform-android .action-sheet .button:hover {
+    color: #007aff;
+}
+
+.platform-android .action-sheet .button.destructive {
+    color: #ff3b30;
+}
+
+.platform-android .action-sheet .button.destructive:hover {
+    color: #ff3b30;
+}
+
+.platform-android .action-sheet .button.active, .platform-android .action-sheet .button.activated {
+    box-shadow: none;
+    border-color: #d1d3d6;
+    color: #007aff;
+    background: #e4e5e7;
+}
+
+.platform-android .action-sheet-has-icons .icon {
+    position: absolute;
+    left: 16px;
+}
+
+.platform-android .action-sheet-title {
+    padding: 16px;
+    color: #8f8f8f;
+    text-align: center;
+    font-size: 13px;
+}
+
+.platform-android .action-sheet-group {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.platform-android .action-sheet-group .button {
+    border-width: 1px 0px 0px 0px;
+}
+
+.platform-android .action-sheet-group .button:first-child:last-child {
+    border-width: 0;
+}
+
+.platform-android .action-sheet-options {
+    background: #f1f2f3;
+}
+
+.platform-android .action-sheet-cancel .button {
+    font-weight: 500;
+}
+
+.platform-android .action-sheet-open {
+    pointer-events: none;
+}
+
+.platform-android .action-sheet-open.modal-open .modal {
+    pointer-events: none;
+}
+
+.platform-android .action-sheet-open .action-sheet-backdrop {
+    pointer-events: auto;
+}
+
+.platform-android .action-sheet .action-sheet-title, .platform-android .action-sheet .button {
+    text-align: center;
+}
+
+.platform-android .action-sheet-cancel {
+    display: block;
+}
+
+.bar.bar-energized {
+    background-color: #01b0e9;
+    border-color:#01b0e9;
+    background-image: linear-gradient(0deg, #01b0e9, #01b0e9 50%, transparent 50%);
+}
+
+.slide-tab {
+    width: 100%;
+}
+
+.slide-tab-two {
+    width: 50% !important;
+}
+
+.btn-reset {
+    width: 50%;
+    background-color: #e6f9ff;
+    color: #01b0e9;
+    border-width: 0
+}
+
+.btn-confirm {
+    width: 50%;
+    left: 50%;
+    background-color: #01b0e9;
+    color: #ffffff;
+    border-width: 0
+}
+
+.radiusbtn {
+    border-width: 0px;
+    width: 80%;
+    background-color: #01b0e9;
+    margin: 0 auto;
+    color: #ffffff;
+    -moz-border-radius: 42px;
+    -webkit-border-radius: 42px;
+    border-radius: 42px;
+}
+
+
+/* 商机列表 */
+.initclueinfo .backlogInfo_div .backlogInfo_title .backlogInfo_title_label{
+    font-size: 0.27rem!important;
+}
+.initclueinfo .mokuai ol .item {
+    height: auto!important;
+    padding: 3% 5%!important;
+}
+.initclueinfo .pane, .initclueinfo .view{
+    background:#f0f0f0
+}
+.initclueinfo .switch{
+    background: url(../img/clue/more.png) no-repeat 90% center;
+    background-size: 0.25rem;
+    background-color: #fff;
+        padding: 10px !important;
+        height: auto !important;
+}
+.initclueinfo .switch.more{
+    background: url(../img/clue/less.png) no-repeat 90% center;
+    background-size: 0.25rem;
+    background-color: #fff;
+        padding: 10px !important;
+        height: auto !important;
+
+}
+
+.initclueinfo .mokuai{
+  margin-bottom: 10px;
+}
+.initclueinfo .column{
+    margin-bottom:3%;
+    background-color: #fff;
+}
+
+.initclueinfo .column .backlogInfo_div{
+  padding-left: 25px !important;
+}
+
+.initclueinfo .column:last-child{
+    margin-bottom:0;
+}
+
+.initclueinfo .input-label {
+    font-size: 0.25rem!important;
+}
+.initclueinfo .input-label:first-child{
+    width: 36%!important;
+    max-width: 127px!important;
+}
+.initclueinfo .scroll-content{
+    max-width: 500px;
+    margin:0 auto;
+}
+@media only screen and (min-width:500px){
+    .initclueinfo .backlogInfo_div .backlogInfo_title .backlogInfo_title_label{
+        font-size: 15px!important;
+    }
+    .initclueinfo .input-label{
+        font-size: 15px!important;
+    }
+}
+
+
+
+/* 拜访记录查询 */
+.cst_vstinfo .backlogInfo_div .backlogInfo_title .backlogInfo_title_label{
+    font-size: 0.27rem!important;
+}
+.cst_vstinfo .item {
+    height: auto!important;
+    padding: 1.5% 5px!important;
+}
+.cst_vstinfo .pane, .cst_vstinfo .view{
+    background:#f0f0f0
+}
+.cst_vstinfo .column{
+    margin-bottom:3%;
+}
+.column:last-child{
+    margin-bottom:0;
+}
+.cst_vstinfo .input-label{
+    font-size: 0.25rem!important;
+}
+.cst_vstinfo .scroll-content{
+    max-width: 500px;
+    margin:0 auto;
+}
+@media only screen and (min-width:500px){
+    .cst_vstinfo .backlogInfo_div .backlogInfo_title .backlogInfo_title_label{
+        font-size: 15px!important;
+    }
+    .cst_vstinfo .input-label{
+        font-size: 15px!important;
+    }
+}
+
+
+/* 切换 样式 */
+.scroll-x{
+    width:100%;
+}
+
+
+/* 机会查询详情页 */
+.history .scroll-x .scroll a{
+    width:33%!important;
+    font-size: 16px!important;
+    line-height: 16px!important;
+}
+
+
+
+
+/* 进入页面，出现侧滑效果 */
+/*.begin-right{
+    left:100%!important;
+    animation: huadong 0.3s linear 0s alternate !important;
+    -webkit-animation: huadong 0.3s linear 0s alternate !important;
+
+    animation-fill-mode: forwards !important;  /!* 把物体停留在100% 的状态) *!/
+    -webkit-animation-fill-mode: forwards !important;
+}*/
+@-webkit-keyframes huadong {
+    0% {
+        left:100%;
+    }
+    50% {
+        left:50%;
+    }
+    100% {
+        left:0;
+    }
+}
+@keyframes huadong {
+    0% {
+        left:100%;
+    }
+    50% {
+        left:50%;
+    }
+    100% {
+        left:0;
+    }
+}
+
+
+
+.begin-left{
+    left:-100%!important;
+    animation: huadong1 0.3s linear 0s alternate !important;
+    -webkit-animation: huadong1 0.3s linear 0s alternate !important;
+
+    animation-fill-mode: forwards !important;  /* 把物体停留在100% 的状态) */
+    -webkit-animation-fill-mode: forwards !important;
+}
+@-webkit-keyframes huadong1 {
+    0% {
+        left:-100%;
+    }
+    50% {
+        left:-50%;
+    }
+    100% {
+        left:-0;
+    }
+}
+@keyframes huadong1 {
+    0% {
+        left:-100%;
+    }
+    50% {
+        left:-50%;
+    }
+    100% {
+        left:-0;
+    }
+}
+
+
+/*.end-right{
+    animation: end 0.3s linear 0s alternate !important;
+    -webkit-animation: end 0.3s linear 0s alternate !important;
+
+    animation-fill-mode: forwards !important;  /!* 把物体停留在100% 的状态) *!/
+    -webkit-animation-fill-mode: forwards !important;
+}*/
+@-webkit-keyframes end {
+    0% {
+        left:0;
+    }
+    50% {
+        left:50%;
+    }
+    100% {
+        left:100%;
+    }
+}
+@keyframes end {
+    0% {
+        left:0;
+    }
+    50% {
+        left:50%;
+    }
+    100% {
+        left:100%;
+    }
+}
+
+
+
+/* 暂无数据 */
+.empty{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 1.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.3rem;
+    letter-spacing: 0.03rem;
+    font-family: Microsoft YaHei;
+    color:#ccc;
+}
+.bar .button, .bar button {
+    font-size: 16px;
+    letter-spacing: 0.03rem;
+    font-family: Microsoft YaHei;
+}
+
+@media only screen and (min-width:500px) {
+    .empty{
+        font-size:17px;
+    }
+}
+
+
+/* 闪现 */
+.shanxian {
+    position: fixed;
+    vertical-align: middle;
+    text-align: center;
+    width:70%;
+    max-width: 300px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 45%;
+    z-index: 50;
+    color: #fff;
+    background: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    display: inline-block;
+}
+#errorBox p {
+    font-size: 0.25rem;
+    letter-spacing: 0.03rem;
+    margin: 0;
+    line-height: 180%;
+    padding: 2%;
+}
+
+
+/* 侧栏 */
+.celan{
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+    height: 43px!important;
+}
+.celan button {
+    font-size: 16px;
+    letter-spacing: 15px;
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    font-weight: normal;
+}
+.celan button span {
+    position: relative;
+    left: 8%;
+}
+
+/* 加载中 */
+.loading span {
+    margin-top: 10%;
+    letter-spacing: 0.02rem;
+    font-size: 0.21rem;
+}
+/*.loading {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    top: 40%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.5);
+}
+.loading img {
+    margin-top: 23px;
+    width: 38px;
+}
+.loading span {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 9px;
+    letter-spacing: 2px;
+}*/
+
+
+/* 左边栏点击切换 */
+.zuola{
+    border-top: 2px solid #F0F0F0;
+    position: relative;
+    height: 100%
+}
+.zuola .klist1 {
+/* margin-top: 5px; */
+}
+.zuola .klist1 dl {
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px;;
+    margin: 0;
+    /* margin-bottom: 12px; */
+    color: #444;
+}
+.zuola .klist1 dl dt {
+    font-size: 0.21rem;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 3%;
+    line-height: inherit;
+    color:#999;
+}
+.zuola .klist1 dl dd {
+    font-size: 0.21rem;
+    width: 61%;
+    display: inline-block;
+    line-height: inherit;
+    color:#000;
+}
+@media only screen and (min-width:500px){
+    .zuola .klist1 dl dt, .zuola .klist1 dl dd{
+        font-size:15px;
+    }
+}
+
+
+.item{
+    z-index: inherit;
+}
+.ionic-body, body{
+    /*font-family: Microsoft YaHei;*/
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    font: normal;
+}
+
+
+/*.backdrop{
+    background: #f0f0f0;
+    top:44px;
+}*/
+.loading-container{
+    top:44px;
+}
+
+.item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
+    white-space: initial;
+}
+
+/* loading 加载动画进入动画效果  */
+
+
+/*选择浮层框*/
+.xuanze{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+.xuanze .btns {
+    /*    position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 80px;
+        width:100%;*/
+}
+.xuanze .btns a {
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100%;
+    font-size: 14px;
+    line-height: initial;
+    position: absolute;
+}
+.xuanze .btn-shenpi{
+    background: #E6F9FF;
+    color: #01b0e9;
+    left: 20%;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.xuanze .btn-kehu{
+    background:#01B0E9;
+    color: #e6f9ff;
+    right: 20%;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.xuanze .btns a:active{
+    background: #ccc!important;
+}
+.xuanze .btns a span {
+    position: absolute;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.ceng{
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.cehua .input-label{
+    width: initial;
+    font-size: 0.25rem;
+    white-space: nowrap;
+}
+@media only screen and (min-width:500px) {
+    .cehua .input-label{
+         font-size: 15px;
+     }
+}
+
+
+
+.cehua .item-select select{
+    background: none;
+}
+
+
+.partnerItemInfo em i.icon {
+    margin-right: 2%!important;
+    float: initial!important;
+    vertical-align: middle;
+}
+
+
+.btn-reset {
+    color: #01B0E9;
+    width: 50%;
+    background-color: #E6F9FF;
+}
+.btn-ok {
+    color: #FFFFFF;
+    background-color: #01B0E9;
+    width: 50%;
+    left: 50%;
+    border: none;
+}
+
+
+
+/* 个人数据申请 */
+.item-complex .item-content{
+    padding: 0;
+}
+
+.item-complex .item-content div{
+  padding: 10px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+/* .item-complex .item-content div:first-child{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.item-complex .item-content div:last-child{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+} */
+
+.item-complex .item-content label{
+  font-size: .25rem;
+  display: inline-block;
+  vertical-align: middle;
+  color:#000;
+}
+
+.item-complex .item-content label:first-child{
+  color: #999;
+  width:33%;
+}
+
+
+
+
+
+
+/* 双列数据的 左列宽度 */
+.ztai2 .input-label:nth-child(1) {
+    width: initial;
+    margin: 0;
+    margin-right: 3%!important;
+}
+.ztai2 .input-label:nth-child(2){
+    width: 65%!important;
+    max-width: initial;
+}
+
+.zleft{
+    width: 35%!important;
+    max-width: 122px!important;
+}
+
+.noleft{
+    width: initial;
+    margin-right: 5%!important;
+}
+#synergyclues .synergymsg .noleft{
+    width: initial!important;
+}
+
+.zleft1{
+    width: 105px;
+    margin-right: 5%!important;
+}
+
+
+.zleft2 {
+    width: 80px;
+    margin-right: 5%!important;
+    display: inline-block;
+}
+.zright2{
+    width: 63%;
+    display: inline-block;
+}
+
+.zleft3, .zright3{
+    font-size:0.25rem!important;
+}
+.zleft3 {
+    width: 38%!important;
+    max-width: 135px!important;
+}
+@media only screen and (min-width:500px) {
+    .zleft3, .zright3{
+        font-size:15px!important;
+    }
+}
+
+
+
+.partnerItemInfo .input-label{
+    font-size: 15px;
+}
+.partnerItemInfo .ng-binding{
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+#synergyclues .item{
+    padding: 12px;
+}
+
+#synergyclues .item:first-child{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#synergyclues .item:last-child{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* 合作 */
+.hz-left, .hz-right{
+    font-size:0.25rem!important;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 24px;
+    font-family: "Microsoft YaHei",sans-serif;
+}
+.hz-left{
+    width:33%;
+    margin-right: 3%;
+    max-width: 138px;
+    color:#999;
+}
+.hz-right {
+    width: 56%;
+    color:#000;
+}
+
+@media only screen and (min-width:500px) {
+    .hz-left, .hz-right{
+        font-size:15px!important;
+    }
+}
+
+
+/* 查询 */
+.cx-left, .cx-right{
+    font-size:0.25rem!important;
+    display: inline-block;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.cx-left{
+    width: initial!important;
+    margin-right: 5%;
+    color:#999;
+}
+
+.cx-right{
+  color:#000;
+}
+@media only screen and (min-width:500px) {
+    .cx-left, .cx-right{
+        font-size:15px!important;
+    }
+}
+
+
+/* 详情页 */
+.xq-left, .xq-right{
+    font-size:0.25rem!important;
+    display: inline-block;
+}
+.xq-left{
+    width: 34%;
+    max-width: 116px;
+    margin-right: 5%;
+}
+@media only screen and (min-width:500px) {
+    .xq-left, .xq-right{
+        font-size:15px!important;
+    }
+}
+
+
+/* 商机详情 */
+.sj-detail .synergymsg .item {
+    padding: 3% 7%!important;
+}
+.sj-detail .synergymsg .item:first-child{
+    padding-top:6%!important;
+}
+.sj-detail .synergymsg .item:last-child{
+    padding-bottom:6%!important;
+}
+
+
+/* 督办详情 */
+.duban-detail .partner-base-info label {
+    width: 33%!important;
+}
+.duban-detail .partner-base-info em {
+    /* width: 62%!important; */
+}
+
+.duban-detail .partner-base-info em{
+    font-size:0.25rem!important;
+}
+.duban-detail .partner-base-info em:first-child {
+    width: 33%;
+    max-width: 118px;
+}
+.duban-detail .partner-base-info em:nth-child(2) {
+    width: 50%!important;
+}
+@media only screen and (min-width:500px) {
+    .duban-detail .partner-basic-info em{
+        font-size:15px!important;
+    }
+}
+
+.bar .button.button-icon .icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar .button.button-icon:before, .bar button.button-icon .icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before, .bar button.button-icon:before{
+    vertical-align: middle;
+}
+
+.dbzt-left{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3%;
+    font-size: .25rem;
+    font-family: "microsoft Yahei", sans-serif;
+    color:#999;
+}
+
+
+
+/* 客户信息 */
+.kehu-detail ion-item .item{
+    padding-left: 8%;
+    padding-right: 7%;
+}
+
+.kh-left {
+    width: 37%;
+    max-width: 126px;
+    margin-right: 5%;
+}
+
+
+/* 查看拜访记录 */
+.chakan-left{
+    width:29%;
+    margin-right:6%;
+}
+.chak-left {
+    width: 28%;
+    max-width: 85px;
+    margin-right: 5%;
+}
+
+.platform-android .bar .title {
+    font-size: 17px;
+}
+
+.scroll-content{
+  background: #f0f0f0;
+}

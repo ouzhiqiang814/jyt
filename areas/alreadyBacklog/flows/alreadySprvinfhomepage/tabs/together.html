@@ -1,0 +1,62 @@
+<ion-content  id="partnerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="partner-basic-info-item"  ng-repeat="info in items"   ng-click="showTogetherInfo(info)">
+            <ol ng-click="tanchu($event)" on-swipe="huandong()">
+                <div class="partner-basic-info">
+                    <em>反馈人员：</em>
+                    <em>{{info.fdbkPsnNm}}</em>
+                </div>
+                <div class="partner-basic-info">
+                    <em>反馈部门：</em>
+                    <em>{{info.fdbkPsnInstNm}}</em>
+                </div>
+                <div class="partner-basic-info">
+                    <em>事项内容：</em>
+                    <em>{{info.itemCnt}}</em>
+                </div>
+               <!-- <div class="partner-basic-info">
+                    <em>开始时间：</em>
+                    <em>{{info.stTm}}</em>
+                </div>-->
+                <div class="partner-basic-info">
+                    <em style="">反馈截止时间：</em>
+                    <em style="width: initial">{{info.edTm}}</em>
+                </div>
+                <div class="partner-basic-info">
+                    <em>完成状态：</em>
+                    <em>{{info.complSttnCdNm}}</em>
+                </div>
+                <div class="partner-basic-info" ng-if="!flag">
+                    <em>反馈说明：</em>
+                    <em>{{info.complCmnt}}</em>
+                </div>
+                <div class="partner-basic-info" ng-if="!flag">
+                    <em>反馈时间：</em>
+                    <em>{{info.complTm}}</em>
+                </div>
+                <div class="partner-basic-info" ng-if="!flag">
+                    <em>反馈耗时（小时）：</em>
+                    <em style="width: initial">{{info.tmPrd}}</em>
+                </div>
+                <div class="" style="background-color: #f0f0f0;height: 1px; position: relative; z-index: 20; margin-left:-20px;"></div>
+            </ol>
+            <nav class="xuanze" style="display: none">
+                <div class="ceng" ng-click="close()"></div>
+                <div class="btns">
+                    <a class="btn-shenpi" ng-click="look(info)"><span>查看</span></a>
+                    <a class="btn-kehu" ng-click="excelColsprvitminf(info)"><span>导出</span></a>
+                </div>
+            </nav>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+    </ion-infinite-scroll>
+    <!--<ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 40px">-->
+    <div style="height: 110px"></div>
+</ion-content>
+
+<div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="items.length==0"  style="background-color: #f0f0f0">
+    <div class="empty" ><p>暂无数据 ...</p></div>
+</div>

@@ -1,0 +1,62 @@
+<ion-content>
+    <!-- <div class="backlogInfo_div" style="height: 30px;padding: 5px;">
+
+    </div> -->
+    <div class="synergymsg" id="diaocha" ng-repeat="item in pdPlanlst">
+      <div class="backlogInfo_title">
+          <em class="backlogInfo_title_label">制定方案</em>
+      </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                产品线:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.PDLN_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                产品组:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.PD_GRP_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                基础产品:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.BSPD_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                可售产品:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.ASPD_NM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                预估业务量:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.EST_BSN_NUM}}
+            </div>
+        </div>
+        <div class="item-input finishedtaskInfo_div">
+            <div class="input-label finishedtaskInfo_title" style="">
+                预估业务单位:
+            </div>
+            <div class="input-label" style="width: 62%;">
+                {{item.EST_BNNM_UNCD_NAME}}
+            </div>
+        </div>
+
+        <!--<div class="" style="height: 4px;"></div>-->
+    </div>
+
+    <div style="height: 40px;"></div>
+</ion-content>

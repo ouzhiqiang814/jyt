@@ -1,0 +1,53 @@
+<ion-view id="finishedtaskInfoAuditing">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">审批</h1>
+
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+
+            <ion-item>
+                <textarea style="width:100%;height:100px;" placeholder="请输入审批意见"></textarea>
+            </ion-item>
+            <ion-item class="item-checkbox" style="padding-left: 16px">
+                审批通过
+                <label class="checkbox">
+                    <input type="radio" style="    float: right;" name="approve" checked="">
+                </label>
+            </ion-item>
+            <ion-item class="item-checkbox" style="padding-left: 16px">
+                审批不通过
+                <label class="checkbox">
+                    <input type="radio" style="    float: right;"  name="approve">
+                </label>
+            </ion-item>
+
+
+        </ion-list>
+
+        <div class="item item-input">
+            <div class="input-label">
+                审批金额：
+            </div>
+            <input type="number">
+        </div>
+        <div class="item item-input">
+            <div class="input-label">
+                结束时间：
+            </div>
+            <input type="date">
+        </div>
+        <div class="item item-input" ng-click="goNextInfo()">
+            <div class="input-label">
+                下一审批人：
+            </div>
+            <em class="goDetail"> > </em>
+        </div>
+
+    </ion-content>
+    <ion-footer-bar style="height: 9%;padding: 0;margin-bottom: 20px; background:none">
+        <button class="button button-full searchbtn tijiao" style="">提交
+        </button>
+    </ion-footer-bar>
+</ion-view>

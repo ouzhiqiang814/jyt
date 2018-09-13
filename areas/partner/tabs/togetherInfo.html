@@ -1,0 +1,167 @@
+<ion-view id="partnerInfoChild">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBackInfo()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">合作事项信息</h1>
+    </ion-header-bar>
+    <ion-content has-header="true" id="content" scroll="false">
+        <tab-slide-box tab='0'>
+            <div class="tsb-icons">
+                <div class="tsb-ic-wrp">
+                    <ion-scroll direction="x" class="tsb-hscroll">
+                        <a href="javascript:;" class="">合作事项基本信息</a>
+                        <a href="javascript:;" class="">合作伙伴联系信息</a>
+                        <a href="javascript:;" class="">附件信息</a>
+                    </ion-scroll>
+                </div>
+            </div>
+            <div style="height:5px;background-color:#f0f0f0;"></div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <ion-content>
+                        <ion-list class="partner-base-info-list">
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>合作事由:</label>
+                                    <em>{{partnerInfo.cooItemDsc}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>对接部门:</label>
+                                    <em>{{partnerInfo.deptName}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>对接人员:</label>
+                                    <em>{{partnerInfo.empeName}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>对接人员联系方式:</label>
+                                    <em>{{partnerInfo.mobile}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>合作时间:</label>
+                                    <em>{{partnerInfo.cooItemTm}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px">
+                        </ion-list>
+                    </ion-content>
+                </ion-slide>
+                <ion-slide>
+                    <ion-content>
+                        <ion-list class="partner-base-info-list">
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>联系人名称:</label>
+                                    <em>{{partnerConnect.cooPtnCtcPsnNm}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>所属部门:</label>
+                                    <em>{{partnerConnect.cooPtnDeptDsc}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>职位:</label>
+                                    <em>{{partnerConnect.cooPtnCtcPsnPost}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>固定电话：</label>
+                                    <em>{{partnerConnect.cooPtnFixTelPhn}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>移动电话：</label>
+                                    <em>{{partnerConnect.cooPtnMoblTelPhn}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>电子邮箱：</label>
+                                    <em>{{partnerConnect.cooPtnCtcEmail}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>国家/地区：</label>
+                                    <em>{{partnerConnect.cooPtnCtcNatName}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>邮政编码：</label>
+                                    <em>{{partnerConnect.cooPtnZipCd}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>省市县：</label>
+                                    <em>{{partnerConnect.cooPtnCtcProvcNm}}{{partnerConnect.cooPtnCtcCityNm}}{{partnerConnect.cooPtnCtyTwnNm}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item">
+                                <div class="partner-base-info">
+                                    <label>详细地址：</label>
+                                    <em>{{partnerConnect.cooPtnAddr}}</em>
+                                </div>
+                            </ion-item>
+                            <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 20px">
+                        </ion-list>
+                    </ion-content>
+                </ion-slide>
+                <ion-slide>
+                    <ion-content>
+                        <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                        </ion-refresher>
+                        <ion-list id="partnerionlist">
+                            <ion-item class="partner-base-item" ng-if="getAttchFileListData.length != 0" ng-repeat="item in getAttchFileListData" on-finish-render-filters  ng-click="show_info(item)">
+
+                                <div class="partner-base-info getAttchFileList">
+                                    <label>文件名称：</label>
+                                    <em>{{item.attachNm}}</em>
+                                </div>
+                                <div class="partner-base-info getAttchFileList">
+                                    <label>文件分类：</label>
+                                    <em>{{item.attachTpCdNm}}</em>
+                                </div>
+                                <div class="partner-base-info getAttchFileList">
+                                    <label>上传时间：</label>
+                                    <em style="width: 30%">{{item.udtTm}}</em>
+                                    <i ng-click="dowload(item)"  class="icon ion-ios-cloud-download-outline"
+                                       style="color: #3839f1;float: right;margin-right: 10px;margin-right: 20px; font-size: 25px;"></i>
+                                </div>
+                                <div class="partner-base-info getAttchFileList">
+                                    <label>上传部门：</label>
+                                    <em>{{item.blngDeptNm}}</em>
+                                </div>
+                                <div class="partner-base-info getAttchFileList">
+                                    <label>上传人员：</label>
+                                    <em>{{item.blngEmpeNm}}</em>
+                                </div>
+                            </ion-item>
+                        </ion-list>
+                        <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()" distance="1%">
+                        </ion-infinite-scroll>
+                        <ion-item class="partner-base-item" style="background-color: #f0f0f0;border-width: 0px;margin-bottom: 20px">
+                    </ion-content>
+                    <div ng-if="getAttchFileListData.length == 0">
+                        <div class="empty"><span>暂无数据 ...</span></div>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </tab-slide-box>
+
+
+    </ion-content>
+</ion-view>

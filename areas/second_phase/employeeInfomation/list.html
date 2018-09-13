@@ -1,0 +1,90 @@
+<ion-view >
+    <ion-side-menus id="employeeInfoList">
+        <ion-header-bar class="bar-energized bar bar-header" align-title="center">
+            <button class="button button-icon ion-ios-arrow-left" ng-click="goBack()"></button>
+            <h1 class="title">员工信息</h1>
+            <button class="button button-icon ion-ios-search" ng-click="qiehuan()"  style="display: block"></button>
+        </ion-header-bar>
+
+        <ion-side-menu-content drag-content="false">
+            <ion-content ng-init="fnGetData()">
+                <!-- <ion-item class="item-input">      
+                    <span class="item-input-wrapper">
+                        <i class="icon ion-ios-search placeholder-icon" ng-click="fnSearch()"></i>
+                        <input id="search" type="search" placeholder="请输出您想查找的员工姓名" ng-model="searchCont.key">
+                        <i class="icon ion-close-circled placeholder-icon" style="vertical-align: middle;" on-tap="fnClearSearch()" ng-if="searchCont.key.length"></i>
+                        
+                    </span>
+                    <button class="button button-clear button-positive"  style="margin-left:0px" ng-click="fnSearch()">搜索</button>
+                </ion-item>                -->
+                <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="fnRefresh()"></ion-refresher>
+                <ion-list>
+                     <ion-item  class="ow-list-card" ng-repeat="item in items" ng-click="fnInfoDetil(item)">
+                        <div class="item item-avatar ow-card-padding">
+                            <img src="{{item.scr}}" class="ow-img-list ow-list-image">
+                            <span class="ow-com-font-size" style="margin-bottom:5px;">姓名：&nbsp;&nbsp;&nbsp;&nbsp;{{ item.name }}</span>
+                            <span class="ow-com-font-size ow-list-info" style="margin-bottom: 5px;">部门：&nbsp;&nbsp;&nbsp;&nbsp;{{item.department}}</span>
+                            <span class="ow-com-font-size ow-list-info">职位：&nbsp;&nbsp;&nbsp;&nbsp;{{item.postName}}</span>
+                        </div>
+                     </ion-item>                                           
+                </ion-list>
+                <ion-infinite-scroll immediate-check="false"  ng-if="finite_state"  on-infinite="fnLoadMore()"  distance="15px"></ion-infinite-scroll>                    
+            </ion-content>
+            <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="items.length==0">
+                <div class="empty"><p>暂无数据 ...</p></div>
+            </div>
+        </ion-side-menu-content>
+
+        <ion-side-menu style="z-index: initial">
+            <nav class="hidden  cehua">
+                <p class="ceng" ng-click="guan()"></p>
+                <div class="kuang">
+                    <header class="bar bar-header bar-stable">
+                    </header>
+                    <ion-content class="has-header">
+                        <div class="item item-input">
+                            <div class="input-label">
+                                员工姓名：
+                            </div>
+                            <input type="text" id="search" name="cstId" placeholder="输入' 张三 '或' zs ''">
+                        </div>
+                        <div class="item item-input item-select" ng-if="showBor">
+                            <div class="input-label" id="lv_1">管辖下机构：</div>
+                            <select ng-model="$parent.$parent.selected1" ng-options="s.orgName for s in list"  ng-change="c()" >
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                        <div class="item item-input item-select"  ng-show="$parent.$parent.selected1.child.length">
+                            <div class="input-label" id="lv_2">管辖机构子部门：</div>
+                            <select ng-model="$parent.$parent.selected2" ng-options="sh.orgName for sh in $parent.$parent.selected1.child" ng-change="c2()" >
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                        <!-- <div class="item item-input item-select" ng-show="$parent.$parent.selected2.child.length">
+                            <div class="input-label" id="lv_3">部门：</div>
+                            <select ng-model="$parent.$parent.selected3" ng-options="x.orgName for x in $parent.$parent.selected2.child" ng-change="c3()" >
+                                <option value="" id="lv_1">全部</option>
+                            </select>
+                        </div>
+                        <div class="item item-input item-select" ng-show="$parent.$parent.selected3.child.length">
+                            <div class="input-label" id="lv_4">子部门：</div>
+                            <select  ng-model="$parent.$parent.selected4" ng-options="x.orgName for x in $parent.$parent.selected3.child" ng-change="c4()" >
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                        <div class="item item-input item-select" ng-show="$parent.$parent.selected4.child.length">
+                            <div class="input-label" id="lv_5">组：</div>
+                            <select  ng-model="$parent.$parent.selected5" ng-options="x.orgName for x in $parent.$parent.selected4.child" ng-change="c5()" >
+                                <option value="">全部</option>
+                            </select>
+                        </div> -->
+                    </ion-content>
+                    <ion-footer-bar style="height: 43px;padding: 0;">
+                        <button class="btn-reset" ng-click="fnReset()">重 置</button>
+                        <button class="btn-confirm" ng-click="fnOk()">完 成</button>
+                    </ion-footer-bar>
+                </div>
+            </nav>
+        </ion-side-menu>        
+    </ion-side-menus>
+</ion-view>

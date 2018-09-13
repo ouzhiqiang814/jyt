@@ -1,0 +1,37 @@
+<ion-view id="finishedtaskInfo">
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">审批详情</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="finishedtaskInfo_div" style="height:80px;">
+            <div class="finishedtaskInfo_title">{{finishedtaskInfo.title}}</div>
+            <em class="finishedtaskInfo_note">类型：{{finishedtaskInfo.step}}</em>
+            <em class="finishedtaskInfo_note" style="padding-left:20px;">时间：{{finishedtaskInfo.date}}</em>
+        </div>
+        <div class="finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title" ng-click="goAuditingHistory()">
+                <em class="finishedtaskInfo_title_label">审批历史</em>
+                <em class="goDetail"> > </em>
+            </div>
+        </div>
+        <div class="finishedtaskInfo_div">
+            <div class="finishedtaskInfo_title" ng-click="goPersonInfo()">
+                <em class="finishedtaskInfo_title_label">申请人</em>
+                <em class="goDetail"> {{finishedtaskInfo.people}} &nbsp;&nbsp;> </em>
+            </div>
+        </div>
+        <div ng-include="'areas/finishedtask/child/customerdata.html'" ng-if="finishedtaskInfo.category=='客户数据查看权限'">
+        </div>
+        <div ng-include="'areas/finishedtask/child/tendinstitution.html'" ng-if="finishedtaskInfo.category=='客户管户机构调整'">
+        </div>
+        <div ng-include="'areas/finishedtask/child/partner.html'" ng-if="finishedtaskInfo.category=='合作伙伴'">
+        </div>
+        <div ng-include="'areas/finishedtask/child/thingsend.html'" ng-if="finishedtaskInfo.category=='合作事项移交'">
+        </div>
+        <div ng-include="'areas/finishedtask/child/partnerseerole.html'"
+             ng-if="finishedtaskInfo.category=='合作伙伴查看权限申请'">
+        </div>
+    </ion-content>
+
+</ion-view>

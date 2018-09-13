@@ -1,0 +1,93 @@
+<tab-slide-box tab='0'>
+    <div class="tsb-icons">
+        <div class="tsb-ic-wrp">
+            <ion-scroll direction="x" class="tsb-hscroll">
+                <a href="javascript:;" class="">基础信息</a>
+                <a href="javascript:;" class="">附件信息</a>
+            </ion-scroll>
+        </div>
+    </div>
+    <div style="height:3px;background-color:#f0f0f0;"></div>
+    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide style="background-color:#ffffff;">
+            <div class="second_title">
+                <span class="label">基本信息</span>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>合作事由:</label>
+                <em>{{thingSendFormData.reason}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>对接部门:</label>
+                <em>{{thingSendFormData.dept}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>对接人员:</label>
+                <em>{{thingSendFormData.person}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>对接人员联系方式:</label>
+                <em>{{thingSendFormData.personPhone}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>合作时间:</label>
+                <em>{{thingSendFormData.date}}</em>
+            </div>
+            <div class="second_title">
+                <span class="label">合作伙伴联系人信息</span>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>联系人名称:</label>
+                <em>{{thingSendFormData.relationName}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>所属部门:</label>
+                <em>{{thingSendFormData.relationDept}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>职位:</label>
+                <em>{{thingSendFormData.relationJob}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>固定电话:</label>
+                <em>{{thingSendFormData.relationTel}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>移动电话:</label>
+                <em>{{thingSendFormData.relationPhone}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>电子邮箱:</label>
+                <em>{{thingSendFormData.relationEmail}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>国家和地区:</label>
+                <em>{{thingSendFormData.relationCountry}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>邮政编码:</label>
+                <em>{{thingSendFormData.relationZipCode}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>省、市、县:</label>
+                <em>{{thingSendFormData.relationCity}}</em>
+            </div>
+            <div class="finishedtaskInfo_base_info">
+                <label>详细地址:</label>
+                <em>{{thingSendFormData.relationAddress}}</em>
+            </div>
+        </ion-slide>
+        <ion-slide style="background-color:#ffffff;">
+            <ion-item class="list-data-info-item" ng-repeat="info in thingSendFileListData">
+                <div class="list-data-info">
+                    <em>文件名称:</em>
+                    <em>{{info.name}}</em>
+                </div>
+                <div class="list-data-info">
+                    <em>上传时间:</em>
+                    <em>{{info.time}}</em>
+                </div>
+            </ion-item>
+        </ion-slide>
+    </ion-slide-box>
+</tab-slide-box>

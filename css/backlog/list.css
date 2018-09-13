@@ -1,0 +1,203 @@
+#backlogList {
+    background: white;
+
+}
+#backlogList .scroll{
+    background-color:#f0f0f0;
+}
+#backlogList .backlog-item {
+    display: inline-block;
+    width: 96%;
+    border: solid;
+    border-color: #EEEEEE;
+    border-width: 1px;
+    padding: 0px;
+    margin-left: 7px;
+    margin-top: 7px;
+}
+#backlogList .backlog-item-up-div {
+    width: 100%;
+    border-bottom-width: 2px;
+    border-bottom-color: #f0f0f0;
+    display: inline-block;
+    padding: 1% 0;
+}
+
+#backlogList .backlog-item-important-div{
+    position:absolute;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+#backlogList .backlog-item-important-img{
+    width: 20px;
+    height: 20px;
+    background-color:#ffffff;
+}
+
+#backlogList .backlog-item-img-left {
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 16%;
+    max-width: 50px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#backlogList .backlog-item-img-left img {
+    width: 100%;
+    margin-top: 7%;
+    border-color: #d6d6d6;
+    border: 1px;
+    box-shadow: 1px 1px 5px 1px #E8E8E8;
+    border-radius: 3px;
+}
+
+#backlogList .backlogContent {
+    width: 48%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#backlogList .backlogContent .backlog-item-title {
+    font-size: 13px;
+    width: 95%;
+    color: #1A1A1A;
+    display: block;
+    white-space: pre-wrap;
+    overflow: hidden;
+    max-height: 40px;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#backlogList .backlogContent .backlog-item-text{
+    display:block;
+    width: 95%;
+    font-size: 11px;
+    color: #999999;
+    overflow:hidden;
+}
+
+#backlogList .backlogContent .backlog-item-name-xt{
+    color: #0c93e1;
+}
+#backlogList .backlogContent .backlog-item-name-yx{
+    color: #02cb94;
+}
+#backlogList .backlogContent .backlog-item-name-kh{
+    color: #fbc31f;
+}
+#backlogList .backlogProgress {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25%;
+}
+DIV.GaugeMeter {
+    margin: 0!important;
+    display: inline-flex;
+}
+
+#backlogList .backlogProgress .backlogProgressText {
+    font-size: 9px;
+    color: #666666;
+}
+
+#backlogList .backlog-item-down-div{
+    height:27px;
+    width:100%;
+    border-top:2px solid #f0f0f0;
+    top:85px;
+    left:0px;
+}
+
+#backlogList .backlog-item-down-left{
+    width:50%;
+    text-align:center;
+    line-height: 23px;
+    float:left;
+    font-size:10px;
+    color:#333333;
+    border-right:2px solid #f0f0f0;
+}
+
+#backlogList .backlog-item-down-right{
+    width:50%;
+    float:left;
+    text-align:center;
+    line-height: 23px;
+    font-size:10px;
+    color:#333333;
+}
+
+#backlogList button{
+    font-size: 16px;
+    letter-spacing:5px;
+}
+
+#backlogList .btn-reset {
+    color: #01B0E9;
+    width: 50%;
+    background-color: #E6F9FF;
+}
+
+#backlogList .btn-ok{
+    color: #FFFFFF;
+    background-color: #01B0E9;
+    width: 50%;
+    left: 50%;
+    border:none;
+}
+@media only screen and (min-width:500px){
+
+}
+
+
+
+
+/* 合作伙伴查看权限申请审批 */
+.jiegou .tou{
+    margin-left: -14%;
+}
+.jiegou:nth-child(1) .tou{
+    margin-bottom: 8%;
+}
+.jiegou .tou .checkbox {
+    vertical-align: middle;
+    padding: 0;
+}
+.jiegou .tou .checkbox input{
+    width:18px;
+    height:18px;
+}
+.jiegou .tou .checkbox input:before{
+    width:18px;
+    height:18px;
+}
+
+.jiegou .tou .checkbox input:checked:before{
+    width:18px;
+    height:18px;
+}
+.jiegou .tou p{
+    vertical-align: middle;
+    font-size: 15px;
+    width:80%;
+    color: #000;
+}
+.jiegou .tou .checkbox input:after, .jiegou .tou .checkbox-icon:after{
+    width: 7px;
+    height: 4px;
+}
+.jiegou .wen{
+    margin-top:3%;
+}
+.jiegou .wen p{
+    font-size:13px;
+
+}

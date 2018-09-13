@@ -1,0 +1,137 @@
+<ion-view>
+    <div>
+        <ion-header-bar class="bar-energized" style=""
+                        align-title="center">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-back"></button>
+            <h1 class="title">公司客户查询</h1>
+        </ion-header-bar>
+        <ion-content class="padding" style="padding :0px;">
+            <div class="item item-input">
+                <div class="input-label">
+                    客户编号
+                </div>
+                <input type="text" id="cstId" name="cstId">
+            </div>
+            <div class="item item-input">
+                <div class="input-label">
+                    客户法定名称
+                </div>
+                <input type="text" id="ipNm" name="ipNm">
+            </div>
+            <div class="item item-input item-select">
+                <div class="input-label">
+                    证件类型
+                </div>
+                <select id="ipidTpcd" name="ipidTpcd">
+                    <option value="">请选择</option>
+                    <option value="{{item.codeValue}}" ng-repeat="item in cardTypes">{{item.codeName}}</option>
+                </select>
+
+            </div>
+            <div class="item item-input">
+                <div class="input-label">
+                    证件号码
+                </div>
+                <input type="text" id="ipidNo" name="ipidNo">
+            </div>
+        </ion-content>
+        <ion-footer-bar style="height: 43px;padding: 0;">
+            <button class="btn-reset" ng-click="func_reset()">重 置
+            </button>
+            <button class="btn-confirm" ng-click="func_ok()">完 成
+            </button>
+        </ion-footer-bar>
+    </div>
+</ion-view>
+
+<script id="templates/queryCust.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-side-menus id="companyCustomerList">
+            <ion-header-bar class="bar-energized" style=""
+                            align-title="center">
+                <button ng-click="modal.hide()" class="button button-icon ion-ios-arrow-left"></button>
+                <h1 class="title">公司客户查询</h1>
+               <!-- <button class="button button-icon ion-ios-search" ng-click="qiehuan()" style="display: block"></button>-->
+            </ion-header-bar>
+
+            <ion-side-menu-content drag-content="false">
+                <ion-content>
+                    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh()">
+                    </ion-refresher>
+                    <ion-list id="cuslist">
+                        <ion-item class="cus-item" ng-repeat="item in items" ng-click="cusItemClick(item)">
+                            <div>
+                                <div class="cus-item-img-left">
+                                    <img src="{{item.statusrc}}" alt="">
+                                </div>
+                                <div class="cusItem">
+                                    <span class="cus-item-title">{{item.name}}</span>
+                                    <span>客户编号：{{item.no}}</span>
+                                    <span>主证件类型：{{item.cardType}}</span>
+                                    <span>主证件号码：{{item.id}}</span>
+                                </div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="loadMore()"
+                                         distance="10px">
+                    </ion-infinite-scroll>
+                </ion-content>
+
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;" ng-if="items.length == 0">
+                    <div class="empty"><p>暂无数据 ...</p></div>
+                </div>
+            </ion-side-menu-content>
+
+            <ion-side-menu style="width: initial;">
+                <nav class="hidden  cehua">
+                    <p class="ceng" ng-click="guan()"></p>
+
+                    <div class="kuang">
+                        <header class="bar bar-header bar-stable">
+                        </header>
+                        <ion-content class="has-header">
+                            <div class="item item-input">
+                                <div class="input-label">
+                                    客户编号：
+                                </div>
+                                <input type="text" id="cstId1" name="cstId1">
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">
+                                    客户法定名称：
+                                </div>
+                                <input type="text" id="ipNm1" name="ipNm1">
+                            </div>
+                            <div class="item item-input item-select">
+                                <div class="input-label">
+                                    证件类型
+                                </div>
+                                <select id="ipidTpcd1" name="ipidTpcd1">
+                                    <option value="">请选择</option>
+                                    <option value="{{item.codeValue}}" ng-repeat="item in cardTypes">{{item.codeName}}
+                                    </option>
+                                </select>
+
+                            </div>
+                            <div class="item item-input">
+                                <div class="input-label">
+                                    证件号码：
+                                </div>
+                                <input type="text" id="ipidNo1" name="ipidNo1">
+                            </div>
+                            <div class="shanxian"></div>
+                            <!--  闪现 必加  -->
+                        </ion-content>
+                        <ion-footer-bar style="height: 43px;padding: 0;">
+                            <button class="btn-reset" ng-click="func_reset()">重 置
+                            </button>
+                            <button class="btn-confirm" ng-click="func_ok1()">完 成
+                            </button>
+                        </ion-footer-bar>
+                    </div>
+                </nav>
+            </ion-side-menu>
+        </ion-side-menus>
+    </ion-modal-view>
+</script>

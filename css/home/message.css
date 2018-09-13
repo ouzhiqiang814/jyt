@@ -1,0 +1,36 @@
+#message #header-bar {
+	height: 51px;
+	border-bottom: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #EBEBEB;
+}
+
+#message .top-title {
+	font-weight: 300;
+	font-size: 20px;
+	color: #007AFF;
+}
+
+#message .msg-title{
+	margin-top: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+#message .msg-date{
+	margin: 10px;
+	position: absolute;
+	right: 20px;
+	
+}
+
+#message .msg-content{
+	margin: 10px;
+	margin-top: 40px;
+	text-indent:2em;
+	word-break: break-word;
+	white-space: normal;
+	font-size: 15px;
+	line-height:1.8;//行距？
+}

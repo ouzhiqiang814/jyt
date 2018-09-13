@@ -1,0 +1,239 @@
+<ion-content id="companyCustomerInfoChild" style="overflow: scroll">
+    <ion-list class="kehu-detail" style="height: 100%" >
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    客户法定名称:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.ipNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    客户编号:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.cstId}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    客户简称:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.ipNmForShort}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    主证件类型:
+                </div>
+                <div class="input-label" style="width:55%;">
+                   <!-- == '*'?'*':basic.ipIdTpCdNm-->
+                    {{basic.ipIdTpCdNm | showAsterisk : basic.ipIdTpCd}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    主证件号码:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.ipIdNo}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    客户管户机构:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.orgNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    客户管户人员:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.empNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    行业类型:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.idyTpCd == '*'?'*':basic.idyTpCdNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    企业规模:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.entpSzCd == '*'?'*':basic.entpSzCdNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    组织性质:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.orgCharCd  == '*'?'*':basic.orgCharCdNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    员工人数范围:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.enumScopCd  == '*'?'*':basic.enumScopCdNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    成立日期:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.fdDt}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    注册资本金额（万元）:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.rgstCptlFndAmt}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    注册资本币种:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.rgstCptlCcyCd == '*'?'*':basic.rgstCptlCcyCdNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    具备法人资格标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.hvLglPsnQuaIdr | getYesOrNo}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    企业出资人经济成分:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.entFnddPsnEcnCmpCd  == '*'?'*':basic.entFnddPsnEcnCmpCdNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    高新技术企业标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.hhnwTechEntpIdr | getYesOrNo}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    上市企业标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.lstdEntpIdr | getYesOrNo}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    台资企业标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.twFndEntpInd | getYesOrNo}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    外地常设机构标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.otsdLndInstIdr | getYesOrNo}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    特殊经济区类型:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.spclEcnZonTpCd   == '*'?'*':basic.spclEcnZonTpCdNm}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    特殊经济区企业标志:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.spclEcnZonEntpIdr | getYesOrNo}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="">
+            <div class="item-input">
+                <div class="input-label" style="width: 45%">
+                    组织经营范围描述:
+                </div>
+                <div class="input-label" style="width:55%;">
+                    {{basic.orgOprtScopDsc}}
+                </div>
+            </div>
+        </ion-item>
+
+        <!--<ion-item class="" style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+        </ion-item>-->
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+</ion-content>

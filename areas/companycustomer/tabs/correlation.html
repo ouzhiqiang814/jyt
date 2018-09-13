@@ -1,0 +1,31 @@
+<ion-content id="companyCustomerInfoChild">
+    <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="func_refresh5()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item class="cus-basic-info-item" ng-if="items5.length != 0" ng-repeat="info in items5">
+            <div class="cus-basic-info">
+                <em>关联方名称:</em>
+                <em>{{info.IP_LGL_NM}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>关联方类型:</em>
+                <em>{{info.IP_RLTV_RETPCD == '*'?'*':info.IP_RLTV_RETPCDNm}}</em>
+            </div>
+            <div class="cus-basic-info">
+                <em>关联方编号:</em>
+                <em>{{info.CST_ID}}</em>
+            </div>
+        </ion-item>
+
+        <!--<ion-item class=""  style="height: 46px;border-width: 0px;background-color: #f0f0f0">
+        </ion-item>-->
+        <!-- <div style="height:70px"></div> -->
+    </ion-list>
+
+    <ion-infinite-scroll immediate-check="false" ng-if="finite_state5" on-infinite="loadMore5()" distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div id="" ng-if="items5.length == 0">
+    <div class="empty"><p>暂无数据 ...</p></div>
+</div>

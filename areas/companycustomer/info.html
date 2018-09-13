@@ -1,0 +1,76 @@
+<ion-view id="companyCustomerInfo"  class="begin-right">
+
+    <ion-header-bar align-title="center" class="bar-energized" style="" id="header-bar">
+        <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+        <h1 class="title">客户信息</h1>
+    </ion-header-bar>
+
+    <ion-content has-header="true" id="content" scroll="false">
+        <tab-slide-box tab='0'>
+            <div class="tsb-icons">
+                <div class="tsb-ic-wrp">
+                    <ion-scroll direction="x" class="tsb-hscroll">
+                        <a href="javascript:;" class="">基本信息</a>
+                        <a href="javascript:;" class="">证件信息</a>
+                        <a href="javascript:;" class="">单位联系信息</a>
+                        <a href="javascript:;" class="">联系人联系信息</a>
+                        <a href="javascript:;" class="">关联方信息</a>
+                        <a href="javascript:;" class="">股东信息</a>
+                        <a href="javascript:;" class="">资产信息</a>
+                        <a href="javascript:;" class="">不良评价信息</a>
+                        <a href="javascript:;" class="">管理机构信息</a>
+                        <a href="javascript:;" class="">管理团队信息</a>
+                    <!--    <a href="javascript:;" class="">客户标签</a>-->
+                    </ion-scroll>
+                </div>
+            </div>
+            <div style="height:5px;background-color:#f0f0f0;"></div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/base.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/card.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/unitRelation.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/relation.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/correlation.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/partner.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/asset.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/evaluate.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/manager.html'">
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div ng-include="'areas/companycustomer/tabs/managerTeam.html'">
+                    </div>
+                </ion-slide>
+             <!--   <ion-slide>
+                    <div ng-include="'areas/personcustomer/tabs/label.html'">
+                    </div>
+                </ion-slide>-->
+         </ion-slide-box>
+        </tab-slide-box>
+    </ion-content>
+</ion-view>
