@@ -72,6 +72,10 @@ angular.module('moremenu.controller', [])
                 {
                     name: "员工信息",
                     typeNumber: '108'
+                },
+                {
+                    name: "效能统计",
+                    typeNumber: '109'
                 }
             ];
 
@@ -355,6 +359,21 @@ angular.module('moremenu.controller', [])
                             //     typeNumber: '10002',
                             //     sref: 'report'
                             // }
+                        ]
+                    }
+                ];
+            }else if (typeNumber == 109) {
+                $scope.categoryDetailData = [
+                    {
+                        title: "效能统计",
+                        src: "img/moremenu/partners.png",
+                        data: [
+                            {
+                                name: "效能统计",
+                                src: "img/home/nav1.png",
+                                typeNumber: '10002',
+                                sref: 'performanceStatis'
+                            }
                         ]
                     }
                 ];

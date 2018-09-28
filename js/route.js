@@ -27,6 +27,7 @@ angular.module('route', [
     "product_query_list.route",
     'employee.route',
     'report.route',
+    'performanceStatis.route'
 ])
     .config(function ($stateProvider, $urlRouterProvider) {
 

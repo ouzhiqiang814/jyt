@@ -265,3 +265,29 @@
     width:50px!important;
     height: 100%!important;
 }
+.ow-bor-title{
+    padding: 5px;
+    text-align: center;
+    font-size: 0.25rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+    margin-top: -25px;
+}
+.ow-border-bottom{
+    border-color:#fff;
+    border-bottom:1px solid #ddd;
+    margin-bottom: 1px;
+}
+.ow-list-outside{
+    border: 1px solid #ddd;
+    padding: 1px;
+    border-radius: 0!important;
+    border-bottom-color: #fff;
+}
+.ow-com-font-size_sml{
+    font-size:0.2rem!important
+}
+#ow-table table, tbody, td, tfoot, th, thead {
+    vertical-align: middle!important;
+    line-height:0.4rem!important
+}

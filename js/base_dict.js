@@ -26,6 +26,9 @@ url.careList = '/adm/api/queryEmpeCareList'
 url.adm_userList = '/adm/api/queryUserList'
 url.cpc_tanform = '/cpc/api/tranTask'
 url.adm_manageOrg = '/adm/api/queryUserManageOrg'
+url.adm_queryFlowAmount = '/adm/api/queryFlowAmount'
+url.adm_queryFlowstatNodeTimeAmount = '/adm/api/queryFlowstatNodeTimeAmount'
+url.adm_queryFlowstatNodeTimeList = '/adm/api/queryFlowstatNodeTimeList'
 
 
 url.potal_potal = '/PORTAL/PORTAL/portal/services/portalWS';

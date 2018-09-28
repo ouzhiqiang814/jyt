@@ -1,0 +1,109 @@
+<ion-view id="performanceStatis">
+    <ion-side-menus>
+        <ion-header-bar class="bar-calm" id="header-bar" align-title="center">
+            <button ng-click="goBack()" class="button button-icon ion-ios-arrow-left"></button>
+            <h1 class="title">效能统计</h1>
+            <button class="button button-icon " ng-click="qiehuan()" style="display: block">筛选</button>
+        </ion-header-bar>
+        <ion-side-menu-content drag-content="false">
+            <ion-content has-header="true" scroll="true">
+                <div style="display: flex;width: 100%;height: 39px;justify-content: space-evenly;background-color: #fff;">
+                    <span style="padding: 12px 20px;" ng-click="fnGoNext()">流程数统计</span>
+                    <span style="padding: 12px 20px;border-bottom: 2px solid #01b0e9;color: #01b0e9">效能待办统计</span>
+                </div>
+                <div style="width: 100%;height: 100%;background-color: #f0f0f0" ng-show="ngflag"></div>
+                <div class="ow-e-box">
+                    <div class="ow-bor-title">{{ title }}</div>
+                    <div id="dealt" class="ow-echart-box" style="height:400px;"></div>
+                    <div class="ow-line"></div>
+                    
+                    <div style="display:flex;justify-content: flex-end;">
+                        <div class=" icon-right " ng-click='fnSort()' style="padding: 6px;margin-right: 10px;color: #11c1f3;">按时长排序
+                            <i class="icon {{ sortIon }}"></i>
+                        </div>
+                    </div>
+                    <div ng-init="fnInit()">
+                        <div class="ow-table-border-box">
+                            <table class="bordered" cellspacing="0" border="0" id="ow-table" style="vertical-align:middle!important">
+                                <tr class="ow-first-title">
+                                    <th>流程名称</th>
+                                    <!-- <th>季度</th> -->
+                                    <!-- <th>月份</th> -->
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
+                                    <th>处理时长</th>
+                                </tr>
+                                <tr ng-repeat="item_2 in items_2">
+                                    <td>{{item_2.name }}</td>
+                                    <!-- <td>{{item_2.season}}</td> -->
+                                    <!-- <td>{{item_2.month }}</td> -->
+                                    <td>{{item_2.start }}</td>
+                                    <td>{{item_2.end }}</td>
+                                    <td>{{item_2.time }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%;background-color: #f0f0f0;height: 100%;position: fixed;top: 48px;" ng-if="items_2.length==0">
+                    <div class="empty">
+                        <p style="color:#333;">{{ title }}暂无数据 ...</p>
+                    </div>
+                </div>
+                <!-- <ion-refresher pulling-text="获取最新数据..." refreshing-text="正在加载" on-refresh="fnRefresh()"></ion-refresher> -->
+                <ion-infinite-scroll immediate-check="false" ng-if="finite_state" on-infinite="fnLoadMore()" distance="60px"></ion-infinite-scroll>
+            </ion-content>
+        </ion-side-menu-content>
+        <ion-side-menu style="z-index: initial">
+            <nav class="hidden  cehua">
+                <p class="ceng" ng-click="guan()"></p>
+                <div class="kuang">
+                    <header class="bar bar-header bar-stable">
+                    </header>
+                    <ion-content class="has-header">
+                        <div class="item item-input item-select">
+                            <div class="input-label" id="lv_1">类型：</div>
+                            <select ng-model="$parent.$parent.selected1" ng-options="s.name for s in list" ng-change="c()">
+                                <option value="">-请选择-</option>
+                            </select>
+                        </div>
+                        <div class="item item-input item-select" ng-show="$parent.$parent.selected1.child.length">
+                            <div class="input-label" id="lv_2">年份：</div>
+                            <select ng-model="$parent.$parent.selected2" ng-options="sh.name for sh in $parent.$parent.selected1.child"
+                                ng-change="c2()">
+                                <option value="">-请选择-</option>
+                            </select>
+                        </div>
+                        <div class="item item-input item-select" ng-show="$parent.$parent.selected2.child.length">
+                            <div class="input-label" id="lv_3">月份：</div>
+                            <select ng-model="$parent.$parent.selected3" ng-options="x.name for x in $parent.$parent.selected2.child"
+                                ng-change="c3()">
+                                <option value="" id="lv_1">-请选择-</option>
+                            </select>
+                        </div>
+                        <!-- <div class="item item-input item-select" ng-show="$parent.$parent.selected2.child.length">
+                            <div class="input-label" id="lv_4">季度：</div>
+                            <select  ng-model="$parent.$parent.selected4" ng-options="x.name for x in $parent.$parent.selected2.child" ng-change="c4()" >
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                        <div class="item item-input item-select" ng-show="$parent.$parent.selected4.child.length">
+                            <div class="input-label" id="lv_5">组：</div>
+                            <select  ng-model="$parent.$parent.selected5" ng-options="x.orgName for x in $parent.$parent.selected4.child" ng-change="c5()" >
+                                <option value="">全部</option>
+                            </select>
+                        </div> -->
+                        <div class="shanxian"></div>
+                        <!--  闪现 必加  -->
+                    </ion-content>
+                    <ion-footer-bar style="height: 43px;padding: 0;">
+                        <button class="btn-reset" ng-click="fnReset()">重 置
+                        </button>
+                        <button class="btn-confirm" ng-click="fnOk()">完 成
+                        </button>
+                    </ion-footer-bar>
+                </div>
+            </nav>
+        </ion-side-menu>
+    </ion-side-menus>
+</ion-view>
